@@ -1,4 +1,7 @@
+import { cookies } from "next/headers";
+import { getAuth } from "../../../../lib/neon/auth";
 import { getPool } from "../../../../lib/neon/db";
+import { createDb } from "../../../../lib/neon/query";
 import {
   deleteObject,
   getBucket,
@@ -48,5 +51,35 @@ export async function GET() {
   }
 
   const ok = Object.values(result).every((service) => (service as { ok: boolean }).ok);
-  return Response.json(result, { status: ok ? 200 : 503 });
+
+  // Diagnostic de connexion pour le navigateur qui appelle cette route : noms
+  // de cookies et oui/non uniquement, jamais une valeur. Ajouté après le calcul
+  // de `ok` : il décrit le visiteur, pas l'état des services.
+  const session: Record<string, unknown> = {};
+  try {
+    const names = (await cookies()).getAll().map((cookie) => cookie.name);
+    session.neonCookies = names.filter((name) => name.includes("neon-auth"));
+    const auth = getAuth();
+    if (!auth) {
+      session.configured = false;
+    } else {
+      const { data, error } = await auth.getSession({ query: {} });
+      session.getSession = {
+        user: Boolean(data?.user),
+        error: error ? { status: error.status, code: error.code, message: error.message } : null,
+      };
+      if (data?.user) {
+        const { data: profile, error: profileError } = await createDb({ kind: "user", userId: data.user.id })
+          .from("profiles")
+          .select("id, role")
+          .eq("id", data.user.id)
+          .maybeSingle();
+        session.profile = { found: Boolean(profile), role: profile?.role ?? null, error: profileError?.message ?? null };
+      }
+    }
+  } catch (error) {
+    session.error = (error as Error).message;
+  }
+
+  return Response.json({ ...result, session }, { status: ok ? 200 : 503 });
 }
