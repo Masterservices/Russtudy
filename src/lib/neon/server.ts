@@ -19,7 +19,8 @@ export const getAuthUser = cache(async function getAuthUser(): Promise<AuthUser 
   const auth = getAuth();
   if (!auth) return null;
 
-  const { data } = await auth.getSession({ query: {} });
+  const { data, error } = await auth.getSession({ query: {} });
+  if (error) console.error('[neon][session]', error.status, error.code, error.message);
   const user = data?.user;
   if (!user) return null;
 

@@ -343,7 +343,9 @@ export class QueryBuilder<Row extends AnyRow, Insert = AnyRow, Update = AnyRow> 
       if (isWrite && this.ctx.kind !== 'admin') schedulePushFlush();
       return this.shape(result);
     } catch (error) {
-      return { data: (this.mode === 'many' ? [] : null) as unknown as Row[], error: toDbError(error), count: null };
+      const failure = toDbError(error);
+      console.error(`[neon][${this.operation} ${this.table}]`, failure.code, failure.message);
+      return { data: (this.mode === 'many' ? [] : null) as unknown as Row[], error: failure, count: null };
     }
   }
 

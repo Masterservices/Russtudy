@@ -49,11 +49,16 @@ export const getAppSession = cache(async function getAppSession(): Promise<AppSe
   const db = await getServerDb();
   if (!db) return null;
 
-  const { data: profile } = await db
+  const { data: profile, error } = await db
     .from('profiles')
     .select('id, role, full_name, email, phone, avatar_url, lang, city')
     .eq('id', user.id)
     .maybeSingle();
+
+  // Une session valide sans profil lisible renvoie vers la connexion : le dire
+  // dans les journaux, sinon la cause reste invisible.
+  if (error) console.error('[app][session] lecture du profil :', error.code, error.message);
+  else if (!profile) console.error('[app][session] aucun profil pour', user.id);
 
   if (!profile) return null;
 
