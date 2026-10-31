@@ -46,6 +46,8 @@ export const ru: AppDictionary = {
     enter: 'Войти',
     passwordHint: 'Минимум 8 символов',
     checkInbox: 'Аккаунт создан. Откройте ссылку подтверждения из письма, чтобы активировать доступ.',
+    newPassword: 'Новый пароль',
+    passwordUpdated: 'Пароль обновлён. Теперь можно войти.',
     errors: {
       missing_credentials: 'Укажите эл. почту и пароль.',
       invalid_credentials: 'Неверная эл. почта или пароль.',
@@ -59,6 +61,7 @@ export const ru: AppDictionary = {
       invalid_email: 'Этот адрес отклонён. Проверьте написание.',
       signup_disabled: 'Регистрация временно закрыта.',
       email_not_confirmed: 'Адрес ещё не подтверждён. Откройте ссылку из письма.',
+      invalid_link: 'Ссылка для сброса недействительна или устарела. Запросите новую.',
     },
   },
   nav: {

@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { getServerSupabase } from '../../../lib/supabase/server';
+import { getServerDb } from '../../../lib/neon/server';
 import { getAppSession } from '../data/session';
 import type { AppRole } from '../types';
 
@@ -32,7 +32,7 @@ export async function updatePricing(formData: FormData): Promise<void> {
   const session = await getAppSession();
   if (!session || session.demo || session.user.role !== 'admin') return;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return;
 
   const updates: { id: string; amount: number }[] = [];
@@ -77,7 +77,7 @@ export async function setUserRole(formData: FormData): Promise<void> {
   const session = await getAppSession();
   if (!session || session.demo || session.user.role !== 'admin') return;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return;
 
   const { error } = await db.from('profiles').update({ role }).eq('id', userId);
@@ -126,7 +126,7 @@ export async function createDossier(
   if (session.demo) return { error: 'demo_mode' };
   if (session.user.role === 'student') return { error: 'forbidden' };
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return { error: 'unavailable' };
 
   const { data: dossier, error } = await db
@@ -189,7 +189,7 @@ export async function createQuote(
   if (session.demo) return { error: 'demo_mode' };
   if (session.user.role === 'student') return { error: 'forbidden' };
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return { error: 'unavailable' };
 
   const items: { label: string; amount: number }[] = [];

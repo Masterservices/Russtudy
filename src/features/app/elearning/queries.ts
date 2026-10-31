@@ -1,6 +1,6 @@
 import 'server-only';
 
-import { getServerSupabase } from '../../../lib/supabase/server';
+import { getServerDb } from '../../../lib/neon/server';
 import { DEMO_COURSES, DEMO_LESSONS, DEMO_LESSON_DETAIL } from './demo';
 import { asLocalized, asLocalizedList, signed, type Row } from './shared';
 import type { CourseSummary, LessonDetail, LessonSummary } from './types';
@@ -8,7 +8,7 @@ import type { CourseSummary, LessonDetail, LessonSummary } from './types';
 export async function getCourses(userId: string, demo: boolean): Promise<CourseSummary[]> {
   if (demo) return DEMO_COURSES;
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return DEMO_COURSES;
 
   const { data: courses } = await client
@@ -71,7 +71,7 @@ export async function getCourseLessons(
   const course = courses.find((c) => c.slug === courseSlug);
   if (!course) return null;
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return null;
 
   const [{ data: rows }, { data: progress }] = await Promise.all([
@@ -115,7 +115,7 @@ export async function getLessonDetail(
       : null;
   }
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return null;
 
   const listing = await getCourseLessons(courseSlug, userId, demo);
@@ -164,8 +164,8 @@ export async function getLessonDetail(
         kind: b.kind as LessonDetail['blocks'][number]['kind'],
         title: asLocalized(content.title),
         lines: asLocalizedList(content.lines),
-        mediaUrl: await signed(client, b.media_url),
-        audioUrl: await signed(client, b.audio_url),
+        mediaUrl: await signed(b.media_url),
+        audioUrl: await signed(b.audio_url),
         transcript: asLocalized(b.transcript),
       };
     }),
@@ -178,7 +178,7 @@ export async function getLessonDetail(
       kind: e.kind as LessonDetail['exercises'][number]['kind'],
       prompt: asLocalized(e.prompt),
       options: asLocalizedList(e.options),
-      audioUrl: await signed(client, e.audio_url),
+      audioUrl: await signed(e.audio_url),
     })),
   );
 

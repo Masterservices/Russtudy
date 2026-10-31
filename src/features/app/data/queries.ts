@@ -1,8 +1,10 @@
 import 'server-only';
 
-import type { SupabaseClient } from '@supabase/supabase-js';
-import type { Database, DossierStepRow, ProfileRow } from '../../../lib/supabase/database.types';
-import { getServerSupabase } from '../../../lib/supabase/server';
+import type { Database, DossierStepRow, ProfileRow } from '../../../lib/neon/database.types';
+import { isStorageConfigured } from '../../../lib/neon/env';
+import type { Db } from '../../../lib/neon/query';
+import { getServerDb } from '../../../lib/neon/server';
+import { DOCUMENTS_PREFIX, signedDownloadUrl } from '../../../lib/neon/storage';
 import type {
   AdminOverview,
   AppRole,
@@ -38,8 +40,6 @@ import {
   DEMO_THREADS,
   DEMO_UNIVERSITIES,
 } from './demo';
-
-type Db = SupabaseClient<Database>;
 
 /* ------------------------------------------------------------------ */
 /* Utilitaires                                                         */
@@ -107,7 +107,7 @@ async function hydrateDossiers(db: Db, rows: DossierRowLite[]): Promise<Dossier[
 
 export async function getStudentDossier(userId: string, demo: boolean): Promise<Dossier | null> {
   if (demo) return DEMO_DOSSIER;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return null;
 
   const { data } = await db
@@ -124,7 +124,7 @@ export async function getStudentDossier(userId: string, demo: boolean): Promise<
 /** Dossiers ouverts au nom d'un étudiant, du plus récent au plus ancien. */
 export async function getStudentDossiers(studentId: string, demo: boolean): Promise<Dossier[]> {
   if (demo) return DEMO_DOSSIERS.slice(0, 1);
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -153,7 +153,7 @@ export async function getProfileDetail(profileId: string, demo: boolean): Promis
     };
   }
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return null;
 
   const { data } = await db
@@ -178,7 +178,7 @@ export async function getProfileDetail(profileId: string, demo: boolean): Promis
 
 export async function getDossierById(dossierId: string, demo: boolean): Promise<Dossier | null> {
   if (demo) return DEMO_DOSSIERS.find((d) => d.id === dossierId) ?? null;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return null;
 
   const { data } = await db.from('dossiers').select('*').eq('id', dossierId).maybeSingle();
@@ -193,7 +193,7 @@ export async function getTimeline(dossierId: string | null, demo: boolean): Prom
   // sont pas les siennes.
   if (!dossierId) return [];
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -239,7 +239,7 @@ export interface PendingStep {
 export async function getPendingSteps(dossiers: Dossier[], demo: boolean): Promise<PendingStep[]> {
   if (demo || dossiers.length === 0) return [];
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -268,7 +268,7 @@ export async function getDocuments(dossierId: string | null, demo: boolean): Pro
   if (demo) return DEMO_DOCUMENTS;
   if (!dossierId) return [];
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -293,7 +293,7 @@ export async function getDocuments(dossierId: string | null, demo: boolean): Pro
 
 export async function getDocument(documentId: string, demo: boolean): Promise<DocumentItem | null> {
   if (demo) return DEMO_DOCUMENTS.find((d) => d.id === documentId) ?? null;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return null;
 
   const { data } = await db.from('documents').select('*').eq('id', documentId).maybeSingle();
@@ -312,21 +312,32 @@ export async function getDocument(documentId: string, demo: boolean): Promise<Do
   };
 }
 
-/** URL signée de courte durée pour une pièce jointe du bucket privé. */
+const DOCUMENT_URL_TTL = 60 * 10;
+
+/**
+ * URL signée de courte durée pour une pièce jointe du bucket privé.
+ *
+ * Le stockage objet ne connaît pas la RLS : l'accès est donc vérifié ici, en
+ * relisant la ligne `documents` au nom de l'utilisateur. Si la base ne la lui
+ * montre pas, aucun lien n'est signé.
+ */
 export async function getDocumentDownloadUrl(storagePath: string | null, demo: boolean): Promise<string | null> {
-  if (demo || !storagePath) return null;
-  const db = await getServerSupabase();
+  if (demo || !storagePath || !isStorageConfigured()) return null;
+  const db = await getServerDb();
   if (!db) return null;
 
-  const { data } = await db.storage.from('documents').createSignedUrl(storagePath, 60 * 10);
-  return data?.signedUrl ?? null;
+  const { data: visible } = await db.from('documents').select('id').eq('storage_path', storagePath).limit(1);
+  if (!visible || visible.length === 0) return null;
+
+  return signedDownloadUrl(`${DOCUMENTS_PREFIX}${storagePath}`, DOCUMENT_URL_TTL);
 }
 
 /**
- * URLs signées pour un lot de pièces, en un seul aller-retour.
+ * URLs signées pour un lot de pièces, en une seule vérification d'accès.
  *
- * Afficher un aperçu dans une liste supposerait sinon autant d'appels que de
- * documents : `createSignedUrls` les demande d'un coup.
+ * Afficher un aperçu dans une liste supposerait sinon autant de contrôles que
+ * de documents : la RLS filtre le lot d'un coup, seules les pièces lisibles
+ * par l'utilisateur sont signées.
  */
 export async function getDocumentPreviewUrls(
   documents: DocumentItem[],
@@ -335,23 +346,26 @@ export async function getDocumentPreviewUrls(
   const urls = new Map<string, string>();
   const paths = documents.map((document) => document.storagePath).filter((path): path is string => !!path);
 
-  if (demo || paths.length === 0) return urls;
+  if (demo || paths.length === 0 || !isStorageConfigured()) return urls;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return urls;
 
-  const { data } = await db.storage.from('documents').createSignedUrls(paths, 60 * 10);
+  const { data: visible } = await db.from('documents').select('storage_path').in('storage_path', paths);
 
-  for (const entry of data ?? []) {
-    if (entry.path && entry.signedUrl) urls.set(entry.path, entry.signedUrl);
-  }
+  await Promise.all(
+    (visible ?? []).map(async (row) => {
+      if (!row.storage_path) return;
+      urls.set(row.storage_path, await signedDownloadUrl(`${DOCUMENTS_PREFIX}${row.storage_path}`, DOCUMENT_URL_TTL));
+    }),
+  );
 
   return urls;
 }
 
 export async function getThreads(dossierIds: string[], userId: string, demo: boolean): Promise<ConversationThread[]> {
   if (demo) return DEMO_THREADS;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db || dossierIds.length === 0) return [];
 
   const { data: conversations } = await db
@@ -390,7 +404,7 @@ export async function getThreads(dossierIds: string[], userId: string, demo: boo
 
 export async function getMessages(conversationId: string, userId: string, demo: boolean): Promise<MessageItem[]> {
   if (demo) return DEMO_MESSAGES[conversationId] ?? [];
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -413,7 +427,7 @@ export async function getMessages(conversationId: string, userId: string, demo: 
 
 export async function getNotifications(userId: string, demo: boolean): Promise<NotificationItem[]> {
   if (demo) return DEMO_NOTIFICATIONS;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -440,7 +454,7 @@ export async function getQuote(dossierId: string | null, demo: boolean): Promise
   // croire à une facture réelle, avec un acompte marqué comme payé.
   if (!dossierId) return null;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return null;
 
   const { data: quote } = await db
@@ -484,7 +498,7 @@ export async function getQuote(dossierId: string | null, demo: boolean): Promise
 
 export async function getConsultantDossiers(consultantId: string, demo: boolean): Promise<Dossier[]> {
   if (demo) return DEMO_DOSSIERS;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -509,7 +523,7 @@ export async function getConsultantOverview(consultantId: string, demo: boolean)
 
 export async function getQuotesForDossiers(dossierIds: string[], demo: boolean): Promise<Quote[]> {
   if (demo) return [DEMO_QUOTE];
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db || dossierIds.length === 0) return [];
 
   const { data: quotes } = await db
@@ -552,7 +566,7 @@ export async function getQuotesForDossiers(dossierIds: string[], demo: boolean):
 
 export async function getUniversities(demo: boolean): Promise<UniversityItem[]> {
   if (demo) return DEMO_UNIVERSITIES;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db.from('universities').select('*').order('name');
@@ -578,7 +592,7 @@ export async function getUniversities(demo: boolean): Promise<UniversityItem[]> 
 
 export async function getPricing(demo: boolean): Promise<PricingItem[]> {
   if (demo) return DEMO_PRICING;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db.from('pricing_items').select('*').order('position');
@@ -613,7 +627,7 @@ export async function getAllProfiles(demo: boolean): Promise<ProfileWithRole[]> 
     }));
   }
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -638,7 +652,7 @@ export async function getAllProfiles(demo: boolean): Promise<ProfileWithRole[]> 
 export async function getStudentsWithoutDossier(demo: boolean): Promise<PersonRef[]> {
   if (demo) return [{ id: DEMO_STUDENT.id, fullName: DEMO_STUDENT.fullName, email: DEMO_STUDENT.email, avatarUrl: null }];
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const [{ data: students }, { data: dossiers }] = await Promise.all([
@@ -655,7 +669,7 @@ export async function getStudentsWithoutDossier(demo: boolean): Promise<PersonRe
 /** Tous les dossiers de la plateforme (RLS : réservé aux administrateurs). */
 export async function getAllDossiers(demo: boolean): Promise<Dossier[]> {
   if (demo) return DEMO_DOSSIERS;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db.from('dossiers').select('*').order('updated_at', { ascending: false }).limit(200);
@@ -674,7 +688,7 @@ export async function getProfilesByRole(role: AppRole, demo: boolean): Promise<P
     }));
   }
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db
@@ -711,7 +725,7 @@ function monthlySeries(dates: string[], valueOf: (index: number) => number = () 
 
 export async function getAdminOverview(demo: boolean): Promise<AdminOverview> {
   if (demo) return DEMO_ADMIN_OVERVIEW;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return { ...DEMO_ADMIN_OVERVIEW, studentCount: 0, consultantCount: 0, dossierCount: 0, revenue: 0 };
 
   const [{ count: studentCount }, { count: consultantCount }, { data: dossiers }, { data: payments }] = await Promise.all([
@@ -754,7 +768,7 @@ export async function getAdminOverview(demo: boolean): Promise<AdminOverview> {
 
 export async function getAuditLogs(demo: boolean): Promise<AuditLogItem[]> {
   if (demo) return DEMO_LOGS;
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return [];
 
   const { data } = await db

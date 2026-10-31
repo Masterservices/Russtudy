@@ -2,7 +2,7 @@
  * Modèle de vue de la plateforme RusStudy.
  *
  * Ces types sont ce que consomment les écrans. Ils sont volontairement
- * découplés des lignes SQL (`src/lib/supabase/database.types.ts`) : la couche
+ * découplés des lignes SQL (`src/lib/neon/database.types.ts`) : la couche
  * `data/` fait la traduction, ce qui permet de faire évoluer le schéma sans
  * toucher aux composants.
  */
@@ -15,7 +15,7 @@ import type {
   PaymentStatus,
   QuoteStatus,
   StepStatus,
-} from '../../lib/supabase/database.types';
+} from '../../lib/neon/database.types';
 
 export type { AppRole, DocumentStatus, DossierStatus, LeadStatus, PaymentStatus, QuoteStatus, StepStatus };
 

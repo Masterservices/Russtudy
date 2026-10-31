@@ -1,25 +1,20 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { getServerSupabase } from '../../../../lib/supabase/server';
+import { HOME_BY_ROLE, getAppSession } from '../../../../features/app/data/session';
 
 export const dynamic = 'force-dynamic';
 
 /**
- * Retour OAuth Supabase : échange le code d'autorisation contre une session
- * (cookies httpOnly) puis renvoie vers l'écran demandé.
+ * Retour de la connexion Google (Neon Auth) : la session est déjà posée par le
+ * proxy d'authentification (`/api/auth`). Cet écran n'a plus qu'à renvoyer vers
+ * l'espace du rôle, ou vers l'écran demandé avant la connexion.
  */
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;
-  const code = searchParams.get('code');
   const next = searchParams.get('suivant');
-  const target = next?.startsWith('/app/') ? next : '/app/etudiant';
 
-  if (!code) return NextResponse.redirect(`${origin}/app/connexion`);
+  const session = await getAppSession();
+  if (!session) return NextResponse.redirect(`${origin}/app/connexion`);
 
-  const supabase = await getServerSupabase();
-  if (!supabase) return NextResponse.redirect(`${origin}/app/connexion`);
-
-  const { error } = await supabase.auth.exchangeCodeForSession(code);
-  if (error) return NextResponse.redirect(`${origin}/app/connexion`);
-
+  const target = next?.startsWith('/app/') && !next.startsWith('/app//') ? next : HOME_BY_ROLE[session.user.role];
   return NextResponse.redirect(`${origin}${target}`);
 }

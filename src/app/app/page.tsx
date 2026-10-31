@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getAppI18n } from '../../features/app/i18n/server';
 import { getAppSession, HOME_BY_ROLE } from '../../features/app/data/session';
-import { isSupabaseConfigured } from '../../lib/supabase/env';
+import { isNeonConfigured } from '../../lib/neon/env';
 import AuthLangSwitch from '../../features/app/ui/auth/AuthLangSwitch';
 import SkylineArt from '../../features/app/ui/SkylineArt';
 import Wordmark from '../../features/app/ui/Wordmark';
@@ -16,7 +16,7 @@ export default async function AppSplashPage() {
   if (session && !session.demo) redirect(HOME_BY_ROLE[session.user.role]);
 
   const { lang, t } = await getAppI18n(session?.user.lang);
-  const demo = !isSupabaseConfigured();
+  const demo = !isNeonConfigured();
 
   return (
     <main className="rs-shell rs-gradient relative flex flex-col overflow-hidden">

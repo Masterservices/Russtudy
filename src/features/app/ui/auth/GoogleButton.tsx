@@ -1,77 +1,39 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { getBrowserSupabase } from '../../../../lib/supabase/client';
-import { SUPABASE_ANON_KEY, SUPABASE_URL } from '../../../../lib/supabase/env';
+import { useState } from 'react';
+import { authClient } from '../../../../lib/neon/auth-client';
 
 /**
- * Connexion via Google (OAuth Supabase).
+ * Connexion via Google (OAuth Neon Auth).
  *
- * La disponibilité du fournisseur est vérifiée **depuis le navigateur**,
- * et non côté serveur. Deux raisons :
- *
- *  - c'est le navigateur qui exécutera ensuite la redirection OAuth ; tester
- *    ailleurs revient à supposer que les deux environnements voient la même
- *    chose, ce qui s'est révélé faux en production ;
- *  - le rendu serveur n'a alors plus à joindre Supabase pour afficher un
- *    écran de connexion, ce qui le rend insensible aux aléas de sortie
- *    réseau de l'hébergeur.
- *
- * Sans ce garde-fou, un fournisseur désactivé enverrait l'utilisateur sur
- * une page d'erreur brute (« Unsupported provider: provider is not enabled »).
+ * Le bouton n'est rendu que si la base est connectée (`enabled`, décidé côté
+ * serveur) : en mode démonstration, aucun fournisseur n'est joignable. Le
+ * séparateur « ou continuer avec » disparaît avec le bouton, pour ne pas rester
+ * suspendu au-dessus du vide.
  */
 export default function GoogleButton({
   label,
   dividerLabel,
   next,
+  enabled,
 }: {
   label: string;
   dividerLabel: string;
   next?: string;
+  enabled: boolean;
 }) {
   const [pending, setPending] = useState(false);
-  const [enabled, setEnabled] = useState(false);
-  const supabase = getBrowserSupabase();
 
-  useEffect(() => {
-    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return;
-    let cancelled = false;
-
-    fetch(`${SUPABASE_URL}/auth/v1/settings`, { headers: { apikey: SUPABASE_ANON_KEY } })
-      .then((response) => (response.ok ? response.json() : null))
-      .then((settings: { external?: Record<string, boolean> } | null) => {
-        if (!cancelled && settings?.external?.google === true) setEnabled(true);
-      })
-      .catch(() => {
-        /* Fournisseur indéterminable : ne pas proposer un bouton qui échouerait. */
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  // Le séparateur « ou continuer avec » disparaît avec le bouton : sans lui,
-  // il resterait suspendu au-dessus du vide.
-  if (!supabase || !enabled) return null;
+  if (!enabled) return null;
 
   async function signInWithGoogle() {
-    if (!supabase) return;
     setPending(true);
-    const target = new URL('/app/auth/callback', window.location.origin);
-    if (next) target.searchParams.set('suivant', next);
+    const callback = new URL('/app/auth/callback', window.location.origin);
+    if (next) callback.searchParams.set('suivant', next);
 
-    const { error } = await supabase.auth.signInWithOAuth({
+    const { error } = await authClient.signIn.social({
       provider: 'google',
-      options: {
-        redirectTo: target.toString(),
-        // `select_account` force l'affichage du sélecteur de comptes Google.
-        // Sans ce paramètre, Google réutilise silencieusement la dernière
-        // session du navigateur : sur un téléphone où plusieurs comptes
-        // cohabitent, l'utilisateur se retrouve connecté avec le mauvais
-        // sans jamais avoir eu le choix.
-        queryParams: { prompt: 'select_account' },
-      },
+      callbackURL: callback.toString(),
     });
     if (error) setPending(false);
   }

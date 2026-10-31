@@ -1,9 +1,8 @@
 import 'server-only';
 
-import type { SupabaseClient } from '@supabase/supabase-js';
+import { isStorageConfigured } from '../../../lib/neon/env';
+import { COURSE_ASSETS_PREFIX, signedDownloadUrl } from '../../../lib/neon/storage';
 import type { Localized, LocalizedList } from './types';
-
-export const BUCKET = 'course-assets';
 
 /**
  * Durée de validité d'une URL de média.
@@ -25,14 +24,15 @@ export function asLocalizedList(value: unknown): LocalizedList {
 }
 
 /**
- * URL signée d'un objet du compartiment, ou null si le chemin est vide.
+ * URL signée d'un média de cours, ou null si le chemin est vide.
  *
- * La signature est demandée avec les droits de l'appelant : un visiteur
- * non connecté l'obtient pour une leçon d'essai et se la voit refuser
- * pour une leçon payante, sans que l'application ait à trancher.
+ * Le stockage objet ne connaît pas la RLS. La protection tient donc au fait
+ * que les chemins ne viennent que de lignes lues au nom de l'appelant : un
+ * visiteur non connecté obtient le média d'une leçon d'essai, mais la base ne
+ * lui montre jamais le chemin d'une leçon payante, donc rien n'est signé.
+ * Ne jamais appeler cette fonction avec un chemin reçu du navigateur.
  */
-export async function signed(client: SupabaseClient, path: unknown): Promise<string | null> {
-  if (typeof path !== 'string' || !path) return null;
-  const { data } = await client.storage.from(BUCKET).createSignedUrl(path, SIGNED_URL_TTL);
-  return data?.signedUrl ?? null;
+export async function signed(path: unknown): Promise<string | null> {
+  if (typeof path !== 'string' || !path || !isStorageConfigured()) return null;
+  return signedDownloadUrl(`${COURSE_ASSETS_PREFIX}${path}`, SIGNED_URL_TTL);
 }

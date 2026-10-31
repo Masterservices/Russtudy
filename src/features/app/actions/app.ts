@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { getServerSupabase } from '../../../lib/supabase/server';
+import { getServerDb } from '../../../lib/neon/server';
 import { getAppSession } from '../data/session';
 import type { DocumentStatus } from '../types';
 
@@ -24,7 +24,7 @@ export async function sendMessage(_prev: ActionState, formData: FormData): Promi
   if (!session) return { error: 'unauthenticated' };
   if (session.demo) return DEMO_STATE;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return { error: 'unavailable' };
 
   const { error } = await db.from('messages').insert({
@@ -62,7 +62,7 @@ export async function startConversation(_prev: ActionState, formData: FormData):
   if (session.demo) return DEMO_STATE;
   if (topic === 'university' && session.user.role !== 'admin') return { error: 'forbidden_topic' };
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return { error: 'unavailable' };
 
   const { data: conversation, error } = await db
@@ -107,7 +107,7 @@ async function runStepGesture(gesture: StepGesture, formData: FormData): Promise
   const session = await getAppSession();
   if (!session || session.demo) return;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return;
 
   const { error } = await db.rpc(STEP_FUNCTIONS[gesture], { step: stepId });
@@ -136,7 +136,7 @@ export async function markAllNotificationsRead(): Promise<void> {
   const session = await getAppSession();
   if (!session || session.demo) return;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return;
 
   await db
@@ -160,7 +160,7 @@ export async function updateProfile(_prev: ActionState, formData: FormData): Pro
   if (!session) return { error: 'unauthenticated' };
   if (session.demo) return DEMO_STATE;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return { error: 'unavailable' };
 
   const { error } = await db
@@ -189,7 +189,7 @@ export async function setDocumentStatus(formData: FormData): Promise<void> {
   const session = await getAppSession();
   if (!session || session.demo || session.user.role === 'student') return;
 
-  const db = await getServerSupabase();
+  const db = await getServerDb();
   if (!db) return;
 
   await db.from('documents').update({ status }).eq('id', documentId);

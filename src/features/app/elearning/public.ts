@@ -1,13 +1,13 @@
 import 'server-only';
 
-import { getServerSupabase } from '../../../lib/supabase/server';
+import { getAuthUser, getServerDb } from '../../../lib/neon/server';
 import { asLocalized, asLocalizedList, signed, type Row } from './shared';
 import type { Localized, LocalizedList } from './types';
 
 /**
  * Lecture publique du catalogue et des leçons d'essai.
  *
- * Ce module ne connaît aucun utilisateur : il interroge Supabase sans
+ * Ce module ne connaît aucun utilisateur : il interroge la base sans
  * session, donc avec le rôle `anon`. Ce sont les politiques de la base
  * qui décident de ce qui est lisible — le catalogue publié, et le
  * contenu des seules leçons d'essai. L'application n'a pas à refaire ce
@@ -89,7 +89,7 @@ function toLesson(row: Row): PublicLesson {
 
 /** Catalogue public : parcours publiés et sommaire de leurs leçons. */
 export async function getPublicCatalogue(): Promise<PublicCourse[]> {
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return [];
 
   const { data: courses } = await client
@@ -132,7 +132,7 @@ export async function getPublicLesson(
   courseSlug: string,
   lessonSlug: string,
 ): Promise<PublicLessonDetail | null> {
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return null;
 
   const { data: courseRow } = await client
@@ -178,8 +178,8 @@ export async function getPublicLesson(
         position: b.position as number,
         title: asLocalized(content.title),
         lines: asLocalizedList(content.lines),
-        mediaUrl: await signed(client, b.media_url),
-        audioUrl: await signed(client, b.audio_url),
+        mediaUrl: await signed(b.media_url),
+        audioUrl: await signed(b.audio_url),
         transcript: asLocalized(b.transcript),
       };
     }),
@@ -232,7 +232,7 @@ export async function getPublicCourse(courseSlug: string): Promise<PublicCourseD
   const course = (await getPublicCatalogue()).find((c) => c.slug === courseSlug);
   if (!course) return null;
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return null;
 
   const { data: courseRow } = await client
@@ -276,7 +276,7 @@ export async function getPublicCourse(courseSlug: string): Promise<PublicCourseD
  * et aucune logique en double à tenir d'accord.
  */
 export async function getAccessibleLessons(courseSlug: string): Promise<Set<string>> {
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return new Set();
 
   const { data: courseRow } = await client
@@ -317,12 +317,10 @@ export async function getAccessibleLessons(courseSlug: string): Promise<Set<stri
  * changeant d'appareil mentirait sur ce qu'elle mesure.
  */
 export async function getCompletedLessons(courseSlug: string): Promise<Set<string>> {
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return new Set();
 
-  const {
-    data: { user },
-  } = await client.auth.getUser();
+  const user = await getAuthUser();
   if (!user) return new Set();
 
   const { data: courseRow } = await client
@@ -365,12 +363,10 @@ export interface Learner {
  * savoir si la personne suit par ailleurs une candidature.
  */
 export async function getLearner(): Promise<Learner | null> {
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return null;
 
-  const {
-    data: { user },
-  } = await client.auth.getUser();
+  const user = await getAuthUser();
 
   const email = user?.email;
   if (!email) return null;
@@ -380,10 +376,7 @@ export async function getLearner(): Promise<Learner | null> {
 
 /** Vrai lorsqu'une session est ouverte, sans rien révéler de son titulaire. */
 export async function isSignedIn(): Promise<boolean> {
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return false;
-  const {
-    data: { user },
-  } = await client.auth.getUser();
-  return Boolean(user);
+  return Boolean(await getAuthUser());
 }

@@ -46,6 +46,8 @@ export const en: AppDictionary = {
     enter: 'Enter',
     passwordHint: '8 characters minimum',
     checkInbox: 'Account created. Open the confirmation link sent to your email to activate your access.',
+    newPassword: 'New password',
+    passwordUpdated: 'Password updated. You can now sign in.',
     errors: {
       missing_credentials: 'Please enter your email and password.',
       invalid_credentials: 'Incorrect email or password.',
@@ -59,6 +61,7 @@ export const en: AppDictionary = {
       invalid_email: 'This email address was rejected. Please check it.',
       signup_disabled: 'Sign-ups are temporarily closed.',
       email_not_confirmed: 'Your address is not confirmed yet. Open the link sent to your inbox.',
+      invalid_link: 'This reset link is invalid or has expired. Request a new one.',
     },
   },
   nav: {
