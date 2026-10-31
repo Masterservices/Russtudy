@@ -315,9 +315,21 @@ reconnecter ou de répéter un historique. Détail et état de la migration : `d
 
 ## Comptes GitHub
 
-- Les dépôts du projet sont sous `ghorbeloussama44-source`. Selon l'utilisateur, ce dépôt et celui du compte
-  « masterservices » sont identiques pour ce projet (aucun développement n'a eu lieu sur Git depuis le
-  changement de compte). Travailler sur `ghorbeloussama44-source` ; ne pas demander lequel utiliser.
+- Le dépôt actif est **`Masterservices/Russtudy`** (compte Masterservices, application Claude et application Vercel
+  installées). `ghorbeloussama44-source` est abandonné : ne plus l'utiliser. Ne pas demander quel compte employer.
+- `main` de `Russtudy` = production, `develop` = préproduction. La PR de migration Neon est `Masterservices/Russtudy#1`
+  (branche `claude/neon-migration-obhema`). Ne pas fusionner dans `main` avant que les variables Neon soient posées
+  en Production (sinon `/app` passe en mode démonstration en ligne).
+- Déployer une prévisualisation : outil Vercel `create_deployment` avec
+  `gitSource: { type: "github", org: "Masterservices", repo: "Russtudy", ref: "<branche>" }`. Adresse stable de test :
+  `https://rustudystudiov5-git-d8f1f0-ghorbeloussama44-gmailcoms-projects.vercel.app` (autorisée dans Neon Auth).
+- Diagnostic de connexion : `/api/neon/health` (base, auth, stockage, et cookies de session du navigateur).
+
+## Connexion Neon Auth — pièges connus
+
+- Au retour de Google, Neon Auth ajoute `neon_auth_session_verifier` à l'URL ; seul le middleware Neon l'échange
+  contre le cookie de session. `src/lib/neon/proxy.ts` doit donc l'exécuter même sur une page publique.
+- Les journaux d'exécution Vercel ne remontent pas les `console.error` de la connexion : utiliser `/api/neon/health`.
 
 ## Règles de travail
 
