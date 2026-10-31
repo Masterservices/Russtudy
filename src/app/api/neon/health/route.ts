@@ -1,4 +1,11 @@
 import { getPool } from "../../../../lib/neon/db";
+import {
+  deleteObject,
+  getBucket,
+  getObjectText,
+  putObject,
+  signedDownloadUrl,
+} from "../../../../lib/neon/storage";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -24,6 +31,20 @@ export async function GET() {
     result.auth = { ok: response.ok && Array.isArray(body.keys), keys: body.keys?.length ?? 0 };
   } catch (error) {
     result.auth = { ok: false, error: (error as Error).message };
+  }
+
+  // Aller-retour complet : écriture, lecture directe, lecture via lien signé, suppression.
+  const key = `health/${Date.now()}.txt`;
+  const payload = `ok ${key}`;
+  try {
+    await putObject(key, payload, "text/plain");
+    const direct = await getObjectText(key);
+    const signed = await fetch(await signedDownloadUrl(key, 60), { cache: "no-store" });
+    const viaSignedUrl = signed.ok ? await signed.text() : `HTTP ${signed.status}`;
+    await deleteObject(key);
+    result.storage = { ok: direct === payload && viaSignedUrl === payload, bucket: getBucket() };
+  } catch (error) {
+    result.storage = { ok: false, error: (error as Error).message };
   }
 
   const ok = Object.values(result).every((service) => (service as { ok: boolean }).ok);
