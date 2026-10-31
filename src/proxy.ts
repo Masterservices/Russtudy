@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { updateAppSession } from './lib/supabase/proxy';
+import { updateAppSession } from './lib/neon/proxy';
 
 const REDIRECT_COOKIE = 'rs_lang_redirected';
 
@@ -21,7 +21,7 @@ const BOT_UA_PATTERN = /bot|crawl|spider|slurp|mediapartners|facebookexternalhit
  * / reste sinon strictement inchange (pas de redirection repetee).
  */
 export async function proxy(request: NextRequest) {
-  // Plateforme RusStudy : rafraîchissement de la session Supabase et garde
+  // Plateforme RusStudy : rafraîchissement de la session Neon Auth et garde
   // d'accès. Aucune interaction avec la détection de langue du site public.
   if (request.nextUrl.pathname.startsWith('/app')) {
     return updateAppSession(request);

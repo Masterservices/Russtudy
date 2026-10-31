@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { BellRing, BellOff } from 'lucide-react';
-import { getBrowserSupabase } from '../../../lib/supabase/client';
+import { removePushSubscription, savePushSubscription } from '../actions/push';
 import type { AppDictionary } from '../i18n';
 
 type State = 'loading' | 'unsupported' | 'blocked' | 'off' | 'on' | 'busy';
@@ -73,23 +73,15 @@ export default function PushToggle({ t }: { t: AppDictionary }) {
         applicationServerKey: decodeKey(VAPID_PUBLIC_KEY) as BufferSource,
       });
 
-      const db = getBrowserSupabase();
-      const { data } = (await db?.auth.getUser()) ?? { data: { user: null } };
-      if (!db || !data.user) return setState('off');
-
       const json = subscription.toJSON();
-      const { error } = await db.from('push_subscriptions').upsert(
-        {
-          user_id: data.user.id,
-          endpoint: subscription.endpoint,
-          p256dh: json.keys?.p256dh ?? '',
-          auth: json.keys?.auth ?? '',
-          user_agent: navigator.userAgent.slice(0, 300),
-        },
-        { onConflict: 'endpoint' },
-      );
+      const { ok } = await savePushSubscription({
+        endpoint: subscription.endpoint,
+        p256dh: json.keys?.p256dh ?? '',
+        auth: json.keys?.auth ?? '',
+        userAgent: navigator.userAgent,
+      });
 
-      setState(error ? 'off' : 'on');
+      setState(ok ? 'on' : 'off');
     } catch {
       setState('off');
     }
@@ -102,8 +94,7 @@ export default function PushToggle({ t }: { t: AppDictionary }) {
       const subscription = await registration?.pushManager.getSubscription();
 
       if (subscription) {
-        const db = getBrowserSupabase();
-        await db?.from('push_subscriptions').delete().eq('endpoint', subscription.endpoint);
+        await removePushSubscription(subscription.endpoint);
         await subscription.unsubscribe();
       }
       setState('off');

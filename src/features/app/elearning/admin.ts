@@ -1,7 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { getServerSupabase } from '../../../lib/supabase/server';
+import { getServerDb } from '../../../lib/neon/server';
 import { requireRole } from '../data/session';
 
 export interface EnrollmentRecord {
@@ -33,7 +33,7 @@ export interface AdminCourseOption {
  */
 export async function listEnrollments(): Promise<EnrollmentRecord[]> {
   await requireRole(['admin']);
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return [];
 
   const { data } = await client
@@ -76,7 +76,7 @@ export async function listEnrollments(): Promise<EnrollmentRecord[]> {
 
 export async function listAdminCourses(): Promise<AdminCourseOption[]> {
   await requireRole(['admin']);
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return [];
 
   const { data } = await client.from('courses').select('id, slug, title').order('position');
@@ -105,7 +105,7 @@ export interface GrantResult {
  */
 export async function grantAccess(formData: FormData): Promise<GrantResult> {
   const { user } = await requireRole(['admin']);
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return { ok: false, error: 'no_database' };
 
   const email = String(formData.get('email') ?? '').trim().toLowerCase();
@@ -147,7 +147,7 @@ export async function grantAccess(formData: FormData): Promise<GrantResult> {
 
 export async function revokeAccess(enrollmentId: string): Promise<GrantResult> {
   await requireRole(['admin']);
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return { ok: false, error: 'no_database' };
 
   const { error } = await client

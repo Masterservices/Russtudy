@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getAppI18n } from '../../../features/app/i18n/server';
 import { getAppSession, HOME_BY_ROLE } from '../../../features/app/data/session';
+import { isNeonConfigured } from '../../../lib/neon/env';
 import AuthLangSwitch from '../../../features/app/ui/auth/AuthLangSwitch';
 import GoogleButton from '../../../features/app/ui/auth/GoogleButton';
 import SignInForm from '../../../features/app/ui/auth/SignInForm';
@@ -29,7 +30,7 @@ export default async function SignInPage({ searchParams }: { searchParams: Promi
 
         <SignInForm t={t} next={next} />
 
-        <GoogleButton label="Google" dividerLabel={t.auth.or} next={next} />
+        <GoogleButton label="Google" dividerLabel={t.auth.or} next={next} enabled={isNeonConfigured()} />
 
         <p className="mt-7 text-center text-[13px] text-[var(--rs-muted)]">
           {t.auth.noAccount}{' '}

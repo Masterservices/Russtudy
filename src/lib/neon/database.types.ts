@@ -1,8 +1,8 @@
 /**
  * Types de la base RusStudy.
  *
- * Miroir manuel des migrations `supabase/migrations/*`. À régénérer avec
- * `npx supabase gen types typescript --linked` après toute évolution du schéma.
+ * Miroir manuel des migrations `supabase/migrations/*` (rejouées sur Neon). À mettre à jour à la main
+ * après toute évolution du schéma.
  */
 
 export type AppRole = 'student' | 'consultant' | 'admin';

@@ -1,7 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { getServerSupabase } from '../../../lib/supabase/server';
+import { getServerDb } from '../../../lib/neon/server';
 import { getAppSession, requireRole } from '../data/session';
 
 export interface SlotOption {
@@ -23,7 +23,7 @@ export interface BookingRecord {
 /** Créneaux à venir encore libres. */
 export async function listOpenSlots(): Promise<SlotOption[]> {
   await requireRole(['student', 'consultant', 'admin']);
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return [];
 
   const { data: slots } = await client
@@ -66,7 +66,7 @@ export async function listMyBookings(): Promise<BookingRecord[]> {
   const session = await getAppSession();
   if (!session) return [];
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return [];
 
   const { data } = await client
@@ -109,7 +109,7 @@ export async function requestSlot(slotId: string, note: string): Promise<{ ok: b
   const session = await getAppSession();
   if (!session) return { ok: false };
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return { ok: false };
 
   const { error } = await client.from('tutoring_bookings').insert({
@@ -127,7 +127,7 @@ export async function cancelBooking(bookingId: string): Promise<{ ok: boolean }>
   const session = await getAppSession();
   if (!session) return { ok: false };
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return { ok: false };
 
   const { error } = await client

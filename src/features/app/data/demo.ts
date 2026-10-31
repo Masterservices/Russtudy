@@ -1,7 +1,7 @@
 /**
  * Jeu de données de démonstration.
  *
- * Utilisé lorsque Supabase n'est pas configuré : `/app` reste entièrement
+ * Utilisé lorsque Neon n'est pas configuré : `/app` reste entièrement
  * navigable (lecture seule) pour la recette, les previews Vercel et le
  * développement local sans base. Les données reprennent celles de la maquette.
  */

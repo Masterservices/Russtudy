@@ -3,8 +3,8 @@ import 'server-only';
 import { cache } from 'react';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { getServerSupabase } from '../../../lib/supabase/server';
-import { isSupabaseConfigured } from '../../../lib/supabase/env';
+import { getAuthUser, getServerDb } from '../../../lib/neon/server';
+import { isNeonConfigured } from '../../../lib/neon/env';
 import type { AppRole, AppSession, AppUser } from '../types';
 import { DEMO_ADMIN, DEMO_CONSULTANT, DEMO_STUDENT } from './demo';
 
@@ -30,32 +30,35 @@ function parseRole(value: string | undefined): AppRole {
 /**
  * Session applicative courante.
  *
- * Sans Supabase configuré, une session de démonstration est renvoyée ; le rôle
+ * Sans Neon configuré, une session de démonstration est renvoyée ; le rôle
  * simulé est porté par un cookie, ce qui permet de parcourir les trois espaces.
  *
  * Mémorisée pour la durée du rendu : chaque layout traversé et la page
- * appelaient `requireRole`, soit deux allers-retours vers Supabase à chaque
+ * appelaient `requireRole`, soit deux allers-retours vers la base à chaque
  * fois — jusqu'à six sur une fiche imbriquée. Ils n'en font plus qu'un.
  */
 export const getAppSession = cache(async function getAppSession(): Promise<AppSession | null> {
-  if (!isSupabaseConfigured()) {
+  if (!isNeonConfigured()) {
     const store = await cookies();
     return { user: demoUser(parseRole(store.get(DEMO_ROLE_COOKIE)?.value)), demo: true };
   }
 
-  const supabase = await getServerSupabase();
-  if (!supabase) return null;
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getAuthUser();
   if (!user) return null;
 
-  const { data: profile } = await supabase
+  const db = await getServerDb();
+  if (!db) return null;
+
+  const { data: profile, error } = await db
     .from('profiles')
     .select('id, role, full_name, email, phone, avatar_url, lang, city')
     .eq('id', user.id)
     .maybeSingle();
+
+  // Une session valide sans profil lisible renvoie vers la connexion : le dire
+  // dans les journaux, sinon la cause reste invisible.
+  if (error) console.error('[app][session] lecture du profil :', error.code, error.message);
+  else if (!profile) console.error('[app][session] aucun profil pour', user.id);
 
   if (!profile) return null;
 
@@ -64,7 +67,7 @@ export const getAppSession = cache(async function getAppSession(): Promise<AppSe
     user: {
       id: profile.id,
       role: profile.role,
-      fullName: profile.full_name || user.email || '',
+      fullName: profile.full_name || user.name || user.email || '',
       email: profile.email || user.email || '',
       phone: profile.phone,
       avatarUrl: profile.avatar_url,

@@ -16,3 +16,4 @@ __pycache__/
 
 # Dossier créé par la CLI Vercel lors d'un déploiement local.
 .vercel
+.neon

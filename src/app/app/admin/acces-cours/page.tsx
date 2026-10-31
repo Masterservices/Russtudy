@@ -27,7 +27,7 @@ export default async function AccesCoursPage() {
         <Card>
           <p className="text-[0.9rem] leading-[1.6] opacity-75">
             Base non connectée : la gestion des accès est désactivée en mode démonstration. Les
-            parcours et les inscriptions s’afficheront ici une fois Supabase branché.
+            parcours et les inscriptions s’afficheront ici une fois la base de données branchée.
           </p>
         </Card>
       ) : (

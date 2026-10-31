@@ -46,6 +46,8 @@ export const ar: AppDictionary = {
     enter: 'دخول',
     passwordHint: '٨ أحرف على الأقل',
     checkInbox: 'تم إنشاء الحساب. افتح رابط التأكيد المرسل إلى بريدك الإلكتروني لتفعيل حسابك.',
+    newPassword: 'كلمة المرور الجديدة',
+    passwordUpdated: 'تم تحديث كلمة المرور. يمكنك الآن تسجيل الدخول.',
     errors: {
       missing_credentials: 'يرجى إدخال البريد الإلكتروني وكلمة المرور.',
       invalid_credentials: 'البريد الإلكتروني أو كلمة المرور غير صحيحة.',
@@ -59,6 +61,7 @@ export const ar: AppDictionary = {
       invalid_email: 'تم رفض هذا البريد الإلكتروني. يرجى التحقق منه.',
       signup_disabled: 'التسجيل مغلق مؤقتاً.',
       email_not_confirmed: 'لم يتم تأكيد عنوانك بعد. افتح الرابط المرسل إلى بريدك.',
+      invalid_link: 'رابط إعادة التعيين غير صالح أو منتهي الصلاحية. اطلب رابطًا جديدًا.',
     },
   },
   nav: {
