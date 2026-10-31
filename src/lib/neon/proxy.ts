@@ -5,6 +5,8 @@ import { isNeonConfigured } from './env';
 /** Écrans de `/app` accessibles sans session. */
 const PUBLIC_APP_PATHS = ['/app', '/app/connexion', '/app/inscription', '/app/mot-de-passe', '/app/auth/callback'];
 const LOGIN_PATH = '/app/connexion';
+/** Paramètre ajouté par Neon Auth au retour d'un fournisseur OAuth (Google). */
+const OAUTH_VERIFIER_PARAM = 'neon_auth_session_verifier';
 
 function isPublicAppPath(pathname: string): boolean {
   return PUBLIC_APP_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
@@ -23,7 +25,13 @@ export async function updateAppSession(request: NextRequest): Promise<NextRespon
   if (!auth || !isNeonConfigured()) return NextResponse.next();
 
   const { pathname } = request.nextUrl;
-  if (isPublicAppPath(pathname)) return NextResponse.next();
+
+  // Retour de Google : l'URL porte un jeton à échanger contre le cookie de
+  // session. Cet échange est fait par le middleware Neon, qui doit donc voir
+  // la requête même sur une page publique (`/app/auth/callback`) — sinon la
+  // session est créée chez Neon mais le navigateur ne la reçoit jamais.
+  const returningFromOAuth = request.nextUrl.searchParams.has(OAUTH_VERIFIER_PARAM);
+  if (isPublicAppPath(pathname) && !returningFromOAuth) return NextResponse.next();
 
   // Les routes publiques sont déjà écartées ci-dessus : le middleware Neon ne
   // reçoit que des écrans privés (sinon `/app` ouvrirait tous ses sous-chemins).
