@@ -61,8 +61,12 @@ posées sur Vercel : sans elles, `/app` reste en mode démonstration.
 4. Premier administrateur, après inscription du compte :
    `update public.profiles set role = 'admin' where email = '<email>';`
 5. Push : `insert into public.app_config (key, value) values ('push_endpoint','internal'), ('push_secret','internal') on conflict (key) do update set value = excluded.value;`
-6. Les scripts d'import de cours (`scripts/elearning/*.py`) écrivent encore dans Supabase :
-   à porter vers Neon avant de réimporter des leçons.
+6. **Cours e-learning : importés le 31 octobre 2026** dans la base `production` (2 parcours, 6 leçons, 82 blocs,
+   36 exercices, 4 modules, 145 fichiers dans `course-assets/`). Pour ajouter ou corriger une leçon : déposer son
+   dossier dans `supabase/seed/lessons/<parcours>/<leçon>/` puis lancer
+   `node scripts/neon/import-elearning.mjs` (variables `MIGRATION_DATABASE_URL` et `NEON_STORAGE_*`, option
+   `--dry-run`). Il est rejouable. `scripts/elearning/import_lesson.py` (Supabase) n'est plus à utiliser ;
+   `extract_course.py` et `narrate.py` restent valables pour fabriquer le dossier d'une leçon.
 
 ## Déploiement Vercel (état vérifié le 31 octobre 2026)
 

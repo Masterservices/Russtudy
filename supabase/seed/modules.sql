@@ -91,8 +91,7 @@ with cible as (
         'ar', 'أولى الجمل',
         'en', 'First sentences'
       ))
-    as m (course_slug, position, key, title)
-  ) m on m.course_slug = c.slug
+  ) as m (course_slug, position, key, title) on m.course_slug = c.slug
 )
 insert into public.modules (course_id, position, title)
 select course_id, position, title from cible
@@ -112,8 +111,7 @@ from (
       ('russe-a1', 2, jsonb_build_object('fr', 'Premiers échanges', 'ar', 'أولى المحادثات', 'en', 'First exchanges', 'ru', 'Первые разговоры')),
       ('francais-a1', 1, jsonb_build_object('ru', 'Звуки и произношение', 'fr', 'Les sons du français', 'ar', 'أصوات الفرنسية', 'en', 'The sounds of French')),
       ('francais-a1', 2, jsonb_build_object('ru', 'Первые фразы', 'fr', 'Premières phrases', 'ar', 'أولى الجمل', 'en', 'First sentences'))
-    as x (course_slug, position, title)
-  ) x on x.course_slug = c.slug
+  ) as x (course_slug, position, title) on x.course_slug = c.slug
 ) v
 where m.course_id = v.course_id and m.position = v.position;
 
