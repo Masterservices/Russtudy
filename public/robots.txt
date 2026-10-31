@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Plateforme privée RusStudy : espace authentifié, sans intérêt d'indexation.
+Disallow: /app/
+Disallow: /app$
+
+# Pages de service de l'espace e-learning : rien à indexer.
+Disallow: /elearning/connexion
+Disallow: /elearning/visio
+
+# Pièces des cours animés : la page indexable est celle de la leçon.
+Disallow: /cours-anime/
+
+Sitemap: https://www.russieetudes.com/sitemap.xml

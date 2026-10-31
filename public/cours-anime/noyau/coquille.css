@@ -1,0 +1,180 @@
+/* ------------------------------------------------------------------
+   Cours animé — coquille.
+
+   Registre nuit : l'expérience se regarde comme on regarde un ciel,
+   et le crème du site ne tient pas ce rôle. Tout est posé dans le
+   conteneur, jamais dans la fenêtre : le même cours s'ouvre en plein
+   écran ou dans une page de leçon.
+   ------------------------------------------------------------------ */
+.ca-hote{
+  --ca-nuit:#07060C; --ca-encre:#FFFFFF;
+  --ca-accent:#A855F7; --ca-or:#FBBB21;
+  --ca-doux:rgba(255,255,255,.62); --ca-tres-doux:rgba(255,255,255,.34);
+  --ca-teinte:#A855F7;
+  --ca-fr:'Space Grotesk', system-ui, sans-serif;
+  --ca-ru:'Manrope', 'Space Grotesk', system-ui, sans-serif;
+  --ca-gl:max(16px, env(safe-area-inset-left,0px));
+  --ca-gr:max(16px, env(safe-area-inset-right,0px));
+  position:relative; overflow:hidden; color-scheme:dark;
+  background:var(--ca-nuit); color:var(--ca-encre);
+  font-family:var(--ca-fr); -webkit-text-size-adjust:100%;
+}
+.ca-hote *{box-sizing:border-box}
+.ca-hote canvas{display:block}
+
+.ca-scene{position:absolute; inset:0; z-index:0}
+.ca-voile{position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 42%, transparent 0%, rgba(7,6,12,.55) 78%, rgba(7,6,12,.9) 100%),
+    linear-gradient(to bottom, rgba(7,6,12,.82) 0%, transparent 26%, transparent 52%, rgba(7,6,12,.94) 88%);
+}
+.ca-grain{position:absolute; inset:0; width:100%; height:100%; z-index:2;
+  pointer-events:none; opacity:.05; mix-blend-mode:overlay}
+
+.ca-ui{position:absolute; z-index:3}
+
+/* ---------- Rail de progression ---------- */
+.ca-rail{top:max(14px,env(safe-area-inset-top,0px)); left:var(--ca-gl); right:var(--ca-gr);
+  display:flex; gap:4px; height:3px}
+.ca-rail button{flex:1; height:3px; padding:0; border:none; border-radius:2px;
+  background:rgba(255,255,255,.17); cursor:pointer; transition:background .3s}
+.ca-rail button[data-vu="1"]{background:rgba(255,255,255,.42)}
+.ca-rail button[aria-current="true"]{background:var(--ca-teinte)}
+
+/* ---------- En-tête ---------- */
+.ca-entete{top:calc(max(14px,env(safe-area-inset-top,0px)) + 18px);
+  left:var(--ca-gl); right:var(--ca-gr);
+  display:flex; align-items:baseline; justify-content:space-between; gap:12px}
+.ca-logo{font-size:17px; font-weight:700; letter-spacing:-.05em; line-height:1}
+.ca-logo .s{color:var(--ca-accent)} .ca-logo .d{color:var(--ca-or)}
+.ca-compteur{font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ca-tres-doux); font-variant-numeric:tabular-nums}
+
+/* ---------- Texte du chapitre ---------- */
+.ca-texte{left:var(--ca-gl); right:var(--ca-gr); bottom:206px; max-width:560px}
+.ca-sur{font-size:11px; font-weight:700; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--ca-teinte); margin:0 0 10px; text-indent:.26em}
+.ca-titre{font-size:clamp(28px,7.6vw,46px); font-weight:700; letter-spacing:-.04em;
+  line-height:1.06; margin:0; text-wrap:balance}
+.ca-lignes{list-style:none; margin:14px 0 0; padding:0; display:flex; flex-direction:column; gap:5px}
+.ca-lignes li{font-size:clamp(13px,3.5vw,15px); line-height:1.55; color:var(--ca-doux)}
+
+/* L'entrée du texte : il monte en se révélant, jamais il n'attend
+   caché — la première image fixe doit déjà être lisible. */
+.ca-texte.entre .ca-sur, .ca-texte.entre .ca-titre, .ca-texte.entre .ca-lignes li{
+  animation: ca-monte .62s cubic-bezier(.22,.7,.3,1) backwards;
+}
+.ca-texte.entre .ca-titre{animation-delay:.05s}
+.ca-texte.entre .ca-lignes li:nth-child(1){animation-delay:.12s}
+.ca-texte.entre .ca-lignes li:nth-child(2){animation-delay:.18s}
+.ca-texte.entre .ca-lignes li:nth-child(3){animation-delay:.24s}
+@keyframes ca-monte{from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none}}
+
+/* ---------- Mot en cours ---------- */
+.ca-mot{left:var(--ca-gl); right:var(--ca-gr); bottom:170px; display:flex;
+  align-items:baseline; gap:12px; flex-wrap:wrap; min-height:30px}
+.ca-mot .ru{font-family:var(--ca-ru); font-size:clamp(20px,5.4vw,28px); font-weight:800;
+  letter-spacing:.02em; color:var(--ca-teinte)}
+.ca-mot .ru[data-barre]{text-decoration:line-through; opacity:.6}
+.ca-mot .fr{font-size:14px; color:var(--ca-doux)}
+.ca-mot.chg .ru, .ca-mot.chg .fr{animation:ca-monte .5s cubic-bezier(.22,.7,.3,1) backwards}
+
+/* ---------- Sous-titre ---------- */
+.ca-sous{left:var(--ca-gl); right:var(--ca-gr); bottom:104px}
+.ca-sous p{margin:0; font-family:var(--ca-ru); font-size:13px; line-height:1.5;
+  font-weight:500; color:var(--ca-tres-doux); max-width:640px;
+  max-height:3.1em; overflow:hidden}
+.ca-sous .m{transition:color .14s, opacity .14s; opacity:.5}
+.ca-sous .m.dit{color:var(--ca-or); opacity:1}
+
+/* ---------- Commandes ---------- */
+.ca-barre{left:var(--ca-gl); right:var(--ca-gr);
+  bottom:max(18px,env(safe-area-inset-bottom,0px));
+  display:flex; align-items:center; gap:10px}
+.ca-btn{border:none; border-radius:999px; font-family:var(--ca-fr); font-weight:700;
+  cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  transition:transform .15s, background .2s, opacity .2s; -webkit-tap-highlight-color:transparent}
+.ca-btn:active{transform:scale(.96)}
+.ca-btn:disabled{opacity:.28; cursor:default}
+.ca-rond{width:46px; height:46px; background:rgba(255,255,255,.1); color:#fff;
+  font-size:17px; flex-shrink:0}
+.ca-rond:hover:not(:disabled){background:rgba(255,255,255,.2)}
+.ca-lire{height:52px; padding:0 26px; background:var(--ca-teinte); color:#0A0A0A;
+  font-size:15px; box-shadow:0 10px 30px -8px var(--ca-teinte)}
+.ca-piste{flex:1; min-width:0; height:3px; border-radius:2px;
+  background:rgba(255,255,255,.14); position:relative; overflow:hidden}
+.ca-piste i{position:absolute; inset:0 auto 0 0; width:0%;
+  background:var(--ca-teinte); border-radius:2px}
+.ca-fin{font-size:11px; color:var(--ca-tres-doux);
+  font-variant-numeric:tabular-nums; flex-shrink:0}
+
+/* ---------- Panneau texte ---------- */
+.ca-panneau{position:absolute; inset:0; z-index:5; background:rgba(7,6,12,.96);
+  padding:max(24px,env(safe-area-inset-top,0px)) var(--ca-gr)
+          max(24px,env(safe-area-inset-bottom,0px)) var(--ca-gl);
+  overflow-y:auto; display:none}
+.ca-panneau.ouvert{display:block}
+.ca-panneau h2{font-size:22px; font-weight:700; letter-spacing:-.03em; margin:0 0 4px}
+.ca-panneau .ca-note{font-size:13px; color:var(--ca-doux); margin:0 0 22px;
+  max-width:560px; line-height:1.6}
+.ca-panneau ol{list-style:none; margin:0; padding:0; display:flex;
+  flex-direction:column; gap:16px; max-width:620px}
+.ca-panneau li{border-left:2px solid rgba(255,255,255,.12); padding-left:14px}
+.ca-panneau .num{font-size:10px; font-weight:700; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--ca-tres-doux); margin:0}
+.ca-panneau .t{font-size:15px; font-weight:700; letter-spacing:-.01em; margin:5px 0 0}
+.ca-panneau .pts{list-style:none; margin:6px 0 0; padding:0; display:flex;
+  flex-direction:column; gap:3px}
+.ca-panneau .pts li{border:none; padding:0; font-size:13px; line-height:1.5;
+  color:var(--ca-doux)}
+.ca-panneau .r{font-family:var(--ca-ru); font-size:15px; line-height:1.6;
+  margin:10px 0 0; color:var(--ca-encre)}
+.ca-panneau .f{font-size:14px; line-height:1.6; color:var(--ca-doux); margin:3px 0 0}
+.ca-fermer{position:absolute; top:max(18px,env(safe-area-inset-top,0px));
+  right:var(--ca-gr); z-index:6}
+
+/* ---------- Écran d'entrée ---------- */
+.ca-entree{position:absolute; inset:0; z-index:7; background:rgba(7,6,12,.97);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:22px; padding:0 var(--ca-gr) 0 var(--ca-gl); text-align:center;
+  transition:opacity .7s, visibility .7s}
+.ca-entree.parti{opacity:0; visibility:hidden}
+.ca-entree h1{font-size:clamp(34px,9vw,64px); font-weight:700; letter-spacing:-.05em;
+  line-height:1.02; margin:0}
+.ca-entree h1 em{font-style:normal; color:var(--ca-accent)}
+.ca-pitch{margin:0; font-size:15px; color:var(--ca-doux); max-width:30em; line-height:1.6}
+.ca-meta{font-size:11px; font-weight:700; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--ca-tres-doux)}
+.ca-casque{font-size:12px; color:var(--ca-tres-doux); margin:0}
+.ca-commencer{height:56px; padding:0 34px; background:var(--ca-accent);
+  color:#0A0A0A; font-size:16px}
+
+@media (max-width:420px){
+  .ca-texte{bottom:198px} .ca-mot{bottom:162px} .ca-sous{bottom:102px}
+  .ca-sous p{font-size:12px; max-height:2.9em}
+  .ca-lignes li:nth-child(n+4){display:none}
+}
+@media (min-width:900px){
+  .ca-texte{bottom:172px; max-width:460px} .ca-mot{bottom:128px}
+  .ca-sous{bottom:58px; right:auto; width:min(640px,46vw)}
+}
+/* Paysage court : le bloc de texte remonterait sous le rail et
+   chevaucherait le logo. Il prend la colonne de gauche, en haut. */
+@media (orientation:landscape) and (max-height:560px){
+  .ca-texte{bottom:auto; top:58px; max-width:min(52vw,540px);
+    max-height:calc(100% - 240px); overflow:hidden}
+  .ca-lignes li:nth-child(n+4){display:none}
+  /* Le mot courant et le sous-titre restent dans la colonne du
+     texte : à pleine largeur, ils traversaient la scène. */
+  .ca-mot, .ca-sous{right:auto; width:min(52vw,540px)}
+  .ca-sous p{max-width:none}
+  .ca-titre{font-size:clamp(24px,5.4vh,36px)}
+  .ca-lignes{margin-top:10px; gap:3px}
+  .ca-lignes li{font-size:12.5px; line-height:1.45}
+  .ca-sous p{max-height:2.9em; overflow:hidden}
+}
+@media (prefers-reduced-motion: reduce){
+  .ca-texte.entre .ca-sur, .ca-texte.entre .ca-titre, .ca-texte.entre .ca-lignes li,
+  .ca-mot.chg .ru, .ca-mot.chg .fr{animation:none}
+  .ca-sous .m{transition:none}
+}

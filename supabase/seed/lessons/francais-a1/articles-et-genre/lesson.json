@@ -1,0 +1,349 @@
+{
+  "slug": "articles-et-genre",
+  "target_lang": "fr",
+  "ui_lang": "ru",
+  "position": 3,
+  "title": {
+    "ru": "Артикли и род: le, la, les, un, une, des"
+  },
+  "summary": {
+    "ru": "В русском артиклей нет, и именно поэтому их пропускают. Разбираем шесть французских артиклей и то, как угадывать род."
+  },
+  "objectives": {
+    "ru": [
+      "Понимать, зачем французскому нужен артикль, которого нет в русском",
+      "Различать определённые le, la, les и неопределённые un, une, des",
+      "Запоминать существительное вместе с его артиклем",
+      "Пользоваться окончаниями как подсказками о роде",
+      "Не путать на слух le и les, un и une"
+    ]
+  },
+  "is_free": false,
+  "duration_min": 12,
+  "source_file": null,
+  "blocks": [
+    {
+      "position": 0,
+      "kind": "slide",
+      "title": "Артикли и род существительных",
+      "lines": [
+        "Французский для русскоговорящих",
+        "Шесть маленьких слов, которые нельзя пропускать"
+      ],
+      "narration": "Bonjour. Dans cette leçon, nous parlons des articles. Ce sont six petits mots : le, la, les, un, une, des. Ils sont courts, mais on ne peut presque jamais les enlever.",
+      "narration_translation": "Здравствуйте. На этом уроке мы говорим об артиклях. Это шесть коротких слов: le, la, les, un, une, des. Они маленькие, но убрать их почти никогда нельзя.",
+      "media": "slide-01.webp"
+    },
+    {
+      "position": 1,
+      "kind": "slide",
+      "title": "Главная трудность русскоговорящего",
+      "lines": [
+        "В русском языке артиклей нет: «книга» — это и «книга», и «одна книга», и «та книга».",
+        "Во французском существительное почти всегда идёт со служебным словом перед ним.",
+        "Сказать « Je cherche livre » нельзя. Нужно « Je cherche un livre » или « le livre ».",
+        "Вывод: артикль — это не украшение, а часть слова."
+      ],
+      "narration": "En russe, le nom se tient tout seul. En français, c'est impossible. On ne dit pas je cherche livre. On dit je cherche un livre, ou je cherche le livre. L'article fait partie du mot.",
+      "narration_translation": "В русском существительное стоит само по себе. Во французском это невозможно. Нельзя сказать je cherche livre. Говорят je cherche un livre или je cherche le livre. Артикль — часть слова.",
+      "media": "slide-02.webp"
+    },
+    {
+      "position": 2,
+      "kind": "slide",
+      "title": "Род: две категории вместо трёх",
+      "lines": [
+        "В русском три рода: мужской, женский, средний.",
+        "Во французском два: мужской и женский. Среднего рода нет.",
+        "Род французского слова не совпадает с русским: « la table » — женский, « le livre » — мужской, « le problème » — мужской.",
+        "Род чаще всего не выводится из смысла. Его просто знают."
+      ],
+      "narration": "Le français a deux genres : masculin et féminin. Il n'y a pas de neutre. Et le genre français ne suit pas le genre russe. Le mot problème est masculin, le mot table est féminin. On ne le devine pas par le sens, on le retient.",
+      "narration_translation": "Во французском два рода: мужской и женский. Среднего рода нет. И французский род не совпадает с русским. Слово problème мужского рода, слово table — женского. Его не выводят из смысла, его запоминают.",
+      "media": "slide-03.webp"
+    },
+    {
+      "position": 3,
+      "kind": "slide",
+      "title": "Определённые артикли: le, la, les",
+      "lines": [
+        "le — мужской род, единственное число: le livre, le train, le professeur.",
+        "la — женский род, единственное число: la table, la ville, la question.",
+        "les — множественное число для обоих родов: les livres, les tables.",
+        "Смысл: речь о конкретном, уже известном предмете, или о предмете в общем."
+      ],
+      "narration": "Voici les articles définis. Le pour le masculin, la pour le féminin, les pour le pluriel. On les utilise quand l'objet est connu, ou quand on parle de la chose en général. J'aime le thé. Je ferme la porte.",
+      "narration_translation": "Вот определённые артикли. Le для мужского рода, la для женского, les для множественного числа. Их используют, когда предмет известен, или когда говорят о вещи в целом. J'aime le thé. Je ferme la porte.",
+      "media": "slide-04.webp"
+    },
+    {
+      "position": 4,
+      "kind": "slide",
+      "title": "Неопределённые артикли: un, une, des",
+      "lines": [
+        "un — мужской род: un livre, un train, un ami.",
+        "une — женский род: une table, une ville, une amie.",
+        "des — множественное число для обоих родов: des livres, des tables.",
+        "Смысл: один из многих, предмет вводится впервые.",
+        "Сравните: « Je cherche un livre » — какую-нибудь книгу. « Je cherche le livre » — ту самую книгу."
+      ],
+      "narration": "Voici les articles indéfinis. Un pour le masculin, une pour le féminin, des pour le pluriel. Ils présentent une chose pour la première fois. Je cherche un livre veut dire n'importe quel livre. Je cherche le livre veut dire ce livre précis.",
+      "narration_translation": "Вот неопределённые артикли. Un для мужского рода, une для женского, des для множественного числа. Они вводят предмет впервые. Je cherche un livre значит «какую-нибудь книгу». Je cherche le livre значит «ту самую книгу».",
+      "media": "slide-05.webp"
+    },
+    {
+      "position": 5,
+      "kind": "slide",
+      "title": "des: артикль, которого русский не ждёт",
+      "lines": [
+        "В русском «Я покупаю книги» — без всякого слова перед «книги».",
+        "Во французском нужно « J'achète des livres ».",
+        "des нельзя убрать, даже если по-русски там ничего нет.",
+        "Сравните: J'achète des livres. J'achète les livres. — какие-то книги и те самые книги."
+      ],
+      "narration": "Le pluriel indéfini s'appelle des. En russe, on ne met rien devant le nom pluriel. En français, c'est obligatoire. J'achète des livres. Sans des, la phrase est fausse.",
+      "narration_translation": "Неопределённый артикль множественного числа — des. В русском перед существительным во множественном числе ничего не ставят. Во французском это обязательно. J'achète des livres. Без des фраза неправильна.",
+      "media": "slide-06.webp"
+    },
+    {
+      "position": 6,
+      "kind": "slide",
+      "title": "l' перед гласной",
+      "lines": [
+        "le и la превращаются в l' перед гласной или перед немой « h ».",
+        "l'ami, l'amie, l'université, l'hôtel, l'étudiant.",
+        "Важно: род при этом не исчезает, он просто не виден в артикле.",
+        "l'université — женского рода. l'hôtel — мужского."
+      ],
+      "narration": "Devant une voyelle, le et la deviennent l apostrophe. On dit l'ami, l'université, l'hôtel. Le genre ne disparaît pas pour autant. Il est seulement caché. Le mot université reste féminin.",
+      "narration_translation": "Перед гласной le и la превращаются в l с апострофом. Говорят l'ami, l'université, l'hôtel. Род при этом не исчезает. Он просто скрыт. Слово université остаётся женского рода.",
+      "media": "slide-07.webp"
+    },
+    {
+      "position": 7,
+      "kind": "slide",
+      "title": "les и звуковая связка",
+      "lines": [
+        "les étudiants — « s » оживает и звучит как /z/.",
+        "des amis — то же самое связывание.",
+        "un ami — « n » тоже оживает перед гласной.",
+        "Это ровно то связывание, которое мы разбирали в уроке фонетики."
+      ],
+      "narration": "Devant une voyelle, l'article se lie au nom. Les étudiants se dit en un seul bloc. Des amis aussi. Et dans un ami, la consonne n reprend vie. C'est la liaison de la leçon de phonétique.",
+      "narration_translation": "Перед гласной артикль сливается с существительным. Les étudiants произносится как один блок. Des amis — тоже. А в un ami оживает согласная «n». Это то самое связывание из урока фонетики.",
+      "media": "slide-08.webp"
+    },
+    {
+      "position": 8,
+      "kind": "slide",
+      "title": "Подсказки: окончания женского рода",
+      "lines": [
+        "-tion, -sion: la question, la nation, la décision.",
+        "-té: la liberté, l'université, la qualité.",
+        "-ette, -elle: la chaussette, la nouvelle.",
+        "-ure: la voiture, la culture.",
+        "-ence, -ance: la science, la chance.",
+        "Это подсказки, а не законы: исключения существуют."
+      ],
+      "narration": "Certaines terminaisons annoncent le féminin. Les mots en t i o n sont féminins : la question, la nation. Les mots en t accent aigu e sont féminins aussi : la liberté, l'université. Ce sont des indices utiles, mais il reste des exceptions.",
+      "narration_translation": "Некоторые окончания указывают на женский род. Слова на -tion женского рода: la question, la nation. Слова на -té тоже женского рода: la liberté, l'université. Это полезные подсказки, но исключения остаются.",
+      "media": "slide-09.webp"
+    },
+    {
+      "position": 9,
+      "kind": "slide",
+      "title": "Подсказки: окончания мужского рода",
+      "lines": [
+        "-ment: le document, le gouvernement.",
+        "-age: le voyage, le message. Исключения: la page, la plage, l'image.",
+        "-eau: le bureau, le gâteau.",
+        "-isme: le tourisme, le réalisme.",
+        "Названия дней, месяцев и языков — мужского рода: le lundi, le russe, le français."
+      ],
+      "narration": "D'autres terminaisons annoncent le masculin. Les mots en m e n t sont masculins : le document. Les mots en a g e aussi, mais attention à la page et à la plage. Les jours, les mois et les langues sont masculins.",
+      "narration_translation": "Другие окончания указывают на мужской род. Слова на -ment мужского рода: le document. Слова на -age тоже, но осторожно с la page и la plage. Дни, месяцы и названия языков — мужского рода.",
+      "media": "slide-10.webp"
+    },
+    {
+      "position": 10,
+      "kind": "slide",
+      "title": "Метод: учить слово вместе с артиклем",
+      "lines": [
+        "Не записывайте « table ». Записывайте « une table ».",
+        "Не записывайте « livre ». Записывайте « un livre ».",
+        "Причина: род управляет прилагательным и всей фразой — un grand livre, une grande table.",
+        "Слово без артикля в вашей тетради — это слово, род которого вы не выучили."
+      ],
+      "narration": "Voici la méthode la plus efficace. N'apprenez jamais un nom tout seul. Apprenez une table, un livre, une ville. Le genre commande l'adjectif : un grand livre, une grande table. Un nom sans article est un nom à moitié appris.",
+      "narration_translation": "Вот самый действенный метод. Никогда не учите существительное отдельно. Учите une table, un livre, une ville. Род управляет прилагательным: un grand livre, une grande table. Существительное без артикля — это слово, выученное наполовину.",
+      "media": "slide-11.webp"
+    },
+    {
+      "position": 11,
+      "kind": "slide",
+      "title": "Короткая тренировка",
+      "lines": [
+        "Je cherche la gare. — Я ищу вокзал, конкретный.",
+        "Il y a une gare ici ? — Здесь есть вокзал, какой-нибудь?",
+        "J'aime le café. — Я люблю кофе вообще.",
+        "Je voudrais un café. — Я хотел бы одну чашку кофе.",
+        "Les étudiants russes parlent français. — О студентах как о группе.",
+        "Des étudiants attendent. — Какие-то студенты ждут."
+      ],
+      "narration": "Comparez ces paires à voix haute. Je cherche la gare. Il y a une gare ici. J'aime le café. Je voudrais un café. Le sens change complètement, et seul l'article change.",
+      "narration_translation": "Сравните эти пары вслух. Je cherche la gare. Il y a une gare ici. J'aime le café. Je voudrais un café. Смысл меняется полностью, а меняется только артикль.",
+      "media": "slide-12.webp"
+    },
+    {
+      "position": 12,
+      "kind": "slide",
+      "title": "Четыре типичные ошибки",
+      "lines": [
+        "1. Пропустить артикль, как в русском: « Je cherche livre ».",
+        "2. Забыть des во множественном числе: « J'achète livres ».",
+        "3. Перенести русский род: « la problème » вместо « le problème ».",
+        "4. Выучить слово без артикля и потом угадывать род наугад."
+      ],
+      "narration": "Quatre erreurs reviennent toujours. Oublier l'article. Oublier des au pluriel. Copier le genre russe. Et apprendre le nom sans son article. Les quatre viennent de la même habitude.",
+      "narration_translation": "Четыре ошибки повторяются постоянно. Пропустить артикль. Забыть des во множественном числе. Перенести русский род. И выучить существительное без артикля. Все четыре растут из одной привычки.",
+      "media": "slide-13.webp"
+    },
+    {
+      "position": 13,
+      "kind": "slide",
+      "title": "План на день: десять минут",
+      "lines": [
+        "2 мин — переписать десять знакомых слов с артиклем un или une.",
+        "2 мин — произнести те же слова с le или la.",
+        "2 мин — поставить их во множественное число с les и des.",
+        "2 мин — вслух отработать связывание: les amis, des étudiants, un ami.",
+        "2 мин — составить три своих пары по образцу « le café » и « un café »."
+      ],
+      "narration": "Dix minutes par jour, comme toujours. Écrivez dix noms avec un ou une. Dites-les avec le ou la. Mettez-les au pluriel. Travaillez la liaison. Puis inventez trois paires à vous. La prochaine leçon utilisera ces articles dans des phrases complètes.",
+      "narration_translation": "Десять минут в день, как всегда. Запишите десять существительных с un или une. Произнесите их с le или la. Поставьте во множественное число. Отработайте связывание. Затем придумайте три своих пары. На следующем уроке мы используем эти артикли в целых фразах.",
+      "media": "slide-14.webp"
+    }
+  ],
+  "exercises": [
+    {
+      "position": 0,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Сколько родов у существительных во французском языке?"
+      },
+      "options": {
+        "ru": [
+          "Два: мужской и женский",
+          "Три, как в русском",
+          "Род зависит от артикля и меняется"
+        ]
+      },
+      "answer": {
+        "ru": "Два: мужской и женский"
+      },
+      "explanation": {
+        "ru": "Среднего рода во французском нет. Род у слова один и не меняется."
+      }
+    },
+    {
+      "position": 1,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Как сказать «Я покупаю книги», имея в виду какие-то книги?"
+      },
+      "options": {
+        "ru": [
+          "J'achète livres.",
+          "J'achète des livres.",
+          "J'achète les livres."
+        ]
+      },
+      "answer": {
+        "ru": "J'achète des livres."
+      },
+      "explanation": {
+        "ru": "Без артикля фраза неправильна. les livres означало бы конкретные, уже известные книги."
+      }
+    },
+    {
+      "position": 2,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Какой артикль подходит слову « question »?"
+      },
+      "options": {
+        "ru": [
+          "le question",
+          "une question",
+          "un question"
+        ]
+      },
+      "answer": {
+        "ru": "une question"
+      },
+      "explanation": {
+        "ru": "Окончание -tion указывает на женский род, поэтому une question и la question."
+      }
+    },
+    {
+      "position": 3,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Что происходит с артиклем в « l'université »?"
+      },
+      "options": {
+        "ru": [
+          "Слово становится мужского рода",
+          "Род сохраняется, он просто не виден",
+          "Слово теряет род"
+        ]
+      },
+      "answer": {
+        "ru": "Род сохраняется, он просто не виден"
+      },
+      "explanation": {
+        "ru": "la превращается в l' перед гласной, но université остаётся женского рода."
+      }
+    },
+    {
+      "position": 4,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Вы в кафе и хотите одну чашку кофе. Что сказать?"
+      },
+      "options": {
+        "ru": [
+          "Je voudrais un café.",
+          "Je voudrais le café.",
+          "J'aime le café."
+        ]
+      },
+      "answer": {
+        "ru": "Je voudrais un café."
+      },
+      "explanation": {
+        "ru": "un café — одна порция. le café — кофе как явление или конкретный, уже упомянутый кофе."
+      }
+    },
+    {
+      "position": 5,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Как правильно записывать новое существительное в тетрадь?"
+      },
+      "options": {
+        "ru": [
+          "Только слово: table",
+          "Слово с артиклем: une table",
+          "Слово с переводом, артикль не нужен"
+        ]
+      },
+      "answer": {
+        "ru": "Слово с артиклем: une table"
+      },
+      "explanation": {
+        "ru": "Род управляет прилагательным и согласованием, поэтому он учится вместе со словом, а не отдельно."
+      }
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "slug": "salutations",
+  "target_lang": "ru",
+  "ui_lang": "fr",
+  "position": 2,
+  "title": {
+    "fr": "Salutations : dire bonjour et se présenter en russe"
+  },
+  "summary": {
+    "fr": "Здравствуйте, Привет, Как дела, Меня зовут : de quoi ouvrir et fermer une conversation russe, en choisissant le bon registre."
+  },
+  "objectives": {
+    "fr": [
+      "Choisir entre le bonjour poli (ЗДРАВСТВУЙТЕ) et familier (ПРИВЕТ)",
+      "Demander comment ça va et répondre en une phrase naturelle",
+      "Donner son prénom et demander celui de l'autre",
+      "Dire d'où l'on vient et prendre congé poliment"
+    ]
+  },
+  "is_free": false,
+  "duration_min": 13,
+  "source_file": null,
+  "blocks": [
+    {
+      "position": 0,
+      "kind": "slide",
+      "title": "Saluer et se présenter",
+      "lines": [
+        "Objectif de la leçon : entrer dans une conversation russe en dix secondes.",
+        "Vous apprendrez à saluer, demander comment ça va, et donner votre prénom.",
+        "Les prononciations entre guillemets sont approximatives : fiez-vous d'abord à l'audio."
+      ],
+      "narration": "Здравствуйте! Сегодня мы учим приветствия. Слушайте и повторяйте за мной.",
+      "narration_translation": "Bonjour ! Aujourd'hui, nous apprenons les salutations. Écoutez et répétez après moi.",
+      "media": "slide-01.webp",
+      "audio": "audio-01-42d02383f5.mp3"
+    },
+    {
+      "position": 1,
+      "kind": "slide",
+      "title": "ЗДРАВСТВУЙТЕ — le bonjour poli",
+      "lines": [
+        "ЗДРАВСТВУЙТЕ = bonjour (poli, à un inconnu, à un adulte, à un professeur).",
+        "Approximation : « zdrastvouïtié ». Le premier В ne se prononce pas.",
+        "C'est long, mais c'est le mot le plus utile du russe : apprenez-le en bloc.",
+        "À utiliser partout : administration, université, commerce, premier contact."
+      ],
+      "narration": "Здравствуйте. Здравствуйте. Это вежливое приветствие. Повторите: здравствуйте.",
+      "narration_translation": "Bonjour. Bonjour. C'est la salutation polie. Répétez : bonjour.",
+      "media": "slide-02.webp",
+      "audio": "audio-02-af278f6264.mp3"
+    },
+    {
+      "position": 2,
+      "kind": "slide",
+      "title": "ПРИВЕТ — le bonjour familier",
+      "lines": [
+        "ПРИВЕТ = salut. Approximation : « priviet ».",
+        "Réservé aux amis, aux camarades de classe, aux personnes de votre âge.",
+        "Règle simple : un inconnu → ЗДРАВСТВУЙТЕ. Un ami → ПРИВЕТ.",
+        "Erreur à éviter : dire ПРИВЕТ à un professeur ou à un fonctionnaire."
+      ],
+      "narration": "Привет! Привет, Анна! Это дружеское приветствие. Привет.",
+      "narration_translation": "Salut ! Salut, Anna ! C'est la salutation amicale. Salut.",
+      "media": "slide-03.webp",
+      "audio": "audio-03-aa26a92b40.mp3"
+    },
+    {
+      "position": 3,
+      "kind": "slide",
+      "title": "Saluer selon le moment de la journée",
+      "lines": [
+        "ДОБРОЕ УТРО = bonjour le matin — « dobroïé outra »",
+        "ДОБРЫЙ ДЕНЬ = bonjour la journée — « dobry dién »",
+        "ДОБРЫЙ ВЕЧЕР = bonsoir — « dobry viétcher »",
+        "ДОБРЫЙ ДЕНЬ est poli, plus court que ЗДРАВСТВУЙТЕ, et toujours correct."
+      ],
+      "narration": "Доброе утро. Добрый день. Добрый вечер. Утро, день, вечер.",
+      "narration_translation": "Bonjour (le matin). Bonjour (la journée). Bonsoir. Matin, journée, soir.",
+      "media": "slide-04.webp",
+      "audio": "audio-04-df863074d7.mp3"
+    },
+    {
+      "position": 4,
+      "kind": "slide",
+      "title": "КАК ДЕЛА ? — comment ça va ?",
+      "lines": [
+        "КАК ДЕЛА? = comment ça va ? — « kak diéla »",
+        "Version polie : КАК ВАШИ ДЕЛА? — « kak vachi diéla »",
+        "Deux mots seulement : КАК (comment) + ДЕЛА (les affaires).",
+        "C'est la question que vous entendrez juste après le bonjour."
+      ],
+      "narration": "Как дела? Как ваши дела? Как дела, Анна?",
+      "narration_translation": "Comment ça va ? Comment allez-vous ? Comment ça va, Anna ?",
+      "media": "slide-05.webp",
+      "audio": "audio-05-b1dfcb83e0.mp3"
+    },
+    {
+      "position": 5,
+      "kind": "slide",
+      "title": "Répondre à КАК ДЕЛА",
+      "lines": [
+        "ХОРОШО = bien — « kharacho »",
+        "ОЧЕНЬ ХОРОШО = très bien — « otchen kharacho »",
+        "НОРМАЛЬНО = ça va, normal — « narmalna »",
+        "ПЛОХО = mal — « plokha »",
+        "Réponse complète et naturelle : ХОРОШО, СПАСИБО (bien, merci)."
+      ],
+      "narration": "Хорошо, спасибо. Очень хорошо. Нормально. Плохо.",
+      "narration_translation": "Bien, merci. Très bien. Ça va. Mal.",
+      "media": "slide-06.webp",
+      "audio": "audio-06-3046f8baa0.mp3"
+    },
+    {
+      "position": 6,
+      "kind": "slide",
+      "title": "МЕНЯ ЗОВУТ — je m'appelle",
+      "lines": [
+        "МЕНЯ ЗОВУТ + prénom = je m'appelle… — « miénia zavout »",
+        "МЕНЯ ЗОВУТ АННА. — Je m'appelle Anna.",
+        "МЕНЯ ЗОВУТ КАРИМ. — Je m'appelle Karim.",
+        "Ne cherchez pas à décomposer la formule : apprenez-la comme un seul bloc."
+      ],
+      "narration": "Меня зовут Анна. Меня зовут Иван. А вас? Меня зовут...",
+      "narration_translation": "Je m'appelle Anna. Je m'appelle Ivan. Et vous ? Je m'appelle…",
+      "media": "slide-07.webp",
+      "audio": "audio-07-c92dcb70e4.mp3"
+    },
+    {
+      "position": 7,
+      "kind": "slide",
+      "title": "Demander le prénom",
+      "lines": [
+        "КАК ВАС ЗОВУТ? = comment vous appelez-vous ? (poli) — « kak vaz zavout »",
+        "КАК ТЕБЯ ЗОВУТ? = comment tu t'appelles ? (familier) — « kak tiébia zavout »",
+        "ВАС va avec ЗДРАВСТВУЙТЕ ; ТЕБЯ va avec ПРИВЕТ.",
+        "Raccourci très utile : А ВАС? = et vous ?"
+      ],
+      "narration": "Как вас зовут? Как тебя зовут? А вас? А тебя?",
+      "narration_translation": "Comment vous appelez-vous ? Comment tu t'appelles ? Et vous ? Et toi ?",
+      "media": "slide-08.webp",
+      "audio": "audio-08-bdeae7cdaf.mp3"
+    },
+    {
+      "position": 8,
+      "kind": "slide",
+      "title": "ОЧЕНЬ ПРИЯТНО — enchanté",
+      "lines": [
+        "ОЧЕНЬ ПРИЯТНО = enchanté, ravi — « otchen priyatna »",
+        "Se dit juste après l'échange des prénoms, homme ou femme, sans changement.",
+        "Enchaînement complet : МЕНЯ ЗОВУТ КАРИМ. — ОЧЕНЬ ПРИЯТНО."
+      ],
+      "narration": "Очень приятно. Меня зовут Иван. Очень приятно!",
+      "narration_translation": "Enchanté. Je m'appelle Ivan. Enchanté !",
+      "media": "slide-09.webp",
+      "audio": "audio-09-8b119fad8f.mp3"
+    },
+    {
+      "position": 9,
+      "kind": "slide",
+      "title": "Dire d'où l'on vient",
+      "lines": [
+        "Я ИЗ + lieu = je viens de… — « ya iz »",
+        "Я ИЗ ТУНИСА. — Je viens de Tunisie.",
+        "Я ИЗ МОСКВЫ. — Je viens de Moscou.",
+        "Я СТУДЕНТ (étudiant) / Я СТУДЕНТКА (étudiante)."
+      ],
+      "narration": "Я из Туниса. Я студент. Я студентка. А вы?",
+      "narration_translation": "Je viens de Tunisie. Je suis étudiant. Je suis étudiante. Et vous ?",
+      "media": "slide-10.webp",
+      "audio": "audio-10-c221b9583b.mp3"
+    },
+    {
+      "position": 10,
+      "kind": "slide",
+      "title": "Les mots de politesse indispensables",
+      "lines": [
+        "СПАСИБО = merci — « spassiba »",
+        "ПОЖАЛУЙСТА = s'il vous plaît / je vous en prie — « pajalsta »",
+        "ИЗВИНИТЕ = excusez-moi — « izviniTIÉ »",
+        "ДА = oui — НЕТ = non",
+        "ИЗВИНИТЕ, ПОЖАЛУЙСТА est la meilleure façon d'aborder quelqu'un."
+      ],
+      "narration": "Спасибо. Пожалуйста. Извините. Да. Нет.",
+      "narration_translation": "Merci. S'il vous plaît. Excusez-moi. Oui. Non.",
+      "media": "slide-11.webp",
+      "audio": "audio-11-fb30d7c242.mp3"
+    },
+    {
+      "position": 11,
+      "kind": "slide",
+      "title": "Dire au revoir",
+      "lines": [
+        "ДО СВИДАНИЯ = au revoir (poli) — « da svidania »",
+        "ПОКА = à plus, salut (familier) — « paka »",
+        "ДО ЗАВТРА = à demain — « da zavtra »",
+        "Même logique que pour le bonjour : poli ou familier, choisissez selon la personne."
+      ],
+      "narration": "До свидания. Пока. До завтра. До свидания!",
+      "narration_translation": "Au revoir. Salut. À demain. Au revoir !",
+      "media": "slide-12.webp",
+      "audio": "audio-12-a67c1643bd.mp3"
+    },
+    {
+      "position": 12,
+      "kind": "slide",
+      "title": "Dialogue complet : votre première conversation",
+      "lines": [
+        "— ЗДРАВСТВУЙТЕ! КАК ДЕЛА?",
+        "— ХОРОШО, СПАСИБО. А ВЫ?",
+        "— ОЧЕНЬ ХОРОШО. КАК ВАС ЗОВУТ?",
+        "— МЕНЯ ЗОВУТ КАРИМ. Я ИЗ ТУНИСА.",
+        "— ОЧЕНЬ ПРИЯТНО! ДО СВИДАНИЯ!",
+        "Entraînement : jouez les deux rôles à voix haute, trois fois."
+      ],
+      "narration": "Здравствуйте! Как дела? Хорошо, спасибо. Как вас зовут? Меня зовут Карим. Очень приятно! До свидания!",
+      "narration_translation": "Bonjour ! Comment ça va ? Bien, merci. Comment vous appelez-vous ? Je m'appelle Karim. Enchanté ! Au revoir !",
+      "media": "slide-13.webp",
+      "audio": "audio-13-ffb138a1a9.mp3"
+    }
+  ],
+  "exercises": [
+    {
+      "position": 0,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Vous entrez dans le bureau d'un professeur que vous ne connaissez pas. Que dites-vous ?"
+      },
+      "options": {
+        "fr": [
+          "ПРИВЕТ",
+          "ЗДРАВСТВУЙТЕ",
+          "ПОКА"
+        ]
+      },
+      "answer": {
+        "fr": "ЗДРАВСТВУЙТЕ"
+      },
+      "explanation": {
+        "fr": "ПРИВЕТ est familier, réservé aux amis. ПОКА signifie « salut » en partant."
+      }
+    },
+    {
+      "position": 1,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Que signifie КАК ДЕЛА ?"
+      },
+      "options": {
+        "fr": [
+          "Comment vous appelez-vous ?",
+          "Comment ça va ?",
+          "D'où venez-vous ?"
+        ]
+      },
+      "answer": {
+        "fr": "Comment ça va ?"
+      },
+      "explanation": {
+        "fr": "КАК (comment) + ДЕЛА (les affaires). Pour le prénom, on dit КАК ВАС ЗОВУТ."
+      }
+    },
+    {
+      "position": 2,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Comment dire « je m'appelle Anna » ?"
+      },
+      "options": {
+        "fr": [
+          "МЕНЯ ЗОВУТ АННА",
+          "КАК ВАС ЗОВУТ АННА",
+          "Я ИЗ АННА"
+        ]
+      },
+      "answer": {
+        "fr": "МЕНЯ ЗОВУТ АННА"
+      },
+      "explanation": {
+        "fr": "МЕНЯ ЗОВУТ s'apprend comme un bloc, suivi du prénom. КАК ВАС ЗОВУТ est la question."
+      }
+    },
+    {
+      "position": 3,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Vous parlez à un camarade de votre âge. Quelle question est adaptée ?"
+      },
+      "options": {
+        "fr": [
+          "КАК ВАС ЗОВУТ?",
+          "КАК ТЕБЯ ЗОВУТ?",
+          "ДО СВИДАНИЯ"
+        ]
+      },
+      "answer": {
+        "fr": "КАК ТЕБЯ ЗОВУТ?"
+      },
+      "explanation": {
+        "fr": "ТЕБЯ va avec le registre familier de ПРИВЕТ ; ВАС va avec ЗДРАВСТВУЙТЕ."
+      }
+    },
+    {
+      "position": 4,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Que répondez-vous à КАК ДЕЛА, de la façon la plus naturelle ?"
+      },
+      "options": {
+        "fr": [
+          "ОЧЕНЬ ПРИЯТНО",
+          "ХОРОШО, СПАСИБО",
+          "ИЗВИНИТЕ"
+        ]
+      },
+      "answer": {
+        "fr": "ХОРОШО, СПАСИБО"
+      },
+      "explanation": {
+        "fr": "ОЧЕНЬ ПРИЯТНО se dit après l'échange des prénoms, et ИЗВИНИТЕ veut dire « excusez-moi »."
+      }
+    },
+    {
+      "position": 5,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Vous quittez une réunion officielle. Que dites-vous ?"
+      },
+      "options": {
+        "fr": [
+          "ПОКА",
+          "ДО СВИДАНИЯ",
+          "ДОБРОЕ УТРО"
+        ]
+      },
+      "answer": {
+        "fr": "ДО СВИДАНИЯ"
+      },
+      "explanation": {
+        "fr": "ПОКА est familier ; ДОБРОЕ УТРО est une salutation d'arrivée, le matin."
+      }
+    }
+  ]
+}

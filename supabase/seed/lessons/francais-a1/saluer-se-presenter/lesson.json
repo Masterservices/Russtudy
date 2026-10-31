@@ -1,0 +1,362 @@
+{
+  "slug": "saluer-se-presenter",
+  "target_lang": "fr",
+  "ui_lang": "ru",
+  "position": 2,
+  "title": {
+    "ru": "Приветствие и знакомство: первые живые фразы"
+  },
+  "summary": {
+    "ru": "Bonjour, Salut, Comment allez-vous, Je m'appelle, Enchanté — и главный выбор каждого разговора: tu или vous."
+  },
+  "objectives": {
+    "ru": [
+      "Выбирать между Bonjour и Salut по ситуации",
+      "Понимать разницу между tu и vous и не путать формы",
+      "Спрашивать, как дела, и отвечать двумя-тремя способами",
+      "Называть своё имя и спрашивать имя собеседника",
+      "Правильно произносить tu, salut, bonjour и enchanté"
+    ]
+  },
+  "is_free": false,
+  "duration_min": 12,
+  "source_file": null,
+  "blocks": [
+    {
+      "position": 0,
+      "kind": "slide",
+      "title": "Приветствие и знакомство",
+      "lines": [
+        "Французский для русскоговорящих",
+        "Слушать • Повторять • Выбирать регистр • Говорить"
+      ],
+      "narration": "Bonjour et bienvenue. Dans la première leçon, nous avons travaillé les sons. Aujourd'hui, nous allons parler. Vous allez apprendre à saluer quelqu'un et à dire votre nom.",
+      "narration_translation": "Здравствуйте и добро пожаловать. На первом уроке мы работали над звуками. Сегодня мы начинаем говорить. Вы научитесь приветствовать человека и называть своё имя.",
+      "media": "slide-01.webp",
+      "audio": "audio-01-a522c50a51.mp3"
+    },
+    {
+      "position": 1,
+      "kind": "slide",
+      "title": "Bonjour: универсальное приветствие",
+      "lines": [
+        "Bonjour — днём, в любой ситуации, с любым человеком.",
+        "Bonsoir — вечером.",
+        "Во Франции Bonjour почти обязательно: входя в магазин, в кабинет, в лифт.",
+        "Звук в начале: носовой /ɔ̃/ без слышимой « n »."
+      ],
+      "narration": "Le mot le plus utile du français est bonjour. On le dit à tout le monde : au vendeur, au professeur, au voisin. Le soir, on dit bonsoir. Attention au début du mot : il y a une voyelle nasale, et aucune consonne n.",
+      "narration_translation": "Самое полезное слово во французском — bonjour. Его говорят всем: продавцу, преподавателю, соседу. Вечером говорят bonsoir. Следите за началом слова: там носовой гласный и никакой согласной «н».",
+      "media": "slide-02.webp",
+      "audio": "audio-02-30fe3b6a7c.mp3"
+    },
+    {
+      "position": 2,
+      "kind": "slide",
+      "title": "Salut: только для своих",
+      "lines": [
+        "Salut — привет и пока, но лишь с друзьями, однокурсниками, близкими.",
+        "Никогда не говорите Salut преподавателю, чиновнику или врачу.",
+        "Конечная « t » в Salut немая.",
+        "Гласная в конце — тот самый /y/, который мы собирали на первом уроке."
+      ],
+      "narration": "Salut est amical. On le dit à un ami, à un camarade de classe, à un frère. On ne le dit jamais à un professeur ou à un médecin. La dernière lettre ne se prononce pas. La voyelle finale est le son u, celui que nous avons fabriqué dans la leçon de phonétique.",
+      "narration_translation": "Salut — дружеское слово. Его говорят другу, однокурснику, брату. Его никогда не говорят преподавателю или врачу. Последняя буква не произносится. Конечный гласный — это тот самый звук «ю», который мы собирали на уроке фонетики.",
+      "media": "slide-03.webp",
+      "audio": "audio-03-d83bf9f8b2.mp3"
+    },
+    {
+      "position": 3,
+      "kind": "slide",
+      "title": "tu или vous: выбор, который слышно сразу",
+      "lines": [
+        "tu — один человек, с которым вы на «ты»: друг, родственник, однокурсник.",
+        "vous — вежливое обращение к одному человеку, и всегда обращение к группе.",
+        "Как в русском «ты» и «вы», но граница во Франции строже: с незнакомым взрослым — только vous.",
+        "Правило для начинающего: сомневаетесь — говорите vous."
+      ],
+      "narration": "Le français distingue tu et vous. On dit tu à un ami et à un membre de la famille. On dit vous à une personne qu'on ne connaît pas, et aussi à un groupe. Si vous hésitez, choisissez vous. C'est toujours correct et jamais impoli.",
+      "narration_translation": "Французский различает tu и vous. Говорят tu другу и члену семьи. Говорят vous человеку, которого не знают, а также группе людей. Если сомневаетесь — выбирайте vous. Это всегда правильно и никогда не грубо.",
+      "media": "slide-04.webp"
+    },
+    {
+      "position": 4,
+      "kind": "slide",
+      "title": "Как дела: две формы",
+      "lines": [
+        "Comment allez-vous ? — вежливо, на vous.",
+        "Comment ça va ? — нейтрально, подходит почти всегда.",
+        "Ça va ? — коротко и по-дружески.",
+        "Обратите внимание: в Comment allez-vous связывание даёт слитное звучание."
+      ],
+      "narration": "Pour demander des nouvelles, il y a deux formes. Comment allez-vous est la forme polie. Comment ça va est plus simple et convient presque partout. Entre amis, on dit juste ça va.",
+      "narration_translation": "Чтобы спросить о делах, есть две формы. Comment allez-vous — вежливая форма. Comment ça va проще и подходит почти везде. Между друзьями говорят просто ça va.",
+      "media": "slide-05.webp",
+      "audio": "audio-05-467056c397.mp3"
+    },
+    {
+      "position": 5,
+      "kind": "slide",
+      "title": "Как отвечать",
+      "lines": [
+        "Ça va bien, merci. — Хорошо, спасибо.",
+        "Très bien, merci. Et vous ? — Очень хорошо, спасибо. А вы?",
+        "Ça va. — Нормально.",
+        "Pas très bien. — Не очень.",
+        "Привычка, которая сразу звучит естественно: вернуть вопрос — Et vous ? или Et toi ?"
+      ],
+      "narration": "La réponse est courte. Ça va bien, merci. Ou bien très bien, merci. Puis rendez la question : et vous, ou et toi. Un dialogue français avance toujours par petits échanges.",
+      "narration_translation": "Ответ короткий. Ça va bien, merci. Или très bien, merci. Затем верните вопрос: et vous или et toi. Французский диалог всегда движется короткими обменами.",
+      "media": "slide-06.webp",
+      "audio": "audio-06-2d29e83735.mp3"
+    },
+    {
+      "position": 6,
+      "kind": "slide",
+      "title": "Je m'appelle: назвать имя",
+      "lines": [
+        "Je m'appelle Anna. — Меня зовут Анна.",
+        "Moi, c'est Anna. — Я Анна. Разговорный вариант.",
+        "Вопрос на vous: Comment vous appelez-vous ?",
+        "Вопрос на tu: Comment tu t'appelles ?"
+      ],
+      "narration": "Pour dire votre nom, une seule phrase suffit : je m'appelle. Je m'appelle Anna. Pour poser la question, il y a deux formes. Comment vous appelez-vous, et comment tu t'appelles.",
+      "narration_translation": "Чтобы назвать имя, достаточно одной фразы: je m'appelle. Je m'appelle Anna. Для вопроса есть две формы: comment vous appelez-vous и comment tu t'appelles.",
+      "media": "slide-07.webp",
+      "audio": "audio-07-5facf2abe8.mp3"
+    },
+    {
+      "position": 7,
+      "kind": "slide",
+      "title": "Enchanté: рад познакомиться",
+      "lines": [
+        "Мужчина говорит: Enchanté.",
+        "Женщина говорит: Enchantée.",
+        "Звучат эти две формы одинаково — различие только на письме.",
+        "Более нейтральный вариант: Ravi de vous rencontrer."
+      ],
+      "narration": "Après le nom, on dit enchanté. Un homme écrit enchanté, une femme écrit enchantée. À l'oreille, c'est exactement le même mot. La différence existe seulement à l'écrit.",
+      "narration_translation": "После имени говорят enchanté. Мужчина пишет enchanté, женщина — enchantée. На слух это абсолютно одно и то же слово. Разница есть только на письме.",
+      "media": "slide-08.webp",
+      "audio": "audio-08-9dbccff609.mp3"
+    },
+    {
+      "position": 8,
+      "kind": "slide",
+      "title": "Откуда вы и где живёте",
+      "lines": [
+        "Je suis russe. — Я русский, русская.",
+        "Je viens de Moscou. — Я из Москвы.",
+        "J'habite à Paris. — Я живу в Париже.",
+        "Je suis étudiant. Je suis étudiante.",
+        "Вопрос: Vous venez d'où ? или Tu viens d'où ?"
+      ],
+      "narration": "Trois phrases suffisent pour vous présenter. Je suis russe. Je viens de Moscou. J'habite à Paris. Ajoutez votre situation : je suis étudiant, ou je suis étudiante.",
+      "narration_translation": "Трёх фраз хватает, чтобы представиться. Je suis russe. Je viens de Moscou. J'habite à Paris. Добавьте, кто вы: je suis étudiant или je suis étudiante.",
+      "media": "slide-09.webp",
+      "audio": "audio-09-4485696446.mp3"
+    },
+    {
+      "position": 9,
+      "kind": "slide",
+      "title": "Прощание",
+      "lines": [
+        "Au revoir. — Нейтральное «до свидания», подходит всегда.",
+        "À bientôt. — До скорого.",
+        "À demain. — До завтра.",
+        "Bonne journée. Bonne soirée. — Хорошего дня. Хорошего вечера.",
+        "Salut — ещё и «пока», но только со своими."
+      ],
+      "narration": "Pour partir, dites au revoir. C'est neutre et toujours correct. Ajoutez bonne journée le matin, ou bonne soirée le soir. Entre amis, salut veut dire aussi au revoir.",
+      "narration_translation": "Уходя, говорите au revoir. Это нейтрально и всегда уместно. Добавьте bonne journée утром или bonne soirée вечером. Между друзьями salut значит ещё и «пока».",
+      "media": "slide-10.webp",
+      "audio": "audio-10-5fb764d16a.mp3"
+    },
+    {
+      "position": 10,
+      "kind": "slide",
+      "title": "Фонетика этого урока",
+      "lines": [
+        "tu и salut — звук /y/: язык впереди, губы округлены.",
+        "bonjour — носовой /ɔ̃/, затем французское /ʁ/ без раската.",
+        "enchanté — носовой /ɑ̃/, конечная согласная « e » и « é » без «н».",
+        "vous — звук /u/, язык отодвинут назад.",
+        "Сравните вслух: tu и tout, vu и vous, su и sous."
+      ],
+      "narration": "Reprenons les sons de cette leçon. Dans tu et salut, la langue est en avant et les lèvres sont arrondies. Dans vous, la langue est reculée. Comparez à voix haute : tu, tout. Vu, vous. Su, sous.",
+      "narration_translation": "Повторим звуки этого урока. В tu и salut язык стоит впереди, а губы округлены. В vous язык отодвинут назад. Сравните вслух: tu, tout. Vu, vous. Su, sous.",
+      "media": "slide-11.webp"
+    },
+    {
+      "position": 11,
+      "kind": "slide",
+      "title": "Мини-диалог: вежливый регистр",
+      "lines": [
+        "— Bonjour, madame. Comment allez-vous ?",
+        "— Très bien, merci. Et vous ?",
+        "— Ça va bien. Je m'appelle Dmitri.",
+        "— Enchantée. Moi, c'est Claire.",
+        "— Vous venez d'où ?",
+        "— Je viens de Lyon. Et vous ?",
+        "— Je viens de Moscou. J'habite à Paris."
+      ],
+      "narration": "Écoutez ce dialogue poli, puis répétez-le ligne par ligne. Tout est à la forme vous. Ne cherchez pas à aller vite. Cherchez des phrases entières, dites sans pause au milieu.",
+      "narration_translation": "Послушайте этот вежливый диалог, затем повторите его строку за строкой. Всё здесь в форме vous. Не старайтесь говорить быстро. Старайтесь говорить целыми фразами, без паузы в середине.",
+      "media": "slide-12.webp"
+    },
+    {
+      "position": 12,
+      "kind": "slide",
+      "title": "Мини-диалог: дружеский регистр",
+      "lines": [
+        "— Salut ! Ça va ?",
+        "— Ça va, et toi ?",
+        "— Ça va bien. Comment tu t'appelles ?",
+        "— Moi, c'est Léa. Et toi ?",
+        "— Ivan. Tu habites ici ?",
+        "— Oui, j'habite à côté. À bientôt !",
+        "— Salut !"
+      ],
+      "narration": "Voici le même échange entre amis. Tout passe à la forme tu. Remarquez que les phrases deviennent plus courtes. C'est normal : le registre familier va plus vite.",
+      "narration_translation": "Вот тот же обмен между друзьями. Всё переходит в форму tu. Обратите внимание, что фразы становятся короче. Это нормально: дружеский регистр звучит быстрее.",
+      "media": "slide-13.webp"
+    },
+    {
+      "position": 13,
+      "kind": "slide",
+      "title": "Итог и план на день",
+      "lines": [
+        "Четыре ошибки начинающего: Salut незнакомому, tu вежливому собеседнику, смешение форм tu и vous в одной фразе, забытое Bonjour при входе.",
+        "2 мин — вслух повторить пары tu и vous в вопросах.",
+        "3 мин — произнести оба диалога целиком.",
+        "2 мин — записать себя на фразе « Bonjour, je m'appelle… Je viens de… »",
+        "3 мин — заменить своё имя и город и повторить."
+      ],
+      "narration": "Pour finir, une règle et un exercice. La règle : ne mélangez jamais tu et vous dans la même phrase. L'exercice : enregistrez-vous en disant bonjour, je m'appelle, puis votre nom et votre ville. Dix minutes par jour suffisent.",
+      "narration_translation": "В конце — одно правило и одно упражнение. Правило: никогда не смешивайте tu и vous в одной фразе. Упражнение: запишите себя, говоря bonjour, je m'appelle, затем своё имя и свой город. Десяти минут в день достаточно.",
+      "media": "slide-14.webp"
+    }
+  ],
+  "exercises": [
+    {
+      "position": 0,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Вы входите в кабинет преподавателя. Как поздороваться?"
+      },
+      "options": {
+        "ru": [
+          "Salut !",
+          "Bonjour, madame.",
+          "Ça va ?"
+        ]
+      },
+      "answer": {
+        "ru": "Bonjour, madame."
+      },
+      "explanation": {
+        "ru": "Salut — только со своими. С преподавателем используется Bonjour и вежливая форма vous."
+      }
+    },
+    {
+      "position": 1,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Вы не знаете, на «ты» или на «вы» с этим человеком. Что выбрать?"
+      },
+      "options": {
+        "ru": [
+          "tu — так дружелюбнее",
+          "vous — безопасный выбор",
+          "Можно вообще без местоимения"
+        ]
+      },
+      "answer": {
+        "ru": "vous — безопасный выбор"
+      },
+      "explanation": {
+        "ru": "vous никогда не звучит грубо. Преждевременное tu, наоборот, воспринимается как бесцеремонность."
+      }
+    },
+    {
+      "position": 2,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Какая фраза означает «Меня зовут Анна»?"
+      },
+      "options": {
+        "ru": [
+          "Je m'appelle Anna.",
+          "Comment tu t'appelles ?",
+          "Enchantée, Anna."
+        ]
+      },
+      "answer": {
+        "ru": "Je m'appelle Anna."
+      },
+      "explanation": {
+        "ru": "Comment tu t'appelles — это вопрос об имени, а Enchantée — реакция после знакомства."
+      }
+    },
+    {
+      "position": 3,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Чем на слух отличаются Enchanté и Enchantée?"
+      },
+      "options": {
+        "ru": [
+          "Ничем, различие только на письме",
+          "Во второй форме слышна конечная « e »",
+          "Во второй форме другой носовой гласный"
+        ]
+      },
+      "answer": {
+        "ru": "Ничем, различие только на письме"
+      },
+      "explanation": {
+        "ru": "Женская форма добавляет « e » на письме, но произношение остаётся идентичным."
+      }
+    },
+    {
+      "position": 4,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "В каком слове звук /y/ — язык впереди, губы округлены?"
+      },
+      "options": {
+        "ru": [
+          "vous",
+          "salut",
+          "bonjour"
+        ]
+      },
+      "answer": {
+        "ru": "salut"
+      },
+      "explanation": {
+        "ru": "В vous и bonjour звучит /u/ с отодвинутым назад языком. /y/ есть в salut и в tu."
+      }
+    },
+    {
+      "position": 5,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Друг спрашивает: « Ça va ? » Какой ответ звучит естественно?"
+      },
+      "options": {
+        "ru": [
+          "Comment allez-vous ?",
+          "Ça va bien, et toi ?",
+          "Au revoir, madame."
+        ]
+      },
+      "answer": {
+        "ru": "Ça va bien, et toi ?"
+      },
+      "explanation": {
+        "ru": "Ответ короткий, и вопрос возвращается. С другом используется et toi, а не et vous."
+      }
+    }
+  ]
+}

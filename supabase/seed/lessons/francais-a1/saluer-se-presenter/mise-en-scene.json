@@ -1,0 +1,546 @@
+{
+  "scene": "carte",
+  "ui": "ru",
+  "langueNarration": "fr",
+  "config": {
+    "stations": [
+      {
+        "id": "salut",
+        "titre": "ПРИВЕТСТВИЕ"
+      },
+      {
+        "id": "cava",
+        "titre": "КАК ДЕЛА"
+      },
+      {
+        "id": "nom",
+        "titre": "ИМЯ"
+      },
+      {
+        "id": "origine",
+        "titre": "ОТКУДА"
+      },
+      {
+        "id": "adieu",
+        "titre": "ПРОЩАНИЕ"
+      }
+    ],
+    "voies": [
+      "poli",
+      "familier"
+    ],
+    "noms": {
+      "poli": "VOUS · вежливо",
+      "familier": "TU · по-дружески"
+    }
+  },
+  "intro": {
+    "meta": "RusStudy · Французский A1 · 12 минут",
+    "titre": "Приветствие и <em>знакомство</em>",
+    "texte": "Разговор — это путь: поздороваться, спросить как дела, назвать имя, попрощаться. И две дороги, между которыми выбирают с первого слова: vous или tu.",
+    "bouton": "Начать →",
+    "note": "Озвучивание этого урока готовится"
+  },
+  "chapitres": [
+    {
+      "sur": "Два регистра",
+      "params": {
+        "allume": [],
+        "voie": "deux",
+        "mots": []
+      },
+      "jetons": []
+    },
+    {
+      "sur": "Нейтральное",
+      "params": {
+        "allume": [
+          "salut"
+        ],
+        "voie": "poli",
+        "mots": [
+          {
+            "t": "Bonjour",
+            "voie": "poli"
+          },
+          {
+            "t": "Bonsoir",
+            "voie": "poli"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Bonjour",
+          "s": "здравствуйте, днём"
+        },
+        {
+          "t": "Bonsoir",
+          "s": "добрый вечер"
+        }
+      ]
+    },
+    {
+      "sur": "Только для своих",
+      "params": {
+        "allume": [
+          "salut"
+        ],
+        "voie": "familier",
+        "mots": [
+          {
+            "t": "Salut",
+            "voie": "familier"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Salut",
+          "s": "привет и пока, только с друзьями"
+        }
+      ]
+    },
+    {
+      "sur": "Выбор, который слышно",
+      "params": {
+        "allume": [
+          "salut"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "vous",
+            "voie": "poli"
+          },
+          {
+            "t": "tu",
+            "voie": "familier"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "vous",
+          "s": "вежливо, и всегда к группе"
+        },
+        {
+          "t": "tu",
+          "s": "один близкий человек"
+        }
+      ]
+    },
+    {
+      "sur": "Спросить",
+      "params": {
+        "allume": [
+          "cava"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "Comment allez-vous ?",
+            "voie": "poli"
+          },
+          {
+            "t": "Comment ça va ?",
+            "voie": "poli"
+          },
+          {
+            "t": "Ça va ?",
+            "voie": "familier"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Comment allez-vous ?",
+          "s": "вежливо, на vous"
+        },
+        {
+          "t": "Comment ça va ?",
+          "s": "нейтрально"
+        },
+        {
+          "t": "Ça va ?",
+          "s": "по-дружески"
+        }
+      ]
+    },
+    {
+      "sur": "Ответить",
+      "params": {
+        "allume": [
+          "cava"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "Ça va bien, merci.",
+            "voie": "poli"
+          },
+          {
+            "t": "Très bien, merci. Et vous ?",
+            "voie": "poli"
+          },
+          {
+            "t": "Ça va, et toi ?",
+            "voie": "familier"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Ça va bien, merci.",
+          "s": "хорошо, спасибо"
+        },
+        {
+          "t": "Très bien, merci. Et vous ?",
+          "s": "очень хорошо. А вы?"
+        },
+        {
+          "t": "Ça va, et toi ?",
+          "s": "нормально, а ты?"
+        }
+      ]
+    },
+    {
+      "sur": "Назвать имя",
+      "params": {
+        "allume": [
+          "nom"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "Je m'appelle Anna.",
+            "voie": "poli"
+          },
+          {
+            "t": "Moi, c'est Anna.",
+            "voie": "familier"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Je m'appelle Anna.",
+          "s": "меня зовут Анна"
+        },
+        {
+          "t": "Moi, c'est Anna.",
+          "s": "я Анна — разговорное"
+        }
+      ]
+    },
+    {
+      "sur": "Рад познакомиться",
+      "params": {
+        "allume": [
+          "nom"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "Enchanté.",
+            "voie": "poli"
+          },
+          {
+            "t": "Enchantée.",
+            "voie": "poli"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Enchanté.",
+          "s": "говорит мужчина"
+        },
+        {
+          "t": "Enchantée.",
+          "s": "говорит женщина"
+        }
+      ]
+    },
+    {
+      "sur": "Откуда вы",
+      "params": {
+        "allume": [
+          "origine"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "Je suis russe.",
+            "voie": "poli"
+          },
+          {
+            "t": "Je viens de Moscou.",
+            "voie": "poli"
+          },
+          {
+            "t": "J'habite à Paris.",
+            "voie": "poli"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Je suis russe.",
+          "s": "я русский, русская"
+        },
+        {
+          "t": "Je viens de Moscou.",
+          "s": "я из Москвы"
+        },
+        {
+          "t": "J'habite à Paris.",
+          "s": "я живу в Париже"
+        }
+      ]
+    },
+    {
+      "sur": "Прощание",
+      "params": {
+        "allume": [
+          "adieu"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "Au revoir.",
+            "voie": "poli"
+          },
+          {
+            "t": "À bientôt.",
+            "voie": "poli"
+          },
+          {
+            "t": "Salut !",
+            "voie": "familier"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Au revoir.",
+          "s": "до свидания"
+        },
+        {
+          "t": "À bientôt.",
+          "s": "до скорого"
+        },
+        {
+          "t": "Salut !",
+          "s": "пока — только со своими"
+        }
+      ]
+    },
+    {
+      "sur": "Звуки этого урока",
+      "params": {
+        "allume": [
+          "salut"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "tu · salut",
+            "voie": "familier"
+          },
+          {
+            "t": "bonjour",
+            "voie": "poli"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "tu · salut",
+          "s": "звук /y/ : язык впереди, губы округлены"
+        },
+        {
+          "t": "bonjour",
+          "s": "носовой /ɔ̃/, затем /ʁ/ без раската"
+        }
+      ]
+    },
+    {
+      "sur": "Вежливый диалог",
+      "params": {
+        "allume": [
+          "salut",
+          "cava",
+          "nom",
+          "origine",
+          "adieu"
+        ],
+        "voie": "poli",
+        "mots": [
+          {
+            "t": "Bonjour, madame.",
+            "voie": "poli",
+            "station": "salut"
+          },
+          {
+            "t": "Comment allez-vous ?",
+            "voie": "poli",
+            "station": "cava"
+          },
+          {
+            "t": "Très bien, merci.",
+            "voie": "poli",
+            "station": "cava"
+          },
+          {
+            "t": "Je m'appelle Karim.",
+            "voie": "poli",
+            "station": "nom"
+          },
+          {
+            "t": "Au revoir, madame.",
+            "voie": "poli",
+            "station": "adieu"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Bonjour, madame.",
+          "s": "здравствуйте"
+        },
+        {
+          "t": "Comment allez-vous ?",
+          "s": "как вы поживаете?"
+        },
+        {
+          "t": "Très bien, merci.",
+          "s": "очень хорошо, спасибо"
+        },
+        {
+          "t": "Je m'appelle Karim.",
+          "s": "меня зовут Карим"
+        },
+        {
+          "t": "Au revoir, madame.",
+          "s": "до свидания"
+        }
+      ]
+    },
+    {
+      "sur": "Дружеский диалог",
+      "params": {
+        "allume": [
+          "salut",
+          "cava",
+          "nom",
+          "origine",
+          "adieu"
+        ],
+        "voie": "familier",
+        "mots": [
+          {
+            "t": "Salut !",
+            "voie": "familier",
+            "station": "salut"
+          },
+          {
+            "t": "Ça va ?",
+            "voie": "familier",
+            "station": "cava"
+          },
+          {
+            "t": "Ça va, et toi ?",
+            "voie": "familier",
+            "station": "cava"
+          },
+          {
+            "t": "Moi, c'est Anna.",
+            "voie": "familier",
+            "station": "nom"
+          },
+          {
+            "t": "Salut !",
+            "voie": "familier",
+            "station": "adieu"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Salut !",
+          "s": "привет!"
+        },
+        {
+          "t": "Ça va ?",
+          "s": "как ты?"
+        },
+        {
+          "t": "Ça va, et toi ?",
+          "s": "нормально, а ты?"
+        },
+        {
+          "t": "Moi, c'est Anna.",
+          "s": "я Анна"
+        },
+        {
+          "t": "Salut !",
+          "s": "пока!"
+        }
+      ]
+    },
+    {
+      "sur": "Четыре ошибки",
+      "params": {
+        "allume": [
+          "salut",
+          "cava",
+          "nom",
+          "origine",
+          "adieu"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "Salut незнакомому",
+            "voie": "familier",
+            "station": "salut"
+          },
+          {
+            "t": "tu вежливому собеседнику",
+            "voie": "familier",
+            "station": "salut"
+          },
+          {
+            "t": "Смешение vous и toi",
+            "voie": "poli",
+            "station": "cava"
+          },
+          {
+            "t": "Enchanté вместо Enchantée",
+            "voie": "poli",
+            "station": "nom"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Salut незнакомому",
+          "s": "регистр не тот"
+        },
+        {
+          "t": "tu вежливому собеседнику",
+          "s": "слишком близко"
+        },
+        {
+          "t": "Смешение vous и toi",
+          "s": "в одной фразе"
+        },
+        {
+          "t": "Enchanté вместо Enchantée",
+          "s": "женщина пишет -e"
+        }
+      ]
+    }
+  ]
+}

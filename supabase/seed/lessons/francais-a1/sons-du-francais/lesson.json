@@ -1,0 +1,380 @@
+{
+  "slug": "sons-du-francais",
+  "target_lang": "fr",
+  "ui_lang": "ru",
+  "position": 1,
+  "title": {
+    "ru": "Звуки французского: фонетика и произношение"
+  },
+  "summary": {
+    "ru": "Шесть ловушек, по которым русскоговорящего узнают сразу — и как выйти из каждой."
+  },
+  "objectives": {
+    "ru": [
+      "Различать и произносить /u/ и /y/ (tout / tu)",
+      "Произносить три носовые гласные без слышимой « n »",
+      "Строить французское /ʁ/ без раскатистого « р »",
+      "Узнавать немые конечные согласные и их исключения",
+      "Делать связывания и говорить ритмическими группами"
+    ]
+  },
+  "is_free": true,
+  "duration_min": 18,
+  "source_file": "French_Phonetics_Blueprint_1.pptx",
+  "blocks": [
+    {
+      "position": 0,
+      "kind": "slide",
+      "title": "Фонетика и произношение",
+      "lines": [
+        "Французский для русскоговорящих",
+        "Слушать • Наблюдать • Артикулировать • Повторять • Говорить"
+      ],
+      "narration": "Bienvenue à votre première leçon de phonétique française. Nous n'allons pas apprendre de grammaire. Nous allons apprendre à bouger la bouche autrement : c'est cela qui sépare une parole comprise d'une parole devinée.",
+      "media": "slide-01.webp",
+      "narration_translation": "Добро пожаловать на первый урок французской фонетики. Мы не будем учить грамматику. Мы будем учить рот двигаться иначе — потому что именно это отделяет понятную речь от непонятной.",
+      "audio": "audio-01-c6ff35e78f.mp3"
+    },
+    {
+      "position": 1,
+      "kind": "slide",
+      "title": "Золотое правило: орфографии недостаточно",
+      "lines": [
+        "Не читайте французский как русский.",
+        "Одна буква может означать несколько звуков.",
+        "Несколько букв могут давать один звук: ou, eau, ch, an.",
+        "Последняя написанная согласная часто немая.",
+        "Внимание: никогда не записывайте французское произношение кириллицей — это закрепляет неверные звуки."
+      ],
+      "narration": "La première habitude à abandonner : lire comme c'est écrit. En français, le lien entre la lettre et le son est indirect. Les lettres e, a, u se lisent un seul son : o. Et surtout, n'écrivez jamais le français en caractères cyrilliques. Cela paraît commode, mais cela fixe des sons qui n'existent pas en français.",
+      "media": "slide-02.webp",
+      "narration_translation": "Первое, от чего нужно отказаться: привычка читать так, как написано. Во французском связь между буквой и звуком непрямая. Сочетание e-a-u читается как один звук «о». И самое важное: не записывайте французские слова кириллицей. Это кажется удобным, но закрепляет звуки, которых во французском нет.",
+      "audio": "audio-02-0e085594c9.mp3"
+    },
+    {
+      "position": 2,
+      "kind": "slide",
+      "title": "Разминка: гимнастика рта",
+      "lines": [
+        "1. Улыбка: широко улыбнуться, затем отпустить губы.",
+        "2. Свист: округлить губы.",
+        "3. Чередование: быстро переходить от растянутых губ к округлённым.",
+        "4. Раскрытие: открыть челюсть, не напрягая её.",
+        "5. Цикл: повторять i – u – ou – i – u – ou.",
+        "Совет: используйте зеркало. Сначала утрируйте движение, потом говорите обычно."
+      ],
+      "narration": "La prononciation française est un travail musculaire. Avant chaque séance, accordez-lui une minute. Le sourire, le sifflet, l'alternance, l'ouverture de la mâchoire, puis le cycle i, u, ou. Faites-le devant un miroir : vous devez voir vos lèvres changer de forme.",
+      "media": "slide-03.webp",
+      "narration_translation": "Французское произношение — это работа мышц. Перед каждым занятием тратьте одну минуту на разминку. Улыбка, свист, чередование, раскрытие челюсти, и цикл и-ю-у. Делайте это перед зеркалом: вы должны видеть, что губы действительно меняют форму.",
+      "audio": "audio-03-55cf1a2945.mp3"
+    },
+    {
+      "position": 3,
+      "kind": "slide",
+      "title": "Диагностика: контраст /u/ и /y/",
+      "lines": [
+        "Звук /u/ — язык назад, губы округлены: tout, roue, sous, doux, bouche, vous.",
+        "Звук /y/ — язык вперёд, как для «i», губы округлены: tu, rue, su, dû, lune.",
+        "Разница только в положении языка, не в губах."
+      ],
+      "narration": "Voici la première erreur, et la plus coûteuse : confondre ou et u. Dans le mot tout, la langue est reculée. Dans le mot tu, la langue est en avant, comme pour i, et les lèvres sont arrondies. Si vous dites tout à la place de tu, votre interlocuteur entend un autre mot.",
+      "media": "slide-04.webp",
+      "narration_translation": "Вот первая и самая дорогая ошибка: путать «у» и «ю». В слове tout язык отодвинут назад. В слове tu язык стоит впереди, как при «и», а губы при этом округлены. Если сказать tout вместо tu, собеседник услышит другое слово.",
+      "audio": "audio-04-47a507e7ad.mp3"
+    },
+    {
+      "position": 4,
+      "kind": "slide",
+      "title": "Инженерия звука: как построить /y/",
+      "lines": [
+        "Шаг 1: произнесите французское «i» — иии.",
+        "Шаг 2: оставьте язык ровно в этом положении.",
+        "Шаг 3: округлите губы, не отодвигая язык назад.",
+        "Шаг 4: постепенно перейдите от «иии» к «ююю».",
+        "Практика: tu, rue, lune, musique, salut, étudiant.",
+        "Целевая фраза: « Tu habites dans une rue près de l'université. »"
+      ],
+      "narration": "Le son u ne se cherche pas à l'oreille. Il se fabrique. Dites i, i, i. Sans bouger la langue, arrondissez les lèvres. Vous venez de produire le u français. Répétez dix fois de suite, puis essayez sur des mots : tu, rue, lune, musique, salut, étudiant.",
+      "media": "slide-05.webp",
+      "narration_translation": "Звук «ю» не нужно искать на слух. Его собирают механически. Произнесите и-и-и. Не двигая язык, округлите губы. Получился французский звук «ю». Повторите это десять раз подряд, затем попробуйте на словах: tu, rue, lune, musique, salut, étudiant.",
+      "audio": "audio-05-5fe19d216a.mp3"
+    },
+    {
+      "position": 5,
+      "kind": "slide",
+      "title": "Носовые гласные: воздух раздваивается",
+      "lines": [
+        "/ɑ̃/ : enfant, dans, sans, blanc.",
+        "/ɔ̃/ : bon, nom, maison, blond.",
+        "/ɛ̃/ : pain, matin, médecin.",
+        "Строгое правило: никогда не произносите слышимую согласную « n ». Носовой звук — это резонанс, одна единая гласная."
+      ],
+      "narration": "Le français a trois voyelles nasales. L'air passe en même temps par la bouche et par le nez. L'erreur principale des russophones est d'ajouter une consonne n à la fin. Dans le mot enfant, il n'y a aucun n. Il y a une voyelle nasale, et rien d'autre.",
+      "media": "slide-06.webp",
+      "narration_translation": "Во французском есть три носовые гласные. Воздух проходит одновременно через рот и через нос. Главная ошибка русскоговорящих — добавлять согласную «н» в конце. В слове enfant нет никакого «н». Есть один носовой гласный звук, и больше ничего.",
+      "audio": "audio-06-2786227f5e.mp3"
+    },
+    {
+      "position": 6,
+      "kind": "slide",
+      "title": "Карта французского «R» /ʁ/",
+      "lines": [
+        "Кончик языка расслаблен. Не напрягайте горло.",
+        "Французское /ʁ/ — мягкое трение в задней части рта.",
+        "Русское раскатистое «р» не подходит: не заставляйте кончик языка вибрировать.",
+        "Прогрессия: rue, rare, regarder, travailler, très heureux."
+      ],
+      "narration": "Le r français ne roule pas. Il se forme à l'arrière, par un frottement léger, la pointe de la langue au repos. Si votre langue vibre à l'avant, le son trahit immédiatement l'accent russe. Commencez par le mot rue, puis montez l'escalier : rare, regarder, travailler, très heureux.",
+      "media": "slide-07.webp",
+      "narration_translation": "Французское «р» не раскатывается. Оно образуется сзади, лёгким трением, при расслабленном кончике языка. Если ваш язык вибрирует впереди, звук сразу выдаёт русский акцент. Начните со слова rue и поднимайтесь по лестнице: rare, regarder, travailler, très heureux.",
+      "audio": "audio-07-96c445c466.mp3"
+    },
+    {
+      "position": 7,
+      "kind": "slide",
+      "title": "Оттенки « E »: насколько открыт рот",
+      "lines": [
+        "/e/ — закрытый, чаще пишется é: été, parler, thé, mes.",
+        "/ɛ/ — открытый, пишется è, ê, ai: était, père, terre, mais, mère, fête.",
+        "Сравните вслух: été / était — mes / mais — thé / terre."
+      ],
+      "narration": "La lettre e est, en français, deux sons différents. Un e fermé, lèvres presque serrées, et un e ouvert, bouche plus large. Comparez ces paires à voix haute : été et était, mes et mais. Si vous n'entendez pas la différence, ouvrez davantage la bouche sur le second mot.",
+      "media": "slide-08.webp",
+      "narration_translation": "Буква «е» во французском — это два разных звука. Закрытый, при почти сомкнутых губах, и открытый, при более раскрытом рте. Сравните пары вслух: été и était, mes и mais. Если разницы не слышно, откройте рот шире на втором слове.",
+      "audio": "audio-08-2f0d25dbc8.mp3"
+    },
+    {
+      "position": 8,
+      "kind": "slide",
+      "title": "Беглое « e »: гласная-призрак",
+      "lines": [
+        "Je t(e) le d(e)mande.",
+        "Je n(e) sais pas.",
+        "D(e)main, je r(e)viens.",
+        "« e » в petit, demain или je может исчезать в зависимости от темпа речи.",
+        "Для начала произносите медленно, затем послушайте естественную версию. Не убирайте все « e » подряд."
+      ],
+      "narration": "Certains e disparaissent quand on parle vite. Je te le demande se dit entièrement lentement, et presque j'te l'demande rapidement. Au début, prononcez tout. Vous supprimerez ces e de vous-même, quand le débit augmentera.",
+      "media": "slide-09.webp",
+      "narration_translation": "Некоторые «е» во французском исчезают при быстрой речи. Je te le demande звучит как «жё тё лё дёманд» медленно и почти как «ж'т'ль деманд» быстро. На старте произносите всё. Убирать «е» вы начнёте сами, когда темп вырастет.",
+      "audio": "audio-09-d02931bf47.mp3"
+    },
+    {
+      "position": 9,
+      "kind": "slide",
+      "title": "Правило тишины: конечные согласные",
+      "lines": [
+        "Чаще немые: petit, grand, français, parler, beaucoup.",
+        "Частые исключения: avec, sac, chef, neuf.",
+        "Методика: всегда учите слово вместе с его звучанием, а не только с написанием."
+      ],
+      "narration": "La dernière consonne écrite ne se prononce presque jamais. Petit, grand, français : les lettres finales se taisent. Mais il y a des exceptions : avec, sac, chef, neuf. Aucune règle ne les donne, on les retient avec leur son. Apprenez donc chaque mot avec son audio, et pas seulement avec les yeux.",
+      "media": "slide-10.webp",
+      "narration_translation": "Последняя написанная согласная чаще всего не произносится. Petit, grand, français — конечные буквы молчат. Но есть исключения: avec, sac, chef, neuf. Их не вывести правилом, их запоминают со звуком. Поэтому учите каждое слово вместе с аудио, а не только глазами.",
+      "audio": "audio-10-2efc4ad9fd.mp3"
+    },
+    {
+      "position": 10,
+      "kind": "slide",
+      "title": "Звонкий или глухой? CH, J, GN",
+      "lines": [
+        "CH /ʃ/ — воздух без голоса: chat, chercher, dimanche, chou, cher.",
+        "J /ʒ/ — голос вибрирует: jeudi, jamais, manger, joue, gérer.",
+        "GN /ɲ/ — носовая согласная: montagne, ligne, gagner.",
+        "Действие: положите руку на горло и почувствуйте разницу вибрации между chou и joue."
+      ],
+      "narration": "La différence entre ch et j tient seulement à la voix. Posez la main sur votre gorge. Dites chou : rien ne vibre. Dites joue : la gorge vibre. Le groupe g, n est un seul son mouillé, comme dans montagne, et non un g suivi d'un n.",
+      "media": "slide-11.webp",
+      "narration_translation": "Разница между ch и j — только в голосе. Положите руку на горло. Скажите chou: вибрации нет. Скажите joue: горло вибрирует. Сочетание gn — это один мягкий носовой звук, как в montagne, а не «г» плюс «н».",
+      "audio": "audio-11-92b8553208.mp3"
+    },
+    {
+      "position": 11,
+      "kind": "slide",
+      "title": "Искусство связывания: звуковой мост",
+      "lines": [
+        "les amis → /lezami/",
+        "vous avez → /vuzave/",
+        "un enfant → /ɛ̃nɑ̃fɑ̃/",
+        "Правило: обычно немая согласная «просыпается» перед гласной.",
+        "Тренируйтесь сначала на les/un/des + существительное и на vous/nous + глагол."
+      ],
+      "narration": "La liaison est ce qui rend la parole française continue. Une consonne muette à la fin d'un mot reprend vie si le mot suivant commence par une voyelle. Les amis se prononce en un seul bloc. Commencez par les deux cas les plus fréquents : article plus nom, pronom plus verbe.",
+      "media": "slide-12.webp",
+      "narration_translation": "Связывание — то, что делает французскую речь слитной. Согласная, которая молчит в конце слова, оживает, если следующее слово начинается с гласной. Les amis произносится как одно слово: лезами. Начните с двух самых частых случаев: артикль плюс существительное, местоимение плюс глагол.",
+      "audio": "audio-12-e23b07e98b.mp3"
+    },
+    {
+      "position": 12,
+      "kind": "slide",
+      "title": "Архитектура фразы: ритм и дыхание",
+      "lines": [
+        "[Je-vou-drais-un-bil-let] ↗ [pour-Pa-ris] ↘",
+        "Во французском слова соединяются в смысловые группы.",
+        "• Il arrive demain. • Vous avez une minute ?",
+        "Принцип: не делайте паузу после каждого слова. Единица произношения — ритмическая группа, а не отдельное слово."
+      ],
+      "narration": "Et pour finir, le plus audible. Le français ne se prononce pas mot par mot. Il se prononce par groupes. Je voudrais un billet : un groupe, qui monte à la fin. Pour Paris : un second groupe, qui descend. Si vous détachez chaque mot, on vous comprend, mais on entend un étranger.",
+      "media": "slide-13.webp",
+      "narration_translation": "И последнее, самое заметное. Французский не произносится слово за словом. Он произносится группами. Je voudrais un billet — это одна группа, с подъёмом в конце. Pour Paris — вторая, с понижением. Если вы разрываете каждое слово, вас понимают, но слышат иностранца.",
+      "audio": "audio-13-6c7a084334.mp3"
+    },
+    {
+      "position": 13,
+      "kind": "slide",
+      "title": "Итог: шесть ловушек для русскоговорящих",
+      "lines": [
+        "1. Путаница /u/ и /y/: сказать « tout » вместо « tu ».",
+        "2. Ложное « н »: добавлять слышимую согласную после /ɑ̃/, /ɔ̃/, /ɛ̃/.",
+        "3. Раскатистое «р»: заставлять вибрировать кончик языка.",
+        "4. Полное проговаривание: систематически произносить конечные буквы.",
+        "5. Стаккато: разделять каждое слово и забывать связывания.",
+        "6. Русское ударение: переносить русскую тоническую схему на французский."
+      ],
+      "narration": "Voici les six erreurs qui font reconnaître un russophone en une phrase. Relisez cette liste avant chaque séance. En corrigeant seulement les trois premières, vous deviendrez nettement plus clair.",
+      "media": "slide-14.webp",
+      "narration_translation": "Вот шесть ошибок, по которым русскоговорящего узнают сразу. Перечитывайте этот список перед каждым занятием. Исправив только первые три, вы станете заметно понятнее.",
+      "audio": "audio-14-e27972c4ee.mp3"
+    },
+    {
+      "position": 14,
+      "kind": "slide",
+      "title": "План тренировки: десять минут в день",
+      "lines": [
+        "2 мин — внимательно слушать носителя.",
+        "2 мин — вслух повторять минимальные пары (/u/ и /y/).",
+        "2 мин — отрабатывать три носовые гласные.",
+        "2 мин — читать пять слов с французским «R».",
+        "2 мин — записать себя и сравнить с оригиналом.",
+        "Задание: запишите фразу « J'habite rue des Lilas, près de l'université. » и отметьте три самых трудных звука.",
+        "Регулярность важнее совершенства."
+      ],
+      "narration": "Dix minutes par jour valent mieux que deux heures une fois par semaine. Deux minutes d'écoute, deux de paires répétées, deux de voyelles nasales, deux de r, deux à vous enregistrer. Enregistrez la phrase cible et notez les trois sons les plus difficiles. Nous commencerons par eux à la prochaine leçon.",
+      "media": "slide-15.webp",
+      "narration_translation": "Десять минут в день дают больше, чем два часа раз в неделю. Две минуты слушать, две повторять пары, две на носовые, две на «р», две на запись себя. Запишите целевую фразу и отметьте три звука, которые даются тяжелее всего. С них начнём следующий урок.",
+      "audio": "audio-15-9611042f94.mp3"
+    }
+  ],
+  "exercises": [
+    {
+      "position": 0,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "В слове « tu » где находится язык?"
+      },
+      "options": {
+        "ru": [
+          "Сзади, как в « tout »",
+          "Впереди, как при « i »",
+          "Положение не важно"
+        ]
+      },
+      "answer": {
+        "ru": "Впереди, как при « i »"
+      },
+      "explanation": {
+        "ru": "Губы округлены в обоих словах. Отличает их только язык: назад для /u/, вперёд для /y/."
+      }
+    },
+    {
+      "position": 1,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Сколько согласных « n » слышно в слове « enfant »?"
+      },
+      "options": {
+        "ru": [
+          "Ни одной",
+          "Одна",
+          "Две"
+        ]
+      },
+      "answer": {
+        "ru": "Ни одной"
+      },
+      "explanation": {
+        "ru": "Носовой гласный — это резонанс, а не гласная плюс « n ». Слышимой согласной здесь нет."
+      }
+    },
+    {
+      "position": 2,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Какое из этих слов произносится с конечной согласной?"
+      },
+      "options": {
+        "ru": [
+          "petit",
+          "grand",
+          "neuf"
+        ]
+      },
+      "answer": {
+        "ru": "neuf"
+      },
+      "explanation": {
+        "ru": "neuf входит в частые исключения вместе с avec, sac и chef. В petit и grand конечная согласная немая."
+      }
+    },
+    {
+      "position": 3,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Как произносится « les amis »?"
+      },
+      "options": {
+        "ru": [
+          "/le ami/",
+          "/lezami/",
+          "/les ami/"
+        ]
+      },
+      "answer": {
+        "ru": "/lezami/"
+      },
+      "explanation": {
+        "ru": "Немая « s » оживает перед гласной и звучит как /z/. Это и есть связывание."
+      }
+    },
+    {
+      "position": 4,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Чем « chou » отличается от « joue »?"
+      },
+      "options": {
+        "ru": [
+          "Положением языка",
+          "Вибрацией голосовых связок",
+          "Длительностью гласного"
+        ]
+      },
+      "answer": {
+        "ru": "Вибрацией голосовых связок"
+      },
+      "explanation": {
+        "ru": "CH глухой, J звонкий. Положите руку на горло: на joue чувствуется вибрация, на chou — нет."
+      }
+    },
+    {
+      "position": 5,
+      "kind": "mcq",
+      "prompt": {
+        "ru": "Какова единица произношения во французском?"
+      },
+      "options": {
+        "ru": [
+          "Отдельное слово",
+          "Ритмическая группа",
+          "Слог"
+        ]
+      },
+      "answer": {
+        "ru": "Ритмическая группа"
+      },
+      "explanation": {
+        "ru": "Слова соединяются в смысловые группы. Пауза после каждого слова и есть «стаккато» из списка шести ловушек."
+      }
+    }
+  ]
+}

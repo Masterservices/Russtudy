@@ -1,0 +1,336 @@
+{
+  "slug": "alphabet-cyrillique",
+  "target_lang": "ru",
+  "ui_lang": "fr",
+  "position": 1,
+  "title": {
+    "fr": "L'alphabet cyrillique : lire le russe dès la première leçon"
+  },
+  "summary": {
+    "fr": "Les lettres déjà connues, les quatre faux amis (В, Р, Н, С) et les lettres nouvelles (Ж, Ш, Щ, Ы) — assez pour lire vos premiers mots russes."
+  },
+  "objectives": {
+    "fr": [
+      "Reconnaître et lire les lettres identiques au latin : А, К, М, О, Т, Е",
+      "Éviter les quatre faux amis В, Р, Н, С, qui ne se lisent pas comme en français",
+      "Prononcer les lettres nouvelles Ж, Ш, Щ et la voyelle Ы",
+      "Lire à voix haute une dizaine de mots russes courants"
+    ]
+  },
+  "is_free": true,
+  "duration_min": 14,
+  "source_file": null,
+  "blocks": [
+    {
+      "position": 0,
+      "kind": "slide",
+      "title": "L'alphabet cyrillique : bienvenue",
+      "lines": [
+        "Le russe s'écrit avec l'alphabet cyrillique : 33 lettres.",
+        "Bonne nouvelle : beaucoup de lettres ressemblent déjà au latin.",
+        "Dans cette leçon : les lettres faciles, les pièges, les lettres nouvelles.",
+        "Entre guillemets, nous donnons une prononciation approximative en français : c'est une approximation, pas la vérité du son. Écoutez toujours la voix."
+      ],
+      "narration": "Здравствуйте! Это русский алфавит. В нём тридцать три буквы. Начнём спокойно, буква за буквой.",
+      "narration_translation": "Bonjour ! Voici l'alphabet russe. Il contient trente-trois lettres. Commençons calmement, lettre par lettre.",
+      "media": "slide-01.webp",
+      "audio": "audio-01-8da96fd3e8.mp3"
+    },
+    {
+      "position": 1,
+      "kind": "slide",
+      "title": "Première habitude : écouter avant de lire",
+      "lines": [
+        "Ne lisez pas le russe comme du français.",
+        "Une lettre russe correspond presque toujours à un seul son stable.",
+        "Apprenez chaque lettre avec un mot entier, jamais seule.",
+        "Conseil : écrivez les lettres à la main, c'est ce qui les fixe le plus vite."
+      ],
+      "narration": "Сначала слушайте, потом читайте. Каждая буква — один звук. Пишите буквы рукой: так вы запомните быстрее.",
+      "narration_translation": "D'abord écoutez, ensuite lisez. Chaque lettre correspond à un son. Écrivez les lettres à la main : vous les retiendrez plus vite.",
+      "media": "slide-02.webp",
+      "audio": "audio-02-7b9601f657.mp3"
+    },
+    {
+      "position": 2,
+      "kind": "slide",
+      "title": "Groupe 1 : les lettres que vous connaissez déjà",
+      "lines": [
+        "А = « a » — К = « k » — М = « m » — О = « o » — Т = « t » — Е = « ié »",
+        "Même forme, même son qu'en français (approximativement).",
+        "Mots : МАМА (maman), КОТ (chat), ТОМ, АТОМ.",
+        "Vous savez déjà lire quatre mots russes."
+      ],
+      "narration": "Мама. Кот. Атом. Том. Эти буквы вы уже знаете. Читайте медленно: ма-ма, кот.",
+      "narration_translation": "Maman. Chat. Atome. Tom. Ces lettres, vous les connaissez déjà. Lisez lentement : ma-ma, kot.",
+      "media": "slide-03.webp",
+      "audio": "audio-03-0b0eceda61.mp3"
+    },
+    {
+      "position": 3,
+      "kind": "slide",
+      "title": "Faux ami n° 1 : В se lit « v »",
+      "lines": [
+        "В n'est pas un « b ». В = « v ».",
+        "ВОДА = eau — ВИНО = vin — МОСКВА = Moscou — ВЫ = vous",
+        "Attention : « Moskba » est une erreur classique. On dit « Moskva »."
+      ],
+      "narration": "Вода. Вино. Москва. Буква В — это звук «в». Вода, вино, Москва.",
+      "narration_translation": "Eau. Vin. Moscou. La lettre В, c'est le son « v ». Eau, vin, Moscou.",
+      "media": "slide-04.webp",
+      "audio": "audio-04-676da0a678.mp3"
+    },
+    {
+      "position": 4,
+      "kind": "slide",
+      "title": "Faux ami n° 2 : Р se lit « r »",
+      "lines": [
+        "Р n'est pas un « p ». Р = « r » roulé, avec le bout de la langue.",
+        "РУКА = main — РАБОТА = travail — РОССИЯ = Russie",
+        "Le « r » russe roule : il est plus proche de l'arabe que du français."
+      ],
+      "narration": "Рука. Работа. Россия. Буква Р — это звук «р». Рука, работа, Россия.",
+      "narration_translation": "Main. Travail. Russie. La lettre Р, c'est le son « r ». Main, travail, Russie.",
+      "media": "slide-05.webp",
+      "audio": "audio-05-f4f980e048.mp3"
+    },
+    {
+      "position": 5,
+      "kind": "slide",
+      "title": "Faux ami n° 3 : Н se lit « n »",
+      "lines": [
+        "Н n'est pas un « h ». Н = « n ».",
+        "НЕТ = non — ОНА = elle — ОН = il — АННА = Anna",
+        "Repère visuel : Н ressemble à un H latin, mais se prononce « n »."
+      ],
+      "narration": "Нет. Он. Она. Анна. Буква Н — это звук «н». Нет, он, она.",
+      "narration_translation": "Non. Il. Elle. Anna. La lettre Н, c'est le son « n ». Non, il, elle.",
+      "media": "slide-06.webp",
+      "audio": "audio-06-8b302309b3.mp3"
+    },
+    {
+      "position": 6,
+      "kind": "slide",
+      "title": "Faux ami n° 4 : С se lit « s »",
+      "lines": [
+        "С n'est pas un « c » dur. С = « s », toujours.",
+        "СОК = jus — СТОП = stop — СПАСИБО = merci",
+        "СПАСИБО est peut-être le mot le plus utile de cette leçon."
+      ],
+      "narration": "Сок. Стоп. Спасибо. Буква С — это звук «с». Спасибо!",
+      "narration_translation": "Jus. Stop. Merci. La lettre С, c'est le son « s ». Merci !",
+      "media": "slide-07.webp",
+      "audio": "audio-07-98cad64df6.mp3"
+    },
+    {
+      "position": 7,
+      "kind": "slide",
+      "title": "Révision des quatre pièges : В Р Н С",
+      "lines": [
+        "В = v, pas b.",
+        "Р = r, pas p.",
+        "Н = n, pas h.",
+        "С = s, pas c dur.",
+        "Lisez à voix haute : ВИНО — РУКА — НЕТ — СОК."
+      ],
+      "narration": "Вино. Рука. Нет. Сок. Четыре буквы, четыре звука: в, р, н, с.",
+      "narration_translation": "Vin. Main. Non. Jus. Quatre lettres, quatre sons : v, r, n, s.",
+      "media": "slide-08.webp",
+      "audio": "audio-08-b0258fd70f.mp3"
+    },
+    {
+      "position": 8,
+      "kind": "slide",
+      "title": "Lettre nouvelle : Ж",
+      "lines": [
+        "Ж = le « j » du français « jour ». Approximation : « j ».",
+        "ЖЕНА = épouse — ЖУРНАЛ = revue — ЖАРА = forte chaleur",
+        "Bonne nouvelle pour un francophone : ce son existe déjà en français."
+      ],
+      "narration": "Жена. Журнал. Жара. Буква Ж — это звук «ж», как в слове журнал.",
+      "narration_translation": "Épouse. Revue. Forte chaleur. La lettre Ж, c'est le son « j », comme dans « journal ».",
+      "media": "slide-09.webp",
+      "audio": "audio-09-6dda630c74.mp3"
+    },
+    {
+      "position": 9,
+      "kind": "slide",
+      "title": "Lettre nouvelle : Ш",
+      "lines": [
+        "Ш = le « ch » du français « chat ». Approximation : « ch ».",
+        "ШАПКА = bonnet — ШКОЛА = école — МАШИНА = voiture",
+        "Ш est dur : la langue est reculée, la bouche large."
+      ],
+      "narration": "Шапка. Школа. Машина. Буква Ш — это звук «ш». Школа, машина.",
+      "narration_translation": "Bonnet. École. Voiture. La lettre Ш, c'est le son « ch ». École, voiture.",
+      "media": "slide-10.webp",
+      "audio": "audio-10-0f54d0170f.mp3"
+    },
+    {
+      "position": 10,
+      "kind": "slide",
+      "title": "Lettre nouvelle : Щ",
+      "lines": [
+        "Щ = un « ch » mouillé, plus long et plus en avant que Ш.",
+        "ЩИ = soupe aux choux — БОРЩ = bortsch — ПЛОЩАДЬ = place",
+        "Comparez à voix haute : ША / ЩА. Le second est plus doux."
+      ],
+      "narration": "Щи. Борщ. Площадь. Слушайте разницу: ша — ща. Ша — твёрдый звук, ща — мягкий.",
+      "narration_translation": "Soupe aux choux. Bortsch. Place. Écoutez la différence : cha — chtcha. Le premier est dur, le second est mouillé.",
+      "media": "slide-11.webp",
+      "audio": "audio-11-fdd7711f47.mp3"
+    },
+    {
+      "position": 11,
+      "kind": "slide",
+      "title": "Lettre nouvelle : Ы",
+      "lines": [
+        "Ы n'existe pas en français : voyelle sourde, langue reculée.",
+        "МЫ = nous — ТЫ = tu — СЫР = fromage — РЫБА = poisson",
+        "Méthode : dites « i », puis tirez la langue vers l'arrière sans bouger les lèvres.",
+        "Comparez : МИР / МЫ — ces deux voyelles sont des mots différents."
+      ],
+      "narration": "Мы. Ты. Сыр. Рыба. Это звук «ы». Слушайте: и — ы, и — ы. Мы, ты.",
+      "narration_translation": "Nous. Tu. Fromage. Poisson. Voici le son « y ». Écoutez : i — y, i — y. Nous, tu.",
+      "media": "slide-12.webp",
+      "audio": "audio-12-96605a980f.mp3"
+    },
+    {
+      "position": 12,
+      "kind": "slide",
+      "title": "Lecture finale : vous lisez déjà du russe",
+      "lines": [
+        "МОСКВА — СПАСИБО — МАШИНА — РЫБА — ШКОЛА",
+        "Vous reconnaissez maintenant : А К М О Т Е В Р Н С Ж Ш Щ Ы.",
+        "Programme de révision : 5 minutes par jour, à voix haute, avec l'audio.",
+        "Prochaine leçon : dire bonjour et se présenter."
+      ],
+      "narration": "Москва. Спасибо. Машина. Рыба. Школа. Очень хорошо! До свидания!",
+      "narration_translation": "Moscou. Merci. Voiture. Poisson. École. Très bien ! Au revoir !",
+      "media": "slide-13.webp",
+      "audio": "audio-13-7f04be7cf2.mp3"
+    }
+  ],
+  "exercises": [
+    {
+      "position": 0,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Comment se prononce le mot МОСКВА ?"
+      },
+      "options": {
+        "fr": [
+          "« Moskba »",
+          "« Moskva »",
+          "« Mochkva »"
+        ]
+      },
+      "answer": {
+        "fr": "« Moskva »"
+      },
+      "explanation": {
+        "fr": "La lettre В se lit « v », jamais « b ». C'est le premier des quatre faux amis."
+      }
+    },
+    {
+      "position": 1,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Quelle lettre russe se prononce « n » ?"
+      },
+      "options": {
+        "fr": [
+          "Н",
+          "П",
+          "Р"
+        ]
+      },
+      "answer": {
+        "fr": "Н"
+      },
+      "explanation": {
+        "fr": "Н ressemble au H latin mais donne le son « n » : НЕТ (non), ОН (il)."
+      }
+    },
+    {
+      "position": 2,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Dans le mot РУКА (main), la lettre Р donne le son :"
+      },
+      "options": {
+        "fr": [
+          "« p »",
+          "« r » roulé",
+          "« b »"
+        ]
+      },
+      "answer": {
+        "fr": "« r » roulé"
+      },
+      "explanation": {
+        "fr": "Р est toujours un « r », roulé avec le bout de la langue."
+      }
+    },
+    {
+      "position": 3,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Quelle lettre correspond au son du français « jour » ?"
+      },
+      "options": {
+        "fr": [
+          "Ш",
+          "Щ",
+          "Ж"
+        ]
+      },
+      "answer": {
+        "fr": "Ж"
+      },
+      "explanation": {
+        "fr": "Ж = « j » de « jour » : ЖУРНАЛ (revue). Ш est le « ch » de « chat », et Щ un « ch » mouillé."
+      }
+    },
+    {
+      "position": 4,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Quelle différence entre Ш et Щ ?"
+      },
+      "options": {
+        "fr": [
+          "Aucune, ce sont deux écritures du même son",
+          "Ш est dur, Щ est mouillé et plus doux",
+          "Ш est une voyelle, Щ une consonne"
+        ]
+      },
+      "answer": {
+        "fr": "Ш est dur, Щ est mouillé et plus doux"
+      },
+      "explanation": {
+        "fr": "Comparez ША et ЩА : le second se forme plus en avant dans la bouche et sonne plus doux."
+      }
+    },
+    {
+      "position": 5,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Le son Ы se travaille comment ?"
+      },
+      "options": {
+        "fr": [
+          "En arrondissant fortement les lèvres comme pour « ou »",
+          "En disant « i » puis en reculant la langue, lèvres immobiles",
+          "En ajoutant un « n » à la fin de la voyelle"
+        ]
+      },
+      "answer": {
+        "fr": "En disant « i » puis en reculant la langue, lèvres immobiles"
+      },
+      "explanation": {
+        "fr": "Ы n'existe pas en français : on le fabrique à partir de « i » en reculant la langue. МЫ, ТЫ, РЫБА."
+      }
+    }
+  ]
+}

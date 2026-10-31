@@ -1,0 +1,341 @@
+{
+  "slug": "chiffres-et-heure",
+  "target_lang": "ru",
+  "ui_lang": "fr",
+  "position": 3,
+  "title": {
+    "fr": "Chiffres et heure : compter, demander un prix, dire l'heure"
+  },
+  "summary": {
+    "fr": "Les nombres de 0 à 20, la question СКОЛЬКО ЭТО СТОИТ pour un prix, et les formules de base pour demander et dire l'heure."
+  },
+  "objectives": {
+    "fr": [
+      "Compter de 0 à 20 en russe et reconnaître la terminaison -НАДЦАТЬ",
+      "Demander un prix avec СКОЛЬКО ЭТО СТОИТ et faire répéter si besoin",
+      "Demander l'heure avec СКОЛЬКО ВРЕМЕНИ ou КОТОРЫЙ ЧАС",
+      "Dire l'heure avec ЧАС, ЧАСА et ЧАСОВ, matin ou soir"
+    ]
+  },
+  "is_free": false,
+  "duration_min": 14,
+  "source_file": null,
+  "blocks": [
+    {
+      "position": 0,
+      "kind": "slide",
+      "title": "Compter, demander un prix, dire l'heure",
+      "lines": [
+        "Trois compétences très concrètes : les nombres de 0 à 20, le prix, l'heure.",
+        "Les nombres russes s'apprennent par petits paquets de cinq.",
+        "Les prononciations entre guillemets restent des approximations : suivez l'audio."
+      ],
+      "narration": "Здравствуйте! Сегодня мы учим числа. Ноль, один, два, три. Слушайте и повторяйте.",
+      "narration_translation": "Bonjour ! Aujourd'hui nous apprenons les nombres. Zéro, un, deux, trois. Écoutez et répétez.",
+      "media": "slide-01.webp",
+      "audio": "audio-01-7c9e27c221.mp3"
+    },
+    {
+      "position": 1,
+      "kind": "slide",
+      "title": "De 0 à 5",
+      "lines": [
+        "0 НОЛЬ « nol » — 1 ОДИН « adine » — 2 ДВА « dva »",
+        "3 ТРИ « tri » — 4 ЧЕТЫРЕ « tchétyrié » — 5 ПЯТЬ « piat »",
+        "Remarquez le Ы de ЧЕТЫРЕ, vu dans la leçon sur l'alphabet.",
+        "Répétez trois fois de suite, lentement, puis plus vite."
+      ],
+      "narration": "Ноль, один, два, три, четыре, пять. Ещё раз: один, два, три, четыре, пять.",
+      "narration_translation": "Zéro, un, deux, trois, quatre, cinq. Encore une fois : un, deux, trois, quatre, cinq.",
+      "media": "slide-02.webp",
+      "audio": "audio-02-02a2e3d045.mp3"
+    },
+    {
+      "position": 2,
+      "kind": "slide",
+      "title": "De 6 à 10",
+      "lines": [
+        "6 ШЕСТЬ « chest » — 7 СЕМЬ « siem » — 8 ВОСЕМЬ « vossiem »",
+        "9 ДЕВЯТЬ « diéviat » — 10 ДЕСЯТЬ « diéssiat »",
+        "Piège courant : ДЕВЯТЬ (9) et ДЕСЯТЬ (10) se ressemblent beaucoup.",
+        "Astuce : 9 contient un В, 10 contient un С."
+      ],
+      "narration": "Шесть, семь, восемь, девять, десять. Девять, десять. Слушайте разницу: девять — десять.",
+      "narration_translation": "Six, sept, huit, neuf, dix. Neuf, dix. Écoutez la différence : neuf — dix.",
+      "media": "slide-03.webp",
+      "audio": "audio-03-2fc998ea12.mp3"
+    },
+    {
+      "position": 3,
+      "kind": "slide",
+      "title": "Révision rapide : 1 à 10",
+      "lines": [
+        "ОДИН, ДВА, ТРИ, ЧЕТЫРЕ, ПЯТЬ, ШЕСТЬ, СЕМЬ, ВОСЕМЬ, ДЕВЯТЬ, ДЕСЯТЬ.",
+        "Exercice : comptez à l'envers, de ДЕСЯТЬ à ОДИН.",
+        "Exercice : dites votre numéro de téléphone chiffre par chiffre."
+      ],
+      "narration": "Один, два, три, четыре, пять, шесть, семь, восемь, девять, десять. Очень хорошо!",
+      "narration_translation": "Un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix. Très bien !",
+      "media": "slide-04.webp",
+      "audio": "audio-04-294fe58079.mp3"
+    },
+    {
+      "position": 4,
+      "kind": "slide",
+      "title": "De 11 à 15 : la terminaison -НАДЦАТЬ",
+      "lines": [
+        "11 ОДИННАДЦАТЬ — 12 ДВЕНАДЦАТЬ — 13 ТРИНАДЦАТЬ",
+        "14 ЧЕТЫРНАДЦАТЬ — 15 ПЯТНАДЦАТЬ",
+        "Tous finissent par -НАДЦАТЬ, approximativement « -natsat ».",
+        "Il suffit donc de reconnaître le début : три → тринадцать."
+      ],
+      "narration": "Одиннадцать, двенадцать, тринадцать, четырнадцать, пятнадцать.",
+      "narration_translation": "Onze, douze, treize, quatorze, quinze.",
+      "media": "slide-05.webp",
+      "audio": "audio-05-8626315a87.mp3"
+    },
+    {
+      "position": 5,
+      "kind": "slide",
+      "title": "De 16 à 20",
+      "lines": [
+        "16 ШЕСТНАДЦАТЬ — 17 СЕМНАДЦАТЬ — 18 ВОСЕМНАДЦАТЬ",
+        "19 ДЕВЯТНАДЦАТЬ — 20 ДВАДЦАТЬ",
+        "20 ДВАДЦАТЬ est à part : il ne contient pas -НАДЦАТЬ.",
+        "Entraînement : 11, 13, 15, 17, 19, puis 12, 14, 16, 18, 20."
+      ],
+      "narration": "Шестнадцать, семнадцать, восемнадцать, девятнадцать, двадцать.",
+      "narration_translation": "Seize, dix-sept, dix-huit, dix-neuf, vingt.",
+      "media": "slide-06.webp",
+      "audio": "audio-06-587ab3e122.mp3"
+    },
+    {
+      "position": 6,
+      "kind": "slide",
+      "title": "Demander un prix",
+      "lines": [
+        "СКОЛЬКО? = combien ? — « skolka »",
+        "СКОЛЬКО ЭТО СТОИТ? = combien ça coûte ? — « skolka èta stoït »",
+        "ЭТО = ceci — СТОИТ = coûte",
+        "Formule minimale, toujours comprise : СКОЛЬКО?"
+      ],
+      "narration": "Сколько это стоит? Сколько? Сколько это стоит?",
+      "narration_translation": "Combien ça coûte ? Combien ? Combien ça coûte ?",
+      "media": "slide-07.webp",
+      "audio": "audio-07-10e411a6cd.mp3"
+    },
+    {
+      "position": 7,
+      "kind": "slide",
+      "title": "Comprendre la réponse",
+      "lines": [
+        "La réponse est souvent un nombre seul : ДЕСЯТЬ. ДВАДЦАТЬ.",
+        "РУБЛЬ est la monnaie russe ; ДИНАР, la monnaie tunisienne.",
+        "Si vous n'avez pas compris : ПОВТОРИТЕ, ПОЖАЛУЙСТА = répétez, s'il vous plaît.",
+        "Ou : НАПИШИТЕ, ПОЖАЛУЙСТА = écrivez, s'il vous plaît. Très efficace au début."
+      ],
+      "narration": "Повторите, пожалуйста. Напишите, пожалуйста. Медленно, пожалуйста.",
+      "narration_translation": "Répétez, s'il vous plaît. Écrivez, s'il vous plaît. Lentement, s'il vous plaît.",
+      "media": "slide-08.webp",
+      "audio": "audio-08-1749ec2dd0.mp3"
+    },
+    {
+      "position": 8,
+      "kind": "slide",
+      "title": "Deux mots pour acheter",
+      "lines": [
+        "ДОРОГО = c'est cher — « doraga »",
+        "ДЁШЕВО = c'est bon marché — « diochéva »",
+        "ДА, ПОЖАЛУЙСТА = oui, s'il vous plaît.",
+        "НЕТ, СПАСИБО = non, merci."
+      ],
+      "narration": "Дорого. Дёшево. Да, пожалуйста. Нет, спасибо.",
+      "narration_translation": "C'est cher. C'est bon marché. Oui, s'il vous plaît. Non, merci.",
+      "media": "slide-09.webp",
+      "audio": "audio-09-4121c8a805.mp3"
+    },
+    {
+      "position": 9,
+      "kind": "slide",
+      "title": "Demander l'heure",
+      "lines": [
+        "СКОЛЬКО ВРЕМЕНИ? = quelle heure est-il ? — « skolka vrémièni »",
+        "Variante également courante : КОТОРЫЙ ЧАС? — « katory tchas »",
+        "ИЗВИНИТЕ, СКОЛЬКО ВРЕМЕНИ? est la version polie, à un inconnu.",
+        "ЧАС veut dire à la fois « heure » et « une heure »."
+      ],
+      "narration": "Сколько времени? Который час? Извините, сколько времени?",
+      "narration_translation": "Quelle heure est-il ? Quelle heure est-il ? Excusez-moi, quelle heure est-il ?",
+      "media": "slide-10.webp",
+      "audio": "audio-10-c994e5df79.mp3"
+    },
+    {
+      "position": 10,
+      "kind": "slide",
+      "title": "Dire l'heure simplement",
+      "lines": [
+        "СЕЙЧАС = maintenant, il est… — « siétchas »",
+        "СЕЙЧАС ЧАС. = il est une heure.",
+        "СЕЙЧАС ДВА ЧАСА. — ТРИ ЧАСА. — ЧЕТЫРЕ ЧАСА.",
+        "СЕЙЧАС ПЯТЬ ЧАСОВ. — ШЕСТЬ ЧАСОВ. — ДЕСЯТЬ ЧАСОВ.",
+        "Retenez le schéma : 1 → ЧАС, 2-4 → ЧАСА, 5 et plus → ЧАСОВ."
+      ],
+      "narration": "Сейчас час. Сейчас два часа. Сейчас пять часов. Сейчас десять часов.",
+      "narration_translation": "Il est une heure. Il est deux heures. Il est cinq heures. Il est dix heures.",
+      "media": "slide-11.webp",
+      "audio": "audio-11-3225f0a97d.mp3"
+    },
+    {
+      "position": 11,
+      "kind": "slide",
+      "title": "Ajouter les minutes et le moment de la journée",
+      "lines": [
+        "СЕЙЧАС ДВА ЧАСА ДЕСЯТЬ МИНУТ. = il est deux heures dix.",
+        "МИНУТА = minute, МИНУТ = minutes (après 5 et plus).",
+        "УТРА = du matin — ДНЯ = de l'après-midi — ВЕЧЕРА = du soir",
+        "СЕМЬ ЧАСОВ УТРА. ВОСЕМЬ ЧАСОВ ВЕЧЕРА."
+      ],
+      "narration": "Сейчас два часа десять минут. Семь часов утра. Восемь часов вечера.",
+      "narration_translation": "Il est deux heures dix. Sept heures du matin. Huit heures du soir.",
+      "media": "slide-12.webp",
+      "audio": "audio-12-449f440c89.mp3"
+    },
+    {
+      "position": 12,
+      "kind": "slide",
+      "title": "Mise en pratique",
+      "lines": [
+        "— ИЗВИНИТЕ, СКОЛЬКО ВРЕМЕНИ?  — СЕЙЧАС ТРИ ЧАСА.  — СПАСИБО!",
+        "— СКОЛЬКО ЭТО СТОИТ?  — ДВАДЦАТЬ.  — СПАСИБО, ДА, ПОЖАЛУЙСТА.",
+        "Entraînement quotidien : dites l'heure en russe chaque fois que vous regardez votre montre.",
+        "Comptez de 1 à 20 à voix haute, une fois par jour."
+      ],
+      "narration": "Извините, сколько времени? Сейчас три часа. Спасибо! Сколько это стоит? Двадцать. Спасибо!",
+      "narration_translation": "Excusez-moi, quelle heure est-il ? Il est trois heures. Merci ! Combien ça coûte ? Vingt. Merci !",
+      "media": "slide-13.webp",
+      "audio": "audio-13-29a272df7d.mp3"
+    }
+  ],
+  "exercises": [
+    {
+      "position": 0,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Quel nombre russe correspond à 4 ?"
+      },
+      "options": {
+        "fr": [
+          "ЧЕТЫРЕ",
+          "ЧЕТЫРНАДЦАТЬ",
+          "ЧЕТЫРЕСТА"
+        ]
+      },
+      "answer": {
+        "fr": "ЧЕТЫРЕ"
+      },
+      "explanation": {
+        "fr": "ЧЕТЫРНАДЦАТЬ, avec la terminaison -НАДЦАТЬ, veut dire 14."
+      }
+    },
+    {
+      "position": 1,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Que veut dire ДЕВЯТЬ ?"
+      },
+      "options": {
+        "fr": [
+          "9",
+          "10",
+          "19"
+        ]
+      },
+      "answer": {
+        "fr": "9"
+      },
+      "explanation": {
+        "fr": "ДЕВЯТЬ = 9 et ДЕСЯТЬ = 10 ; ДЕВЯТНАДЦАТЬ = 19. Repère : 9 contient un В, 10 un С."
+      }
+    },
+    {
+      "position": 2,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Qu'ont en commun les nombres de 11 à 19 ?"
+      },
+      "options": {
+        "fr": [
+          "Ils commencent tous par ДВА",
+          "Ils finissent tous par -НАДЦАТЬ",
+          "Ils sont invariables"
+        ]
+      },
+      "answer": {
+        "fr": "Ils finissent tous par -НАДЦАТЬ"
+      },
+      "explanation": {
+        "fr": "Il suffit de reconnaître le début du mot : три → тринадцать. ДВАДЦАТЬ (20) sort de ce schéma."
+      }
+    },
+    {
+      "position": 3,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Comment demander un prix ?"
+      },
+      "options": {
+        "fr": [
+          "СКОЛЬКО ВРЕМЕНИ?",
+          "СКОЛЬКО ЭТО СТОИТ?",
+          "КАК ВАС ЗОВУТ?"
+        ]
+      },
+      "answer": {
+        "fr": "СКОЛЬКО ЭТО СТОИТ?"
+      },
+      "explanation": {
+        "fr": "СКОЛЬКО ВРЕМЕНИ porte sur l'heure. Les deux questions partagent le mot СКОЛЬКО (combien)."
+      }
+    },
+    {
+      "position": 4,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Comment dit-on « il est cinq heures » ?"
+      },
+      "options": {
+        "fr": [
+          "СЕЙЧАС ПЯТЬ ЧАС",
+          "СЕЙЧАС ПЯТЬ ЧАСА",
+          "СЕЙЧАС ПЯТЬ ЧАСОВ"
+        ]
+      },
+      "answer": {
+        "fr": "СЕЙЧАС ПЯТЬ ЧАСОВ"
+      },
+      "explanation": {
+        "fr": "Schéma de la leçon : 1 → ЧАС, 2 à 4 → ЧАСА, 5 et au-delà → ЧАСОВ."
+      }
+    },
+    {
+      "position": 5,
+      "kind": "mcq",
+      "prompt": {
+        "fr": "Vous n'avez pas compris le prix annoncé. Que dites-vous ?"
+      },
+      "options": {
+        "fr": [
+          "ДОРОГО",
+          "ПОВТОРИТЕ, ПОЖАЛУЙСТА",
+          "ДО СВИДАНИЯ"
+        ]
+      },
+      "answer": {
+        "fr": "ПОВТОРИТЕ, ПОЖАЛУЙСТА"
+      },
+      "explanation": {
+        "fr": "ДОРОГО signifie « c'est cher ». Autre solution très efficace : НАПИШИТЕ, ПОЖАЛУЙСТА (écrivez, s'il vous plaît)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Aperçu — cours animé</title>
+<link rel="stylesheet" href="noyau/polices.css">
+<link rel="stylesheet" href="noyau/coquille.css">
+<style>
+  html,body{height:100%;margin:0;background:#07060C}
+  #hote{position:fixed;inset:0}
+  .erreur{color:#fff;font:15px/1.6 system-ui;padding:40px;max-width:40em}
+  .erreur code{color:#FBBB21}
+</style>
+</head>
+<body>
+<div id="hote"></div>
+<script src="noyau/three.min.js"></script>
+<script src="noyau/moteur.js"></script>
+<script>
+/* Banc d'essai : ouvre un cours animé hors de la plateforme.
+   ?lecon=<cours>/<lecon>   la leçon à jouer
+   ?audio=<base>            où trouver les fichiers de narration
+   ?auto=1                  démarre sans l'écran d'entrée           */
+(function () {
+  var p = new URLSearchParams(location.search);
+  var id = p.get('lecon') || 'francais-a1/sons-du-francais';
+  var hote = document.getElementById('hote');
+
+  function erreur(message) {
+    hote.innerHTML = '<div class="erreur">' + message + '</div>';
+  }
+  function charger(src) {
+    return new Promise(function (ok, non) {
+      var s = document.createElement('script');
+      s.src = src;
+      s.onload = ok;
+      s.onerror = function () { non(new Error(src)); };
+      document.head.appendChild(s);
+    });
+  }
+
+  charger('lecons/' + id.replace('/', '__') + '.js')
+    .then(function () {
+      var lecon = (window.CoursAnimeLecons || {})[id];
+      if (!lecon) throw new Error('données absentes pour ' + id);
+      return charger('scenes/' + lecon.scene + '.js').then(function () { return lecon; });
+    })
+    .then(function (lecon) {
+      window.CoursAnime.demarrer(hote, lecon, {
+        baseAudio: p.get('audio') || ('audio/' + id + '/'),
+        auto: p.get('auto') === '1',
+      });
+    })
+    .catch(function (e) {
+      erreur('Impossible de charger <code>' + id + '</code>.<br>' + e.message +
+             '<br><br>Générez les données avec <code>node scripts/cours-anime/generer.mjs</code>.');
+    });
+})();
+</script>
+</body>
+</html>

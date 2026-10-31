@@ -1,0 +1,6 @@
+{
+  "name": "RusStudy Landing Page",
+  "description": "Landing page de conversion pour RusStudy - Agence d'orientation vers les universités russes pour étudiants tunisiens.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

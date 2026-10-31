@@ -1,0 +1,541 @@
+{
+  "scene": "grille",
+  "ui": "ru",
+  "langueNarration": "fr",
+  "config": {
+    "colonnes": [
+      {
+        "id": "m",
+        "titre": "МУЖСКОЙ"
+      },
+      {
+        "id": "f",
+        "titre": "ЖЕНСКИЙ"
+      },
+      {
+        "id": "p",
+        "titre": "МН. ЧИСЛО"
+      }
+    ],
+    "rangs": [
+      {
+        "id": "def",
+        "titre": "ОПРЕДЕЛ."
+      },
+      {
+        "id": "ind",
+        "titre": "НЕОПРЕДЕЛ."
+      }
+    ],
+    "cases": [
+      {
+        "col": "m",
+        "rang": "def",
+        "mot": "le"
+      },
+      {
+        "col": "f",
+        "rang": "def",
+        "mot": "la"
+      },
+      {
+        "col": "p",
+        "rang": "def",
+        "mot": "les"
+      },
+      {
+        "col": "m",
+        "rang": "ind",
+        "mot": "un"
+      },
+      {
+        "col": "f",
+        "rang": "ind",
+        "mot": "une"
+      },
+      {
+        "col": "p",
+        "rang": "ind",
+        "mot": "des"
+      }
+    ]
+  },
+  "intro": {
+    "meta": "RusStudy · Французский A1 · 12 минут",
+    "titre": "Артикли и <em>род</em>",
+    "texte": "Шесть маленьких слов, которых нет в русском. Они не учатся списком — они учатся таблицей, и каждое слово садится в свою клетку.",
+    "bouton": "Начать →",
+    "note": "Наушники рекомендуются"
+  },
+  "chapitres": [
+    {
+      "sur": "Шесть слов",
+      "params": {
+        "allume": [],
+        "mots": []
+      },
+      "jetons": []
+    },
+    {
+      "sur": "Почему это трудно",
+      "params": {
+        "allume": [],
+        "mots": [
+          {
+            "t": "книга",
+            "col": "m",
+            "rang": "def"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "книга",
+          "s": "une / la / cette — всё это «книга»"
+        }
+      ]
+    },
+    {
+      "sur": "Два рода, не три",
+      "params": {
+        "allume": [
+          "m|def",
+          "f|def"
+        ],
+        "mots": [
+          {
+            "t": "мужской",
+            "col": "m",
+            "rang": "def"
+          },
+          {
+            "t": "женский",
+            "col": "f",
+            "rang": "def"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "мужской",
+          "s": "masculin"
+        },
+        {
+          "t": "женский",
+          "s": "féminin"
+        }
+      ]
+    },
+    {
+      "sur": "le · la · les",
+      "params": {
+        "allume": [
+          "m|def",
+          "f|def",
+          "p|def"
+        ],
+        "mots": [
+          {
+            "t": "le livre",
+            "col": "m",
+            "rang": "def"
+          },
+          {
+            "t": "la table",
+            "col": "f",
+            "rang": "def"
+          },
+          {
+            "t": "les livres",
+            "col": "p",
+            "rang": "def"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "le livre",
+          "s": "книга — определённый"
+        },
+        {
+          "t": "la table",
+          "s": "стол — определённый"
+        },
+        {
+          "t": "les livres",
+          "s": "книги — определённый"
+        }
+      ]
+    },
+    {
+      "sur": "un · une · des",
+      "params": {
+        "allume": [
+          "m|ind",
+          "f|ind",
+          "p|ind"
+        ],
+        "mots": [
+          {
+            "t": "un livre",
+            "col": "m",
+            "rang": "ind"
+          },
+          {
+            "t": "une table",
+            "col": "f",
+            "rang": "ind"
+          },
+          {
+            "t": "des livres",
+            "col": "p",
+            "rang": "ind"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "un livre",
+          "s": "какая-то книга"
+        },
+        {
+          "t": "une table",
+          "s": "какой-то стол"
+        },
+        {
+          "t": "des livres",
+          "s": "какие-то книги"
+        }
+      ]
+    },
+    {
+      "sur": "des",
+      "params": {
+        "allume": [
+          "p|ind"
+        ],
+        "mots": [
+          {
+            "t": "J'achète des livres",
+            "col": "p",
+            "rang": "ind"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "J'achète des livres",
+          "s": "я покупаю книги"
+        }
+      ]
+    },
+    {
+      "sur": "l' devant voyelle",
+      "params": {
+        "allume": [
+          "m|def",
+          "f|def"
+        ],
+        "mots": [
+          {
+            "t": "l'ami",
+            "col": "m",
+            "rang": "def"
+          },
+          {
+            "t": "l'amie",
+            "col": "f",
+            "rang": "def"
+          },
+          {
+            "t": "l'université",
+            "col": "f",
+            "rang": "def"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "l'ami",
+          "s": "друг"
+        },
+        {
+          "t": "l'amie",
+          "s": "подруга"
+        },
+        {
+          "t": "l'université",
+          "s": "университет"
+        }
+      ]
+    },
+    {
+      "sur": "La liaison",
+      "params": {
+        "allume": [
+          "p|def",
+          "p|ind"
+        ],
+        "mots": [
+          {
+            "t": "les étudiants",
+            "col": "p",
+            "rang": "def"
+          },
+          {
+            "t": "des amis",
+            "col": "p",
+            "rang": "ind"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "les étudiants",
+          "s": "/lezetydjɑ̃/"
+        },
+        {
+          "t": "des amis",
+          "s": "/dezami/"
+        }
+      ]
+    },
+    {
+      "sur": "Indices du féminin",
+      "params": {
+        "allume": [
+          "f|def"
+        ],
+        "mots": [
+          {
+            "t": "la question",
+            "col": "f",
+            "rang": "def"
+          },
+          {
+            "t": "la liberté",
+            "col": "f",
+            "rang": "def"
+          },
+          {
+            "t": "la musique",
+            "col": "f",
+            "rang": "def"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "la question",
+          "s": "-tion"
+        },
+        {
+          "t": "la liberté",
+          "s": "-té"
+        },
+        {
+          "t": "la musique",
+          "s": "-que"
+        }
+      ]
+    },
+    {
+      "sur": "Indices du masculin",
+      "params": {
+        "allume": [
+          "m|def"
+        ],
+        "mots": [
+          {
+            "t": "le document",
+            "col": "m",
+            "rang": "def"
+          },
+          {
+            "t": "le voyage",
+            "col": "m",
+            "rang": "def"
+          },
+          {
+            "t": "le fromage",
+            "col": "m",
+            "rang": "def"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "le document",
+          "s": "-ment"
+        },
+        {
+          "t": "le voyage",
+          "s": "-age"
+        },
+        {
+          "t": "le fromage",
+          "s": "-age"
+        }
+      ]
+    },
+    {
+      "sur": "La méthode",
+      "params": {
+        "allume": [
+          "m|ind",
+          "f|ind"
+        ],
+        "mots": [
+          {
+            "t": "une table",
+            "col": "f",
+            "rang": "ind"
+          },
+          {
+            "t": "un livre",
+            "col": "m",
+            "rang": "ind"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "une table",
+          "s": "не «table»"
+        },
+        {
+          "t": "un livre",
+          "s": "не «livre»"
+        }
+      ]
+    },
+    {
+      "sur": "Entraînement",
+      "params": {
+        "allume": [
+          "f|def",
+          "f|ind"
+        ],
+        "mots": [
+          {
+            "t": "la gare",
+            "col": "f",
+            "rang": "def"
+          },
+          {
+            "t": "une gare",
+            "col": "f",
+            "rang": "ind"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "la gare",
+          "s": "конкретный вокзал"
+        },
+        {
+          "t": "une gare",
+          "s": "какой-нибудь вокзал"
+        }
+      ]
+    },
+    {
+      "sur": "Quatre erreurs",
+      "params": {
+        "allume": [
+          "m|def",
+          "f|def",
+          "p|def",
+          "m|ind",
+          "f|ind",
+          "p|ind"
+        ],
+        "mots": [
+          {
+            "t": "Je cherche livre",
+            "col": "m",
+            "rang": "def"
+          },
+          {
+            "t": "J'achète livres",
+            "col": "p",
+            "rang": "ind"
+          },
+          {
+            "t": "le table",
+            "col": "f",
+            "rang": "def"
+          },
+          {
+            "t": "le ami",
+            "col": "m",
+            "rang": "def"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "Je cherche livre",
+          "s": "пропущен артикль"
+        },
+        {
+          "t": "J'achète livres",
+          "s": "забыт des"
+        },
+        {
+          "t": "le table",
+          "s": "перепутан род"
+        },
+        {
+          "t": "le ami",
+          "s": "нужно l'ami"
+        }
+      ]
+    },
+    {
+      "sur": "Dix minutes par jour",
+      "params": {
+        "allume": [
+          "m|def",
+          "f|def",
+          "p|def",
+          "m|ind",
+          "f|ind",
+          "p|ind"
+        ],
+        "mots": [
+          {
+            "t": "un · une",
+            "col": "m",
+            "rang": "ind"
+          },
+          {
+            "t": "le · la",
+            "col": "m",
+            "rang": "def"
+          },
+          {
+            "t": "des · les",
+            "col": "p",
+            "rang": "def"
+          }
+        ]
+      },
+      "jetons": [
+        {
+          "t": "un · une",
+          "s": "2 мин"
+        },
+        {
+          "t": "le · la",
+          "s": "2 мин"
+        },
+        {
+          "t": "des · les",
+          "s": "3 мин"
+        }
+      ]
+    }
+  ]
+}

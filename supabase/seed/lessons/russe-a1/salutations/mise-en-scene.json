@@ -1,0 +1,450 @@
+{
+  "scene": "carte",
+  "ui": "fr",
+  "langueNarration": "ru",
+  "config": {
+    "stations": [
+      {
+        "id": "salut",
+        "titre": "Saluer"
+      },
+      {
+        "id": "cava",
+        "titre": "Ça va ?"
+      },
+      {
+        "id": "nom",
+        "titre": "Le prénom"
+      },
+      {
+        "id": "origine",
+        "titre": "D'où"
+      },
+      {
+        "id": "merci",
+        "titre": "Politesse"
+      },
+      {
+        "id": "adieu",
+        "titre": "Congé"
+      }
+    ],
+    "voies": [
+      "poli",
+      "familier"
+    ],
+    "noms": {
+      "poli": "ВЫ · poli",
+      "familier": "ТЫ · familier"
+    }
+  },
+  "intro": {
+    "meta": "RusStudy · Russe A1 · 13 minutes",
+    "titre": "Saluer et <em>se présenter</em>",
+    "texte": "Une conversation est un chemin : saluer, demander comment ça va, donner son prénom, remercier, partir. Et deux voies pour le parcourir — vouvoyer ou tutoyer.",
+    "bouton": "Commencer →",
+    "note": "Écouteurs recommandés"
+  },
+  "chapitres": [
+    {
+      "sur": "Le chemin",
+      "jetons": [],
+      "params": {
+        "allume": [],
+        "voie": "deux",
+        "mots": []
+      }
+    },
+    {
+      "sur": "Registre poli",
+      "jetons": [
+        {
+          "t": "ЗДРАВСТВУЙТЕ",
+          "s": "bonjour, à un inconnu"
+        }
+      ],
+      "params": {
+        "allume": [
+          "salut"
+        ],
+        "voie": "poli",
+        "mots": [
+          {
+            "t": "ЗДРАВСТВУЙТЕ",
+            "voie": "poli"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Registre familier",
+      "jetons": [
+        {
+          "t": "ПРИВЕТ",
+          "s": "salut, entre amis"
+        }
+      ],
+      "params": {
+        "allume": [
+          "salut"
+        ],
+        "voie": "familier",
+        "mots": [
+          {
+            "t": "ПРИВЕТ",
+            "voie": "familier"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Selon l'heure",
+      "jetons": [
+        {
+          "t": "ДОБРОЕ УТРО",
+          "s": "bonjour le matin"
+        },
+        {
+          "t": "ДОБРЫЙ ДЕНЬ",
+          "s": "bonjour la journée"
+        },
+        {
+          "t": "ДОБРЫЙ ВЕЧЕР",
+          "s": "bonsoir"
+        }
+      ],
+      "params": {
+        "allume": [
+          "salut"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "ДОБРОЕ УТРО",
+            "voie": "poli"
+          },
+          {
+            "t": "ДОБРЫЙ ДЕНЬ",
+            "voie": "poli"
+          },
+          {
+            "t": "ДОБРЫЙ ВЕЧЕР",
+            "voie": "poli"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Demander",
+      "jetons": [
+        {
+          "t": "КАК ДЕЛА?",
+          "s": "comment ça va ?"
+        },
+        {
+          "t": "КАК ВАШИ ДЕЛА?",
+          "s": "comment allez-vous ?"
+        }
+      ],
+      "params": {
+        "allume": [
+          "cava"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "КАК ДЕЛА?",
+            "voie": "familier"
+          },
+          {
+            "t": "КАК ВАШИ ДЕЛА?",
+            "voie": "poli"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Répondre",
+      "jetons": [
+        {
+          "t": "ХОРОШО",
+          "s": "bien"
+        },
+        {
+          "t": "ОЧЕНЬ ХОРОШО",
+          "s": "très bien"
+        },
+        {
+          "t": "НОРМАЛЬНО",
+          "s": "ça va"
+        }
+      ],
+      "params": {
+        "allume": [
+          "cava"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "ХОРОШО",
+            "voie": "familier"
+          },
+          {
+            "t": "ОЧЕНЬ ХОРОШО",
+            "voie": "poli"
+          },
+          {
+            "t": "НОРМАЛЬНО",
+            "voie": "familier"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Donner son prénom",
+      "jetons": [
+        {
+          "t": "МЕНЯ ЗОВУТ…",
+          "s": "je m'appelle…"
+        }
+      ],
+      "params": {
+        "allume": [
+          "nom"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "МЕНЯ ЗОВУТ…",
+            "voie": "poli"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Demander le prénom",
+      "jetons": [
+        {
+          "t": "КАК ВАС ЗОВУТ?",
+          "s": "comment vous appelez-vous ?"
+        },
+        {
+          "t": "КАК ТЕБЯ ЗОВУТ?",
+          "s": "comment tu t'appelles ?"
+        }
+      ],
+      "params": {
+        "allume": [
+          "nom"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "КАК ВАС ЗОВУТ?",
+            "voie": "poli"
+          },
+          {
+            "t": "КАК ТЕБЯ ЗОВУТ?",
+            "voie": "familier"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Enchanté",
+      "jetons": [
+        {
+          "t": "ОЧЕНЬ ПРИЯТНО",
+          "s": "enchanté"
+        }
+      ],
+      "params": {
+        "allume": [
+          "nom"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "ОЧЕНЬ ПРИЯТНО",
+            "voie": "poli"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Son origine",
+      "jetons": [
+        {
+          "t": "Я ИЗ ТУНИСА",
+          "s": "je viens de Tunisie"
+        },
+        {
+          "t": "Я ИЗ МОСКВЫ",
+          "s": "je viens de Moscou"
+        }
+      ],
+      "params": {
+        "allume": [
+          "origine"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "Я ИЗ ТУНИСА",
+            "voie": "poli"
+          },
+          {
+            "t": "Я ИЗ МОСКВЫ",
+            "voie": "poli"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Trois mots",
+      "jetons": [
+        {
+          "t": "СПАСИБО",
+          "s": "merci"
+        },
+        {
+          "t": "ПОЖАЛУЙСТА",
+          "s": "s'il vous plaît"
+        },
+        {
+          "t": "ИЗВИНИТЕ",
+          "s": "excusez-moi"
+        }
+      ],
+      "params": {
+        "allume": [
+          "merci"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "СПАСИБО",
+            "voie": "poli"
+          },
+          {
+            "t": "ПОЖАЛУЙСТА",
+            "voie": "poli"
+          },
+          {
+            "t": "ИЗВИНИТЕ",
+            "voie": "poli"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Prendre congé",
+      "jetons": [
+        {
+          "t": "ДО СВИДАНИЯ",
+          "s": "au revoir"
+        },
+        {
+          "t": "ПОКА",
+          "s": "à plus"
+        },
+        {
+          "t": "ДО ЗАВТРА",
+          "s": "à demain"
+        }
+      ],
+      "params": {
+        "allume": [
+          "adieu"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "ДО СВИДАНИЯ",
+            "voie": "poli"
+          },
+          {
+            "t": "ПОКА",
+            "voie": "familier"
+          },
+          {
+            "t": "ДО ЗАВТРА",
+            "voie": "poli"
+          }
+        ]
+      }
+    },
+    {
+      "sur": "Le chemin entier",
+      "jetons": [
+        {
+          "t": "ЗДРАВСТВУЙТЕ!",
+          "s": "bonjour !"
+        },
+        {
+          "t": "КАК ДЕЛА?",
+          "s": "comment ça va ?"
+        },
+        {
+          "t": "ХОРОШО, СПАСИБО",
+          "s": "bien, merci"
+        },
+        {
+          "t": "КАК ВАС ЗОВУТ?",
+          "s": "comment vous appelez-vous ?"
+        },
+        {
+          "t": "ОЧЕНЬ ПРИЯТНО",
+          "s": "enchanté"
+        },
+        {
+          "t": "ДО СВИДАНИЯ!",
+          "s": "au revoir !"
+        }
+      ],
+      "params": {
+        "allume": [
+          "salut",
+          "cava",
+          "nom",
+          "origine",
+          "merci",
+          "adieu"
+        ],
+        "voie": "deux",
+        "mots": [
+          {
+            "t": "ЗДРАВСТВУЙТЕ!",
+            "voie": "poli",
+            "station": "salut"
+          },
+          {
+            "t": "КАК ДЕЛА?",
+            "voie": "poli",
+            "station": "cava"
+          },
+          {
+            "t": "ХОРОШО, СПАСИБО",
+            "voie": "poli",
+            "station": "cava"
+          },
+          {
+            "t": "КАК ВАС ЗОВУТ?",
+            "voie": "poli",
+            "station": "nom"
+          },
+          {
+            "t": "ОЧЕНЬ ПРИЯТНО",
+            "voie": "poli",
+            "station": "nom"
+          },
+          {
+            "t": "ДО СВИДАНИЯ!",
+            "voie": "poli",
+            "station": "adieu"
+          }
+        ]
+      }
+    }
+  ]
+}

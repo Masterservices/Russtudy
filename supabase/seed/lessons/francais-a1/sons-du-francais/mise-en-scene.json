@@ -1,0 +1,576 @@
+{
+  "scene": "bouche",
+  "ui": "ru",
+  "langueNarration": "fr",
+  "intro": {
+    "meta": "RusStudy · Французский A1 · 30 минут",
+    "titre": "Звуки <em>французского</em>",
+    "texte": "Шесть ловушек, по которым русскоговорящего узнают сразу. Включите звук: голос говорит — рот показывает.",
+    "bouton": "Начать →",
+    "note": "Наушники рекомендуются"
+  },
+  "chapitres": [
+    {
+      "sur": "Начало",
+      "teinte": "#2460E8",
+      "params": {
+        "recul": 0.5,
+        "hauteur": 0.45,
+        "arrondi": 0.3,
+        "ouverture": 0.4,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "jetons": [
+        {
+          "t": "/y/",
+          "s": "tu",
+          "souffle": "/y/",
+          "params": {
+            "recul": 0,
+            "arrondi": 1,
+            "ouverture": 0.18,
+            "nasal": 0,
+            "friction": 0
+          }
+        },
+        {
+          "t": "/ɑ̃/",
+          "s": "enfant",
+          "souffle": "/ɑ̃/",
+          "params": {
+            "recul": 0.75,
+            "arrondi": 0.5,
+            "ouverture": 0.55,
+            "nasal": 1,
+            "friction": 0
+          }
+        },
+        {
+          "t": "/ʁ/",
+          "s": "rue",
+          "souffle": "/ʁ/",
+          "params": {
+            "recul": 1,
+            "arrondi": 0.3,
+            "ouverture": 0.4,
+            "nasal": 0,
+            "friction": 1
+          }
+        },
+        {
+          "t": "/ʒ/",
+          "s": "joue",
+          "souffle": "/ʒ/",
+          "params": {
+            "recul": 0.55,
+            "arrondi": 0.6,
+            "ouverture": 0.25,
+            "nasal": 0,
+            "friction": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Золотое правило",
+      "teinte": "#A855F7",
+      "params": {
+        "recul": 0.6,
+        "hauteur": 0.5,
+        "arrondi": 0.75,
+        "ouverture": 0.35,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "jetons": [
+        {
+          "t": "e a u",
+          "s": "→ /o/",
+          "souffle": "e a u"
+        },
+        {
+          "t": "/o/",
+          "souffle": "/o/"
+        }
+      ]
+    },
+    {
+      "sur": "Разминка",
+      "teinte": "#FBBB21",
+      "params": {
+        "recul": 0.2,
+        "hauteur": 0.8,
+        "arrondi": 0.1,
+        "ouverture": 0.3,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "focus": {
+        "ancre": "levres",
+        "texte": "ГУБЫ"
+      },
+      "jetons": [
+        {
+          "t": "i",
+          "souffle": "i",
+          "params": {
+            "recul": 0,
+            "arrondi": 0.05
+          }
+        },
+        {
+          "t": "u",
+          "souffle": "u",
+          "params": {
+            "recul": 0,
+            "arrondi": 1
+          }
+        },
+        {
+          "t": "ou",
+          "souffle": "ou",
+          "params": {
+            "recul": 1,
+            "arrondi": 1
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Ловушка 1 · диагностика",
+      "teinte": "#EF4444",
+      "params": {
+        "recul": 1,
+        "hauteur": 0.85,
+        "arrondi": 1,
+        "ouverture": 0.2,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "focus": {
+        "ancre": "langue",
+        "texte": "ЯЗЫК"
+      },
+      "jetons": [
+        {
+          "t": "tout",
+          "s": "/u/",
+          "souffle": "/u/",
+          "params": {
+            "recul": 1
+          }
+        },
+        {
+          "t": "tu",
+          "s": "/y/",
+          "souffle": "/y/",
+          "params": {
+            "recul": 0
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Инженерия звука",
+      "teinte": "#22C55E",
+      "params": {
+        "recul": 0,
+        "hauteur": 0.88,
+        "arrondi": 1,
+        "ouverture": 0.18,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "focus": {
+        "ancre": "levres",
+        "texte": "ГУБЫ"
+      },
+      "jetons": [
+        {
+          "t": "i",
+          "souffle": "i",
+          "params": {
+            "recul": 0,
+            "arrondi": 0.05
+          }
+        },
+        {
+          "t": "i + губы",
+          "souffle": "i + губы",
+          "params": {
+            "recul": 0,
+            "arrondi": 0.6
+          }
+        },
+        {
+          "t": "y",
+          "souffle": "y",
+          "params": {
+            "recul": 0,
+            "arrondi": 1
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Воздух раздваивается",
+      "teinte": "#A855F7",
+      "params": {
+        "recul": 0.75,
+        "hauteur": 0.35,
+        "arrondi": 0.5,
+        "ouverture": 0.55,
+        "nasal": 1,
+        "voix": 1,
+        "friction": 0
+      },
+      "focus": {
+        "ancre": "nez",
+        "texte": "НОС"
+      },
+      "jetons": [
+        {
+          "t": "enfant",
+          "s": "/ɑ̃/",
+          "souffle": "/ɑ̃/",
+          "params": {
+            "nasal": 1
+          }
+        },
+        {
+          "t": "bon",
+          "s": "/ɔ̃/",
+          "souffle": "/ɔ̃/",
+          "params": {
+            "nasal": 1
+          }
+        },
+        {
+          "t": "pain",
+          "s": "/ɛ̃/",
+          "souffle": "/ɛ̃/",
+          "params": {
+            "nasal": 1
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Ловушка 3",
+      "teinte": "#F97316",
+      "params": {
+        "recul": 1,
+        "hauteur": 0.6,
+        "arrondi": 0.3,
+        "ouverture": 0.4,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 1
+      },
+      "focus": {
+        "ancre": "arriere",
+        "texte": "СЗАДИ"
+      },
+      "jetons": [
+        {
+          "t": "rue",
+          "souffle": "rue",
+          "params": {
+            "recul": 1,
+            "friction": 1,
+            "arrondi": 1
+          }
+        },
+        {
+          "t": "rare",
+          "souffle": "rare",
+          "params": {
+            "recul": 1,
+            "friction": 1,
+            "ouverture": 0.6
+          }
+        },
+        {
+          "t": "regarder",
+          "souffle": "regarder",
+          "params": {
+            "recul": 1,
+            "friction": 0.8,
+            "ouverture": 0.45
+          }
+        },
+        {
+          "t": "раскатистое «р»",
+          "barre": true
+        }
+      ]
+    },
+    {
+      "sur": "Насколько открыт рот",
+      "teinte": "#FBBB21",
+      "params": {
+        "recul": 0.25,
+        "hauteur": 0.7,
+        "arrondi": 0.1,
+        "ouverture": 0.25,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "focus": {
+        "ancre": "levres",
+        "texte": "РАСКРЫТИЕ"
+      },
+      "jetons": [
+        {
+          "t": "été",
+          "s": "/e/",
+          "souffle": "/e/",
+          "params": {
+            "ouverture": 0.22
+          }
+        },
+        {
+          "t": "était",
+          "s": "/ɛ/",
+          "souffle": "/ɛ/",
+          "params": {
+            "ouverture": 0.62
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Гласная-призрак",
+      "teinte": "#2460E8",
+      "params": {
+        "recul": 0.45,
+        "hauteur": 0.4,
+        "arrondi": 0.35,
+        "ouverture": 0.35,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "jetons": [
+        {
+          "t": "Je te le demande",
+          "s": "медленно",
+          "souffle": "медленно",
+          "params": {
+            "ouverture": 0.45
+          }
+        },
+        {
+          "t": "J(e) t(e) l(e) d(e)mande",
+          "s": "быстро",
+          "souffle": "быстро",
+          "params": {
+            "ouverture": 0.3
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Ловушка 4",
+      "teinte": "#EF4444",
+      "params": {
+        "recul": 0.5,
+        "hauteur": 0.4,
+        "arrondi": 0.3,
+        "ouverture": 0.45,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "jetons": [
+        {
+          "t": "petit",
+          "s": "немая",
+          "souffle": "petit"
+        },
+        {
+          "t": "grand",
+          "s": "немая",
+          "souffle": "grand"
+        },
+        {
+          "t": "français",
+          "s": "немая",
+          "souffle": "français"
+        },
+        {
+          "t": "avec",
+          "s": "звучит",
+          "souffle": "avec"
+        }
+      ]
+    },
+    {
+      "sur": "Звонкий или глухой",
+      "teinte": "#22C55E",
+      "params": {
+        "recul": 0.55,
+        "hauteur": 0.75,
+        "arrondi": 0.6,
+        "ouverture": 0.25,
+        "nasal": 0,
+        "voix": 0,
+        "friction": 0.6
+      },
+      "focus": {
+        "ancre": "cordes",
+        "texte": "СВЯЗКИ"
+      },
+      "jetons": [
+        {
+          "t": "chou",
+          "souffle": "chou",
+          "params": {
+            "voix": 0,
+            "friction": 0.6
+          }
+        },
+        {
+          "t": "joue",
+          "souffle": "joue",
+          "params": {
+            "voix": 1,
+            "friction": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Звуковой мост",
+      "teinte": "#A855F7",
+      "params": {
+        "recul": 0.5,
+        "hauteur": 0.5,
+        "arrondi": 0.4,
+        "ouverture": 0.4,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "jetons": [
+        {
+          "t": "les‿amis",
+          "s": "/z/",
+          "souffle": "/z/"
+        },
+        {
+          "t": "vous‿avez",
+          "s": "/z/",
+          "souffle": "/z/"
+        },
+        {
+          "t": "un‿enfant",
+          "s": "/n/",
+          "souffle": "/n/"
+        }
+      ]
+    },
+    {
+      "sur": "Архитектура фразы",
+      "teinte": "#FBBB21",
+      "params": {
+        "recul": 0.5,
+        "hauteur": 0.45,
+        "arrondi": 0.35,
+        "ouverture": 0.5,
+        "nasal": 0.2,
+        "voix": 1,
+        "friction": 0
+      },
+      "jetons": [
+        {
+          "t": "Je voudrais un billet"
+        },
+        {
+          "t": "pour Paris",
+          "souffle": "pour Paris"
+        }
+      ]
+    },
+    {
+      "sur": "Итог",
+      "teinte": "#EF4444",
+      "params": {
+        "recul": 0.5,
+        "hauteur": 0.45,
+        "arrondi": 0.35,
+        "ouverture": 0.4,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "jetons": [
+        {
+          "t": "1. Путать /u/ и /y/"
+        },
+        {
+          "t": "2. Слышимая «н» в носовых"
+        },
+        {
+          "t": "3. Раскатистое «р»"
+        },
+        {
+          "t": "4. Произносить конечные буквы"
+        },
+        {
+          "t": "5. Стаккато без связываний"
+        },
+        {
+          "t": "6. Русское ударение"
+        }
+      ]
+    },
+    {
+      "sur": "План тренировки",
+      "teinte": "#22C55E",
+      "params": {
+        "recul": 0.4,
+        "hauteur": 0.55,
+        "arrondi": 0.4,
+        "ouverture": 0.35,
+        "nasal": 0,
+        "voix": 1,
+        "friction": 0
+      },
+      "jetons": [
+        {
+          "t": "Слушать",
+          "s": "2 мин",
+          "souffle": "Слушать"
+        },
+        {
+          "t": "/u/ — /y/",
+          "s": "2 мин",
+          "souffle": "/u/ — /y/"
+        },
+        {
+          "t": "Носовые",
+          "s": "2 мин",
+          "souffle": "Носовые"
+        },
+        {
+          "t": "«R»",
+          "s": "2 мин",
+          "souffle": "«R»"
+        },
+        {
+          "t": "Запись",
+          "s": "2 мин",
+          "souffle": "Запись"
+        }
+      ]
+    }
+  ]
+}

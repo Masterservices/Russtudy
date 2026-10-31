@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+/* ============================================================
+   RusStudy — design system de la plateforme /app
+   Mobile-first, thème violet, cartes arrondies, navigation
+   basse. Totalement indépendant du thème du site public
+   (src/index.css) pour éviter toute régression de part et
+   d'autre.
+   ============================================================ */
+
+:root {
+  --rs-primary: #5B2BD9;
+  --rs-primary-strong: #4718B4;
+  --rs-primary-soft: #F0EBFE;
+  --rs-primary-ink: #ffffff;
+
+  --rs-bg: #F5F4FA;
+  --rs-card: #ffffff;
+  --rs-ink: #16132B;
+  --rs-muted: #6E6A85;
+  --rs-line: #E9E7F3;
+
+  --rs-success: #16A34A;
+  --rs-success-soft: #E7F7ED;
+  --rs-warning: #E08A00;
+  --rs-warning-soft: #FDF3E0;
+  --rs-danger: #DC2626;
+  --rs-danger-soft: #FDECEC;
+  --rs-info: #2563EB;
+  --rs-info-soft: #EAF1FE;
+
+  --rs-radius: 18px;
+  --rs-radius-lg: 24px;
+  --rs-shadow: 0 2px 12px rgba(22, 19, 43, 0.06);
+  --rs-shadow-lifted: 0 12px 32px rgba(71, 24, 180, 0.18);
+
+  --rs-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--rs-bg);
+    color: var(--rs-ink);
+    font-family: var(--rs-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Confort de lecture en arabe */
+  html[dir="rtl"] body {
+    font-family: "Tajawal", var(--rs-font);
+    letter-spacing: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--rs-primary);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  /* --- Conteneur mobile --------------------------------------- */
+  .rs-shell {
+    max-width: 480px;
+    margin-inline: auto;
+    min-height: 100dvh;
+    background-color: var(--rs-bg);
+    position: relative;
+  }
+
+  @media (min-width: 1024px) {
+    .rs-shell {
+      max-width: 720px;
+      box-shadow: 0 0 0 1px var(--rs-line);
+    }
+  }
+
+  .rs-main {
+    padding: 16px 16px 96px;
+  }
+
+  /* --- Surfaces ------------------------------------------------ */
+  .rs-card {
+    background-color: var(--rs-card);
+    border: 1px solid var(--rs-line);
+    border-radius: var(--rs-radius);
+    box-shadow: var(--rs-shadow);
+  }
+
+  .rs-card-flat {
+    background-color: var(--rs-card);
+    border: 1px solid var(--rs-line);
+    border-radius: var(--rs-radius);
+  }
+
+  .rs-gradient {
+    background: linear-gradient(150deg, #6E3AF0 0%, var(--rs-primary) 45%, var(--rs-primary-strong) 100%);
+    color: var(--rs-primary-ink);
+  }
+
+  /* --- Boutons ------------------------------------------------- */
+  .rs-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 0.16s ease, transform 0.16s ease, opacity 0.16s ease;
+  }
+
+  .rs-btn:active {
+    transform: scale(0.985);
+  }
+
+  .rs-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .rs-btn-primary {
+    background-color: var(--rs-primary);
+    color: var(--rs-primary-ink);
+    border: 1px solid transparent;
+  }
+
+  .rs-btn-primary:hover:not(:disabled) {
+    background-color: var(--rs-primary-strong);
+  }
+
+  .rs-btn-secondary {
+    background-color: var(--rs-card);
+    color: var(--rs-ink);
+    border: 1px solid var(--rs-line);
+  }
+
+  .rs-btn-secondary:hover:not(:disabled) {
+    background-color: var(--rs-primary-soft);
+  }
+
+  .rs-btn-ghost {
+    background-color: transparent;
+    color: var(--rs-primary);
+    border: 1px solid transparent;
+    width: auto;
+    min-height: 40px;
+    padding: 8px 12px;
+  }
+
+  /* --- Formulaires --------------------------------------------- */
+  .rs-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--rs-muted);
+    margin-bottom: 6px;
+  }
+
+  .rs-input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--rs-line);
+    background-color: var(--rs-card);
+    color: var(--rs-ink);
+    font-size: 15px;
+  }
+
+  .rs-input::placeholder {
+    color: color-mix(in srgb, var(--rs-muted) 70%, transparent);
+  }
+
+  .rs-input:focus {
+    border-color: var(--rs-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--rs-primary-soft);
+  }
+
+  /* --- Pastilles de statut -------------------------------------- */
+  .rs-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .rs-pill-success { background-color: var(--rs-success-soft); color: var(--rs-success); }
+  .rs-pill-warning { background-color: var(--rs-warning-soft); color: var(--rs-warning); }
+  .rs-pill-danger  { background-color: var(--rs-danger-soft);  color: var(--rs-danger); }
+  .rs-pill-info    { background-color: var(--rs-info-soft);    color: var(--rs-info); }
+  .rs-pill-neutral { background-color: #F1F0F7;                color: var(--rs-muted); }
+  .rs-pill-primary { background-color: var(--rs-primary-soft);  color: var(--rs-primary); }
+
+  /* --- Navigation basse ---------------------------------------- */
+  .rs-tabbar {
+    position: fixed;
+    bottom: 0;
+    inset-inline: 0;
+    z-index: 40;
+    margin-inline: auto;
+    max-width: 480px;
+    display: grid;
+    background-color: var(--rs-card);
+    border-top: 1px solid var(--rs-line);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  @media (min-width: 1024px) {
+    .rs-tabbar { max-width: 720px; }
+  }
+
+  .rs-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 10px 4px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--rs-muted);
+    transition: color 0.14s ease;
+  }
+
+  .rs-tab[aria-current="page"] {
+    color: var(--rs-primary);
+  }
+
+  /* Un libellé long ne doit jamais passer sur deux lignes : la barre
+     déborderait sur le contenu. */
+  .rs-tab > span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* --- Divers --------------------------------------------------- */
+  .rs-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 16px;
+    text-align: start;
+  }
+
+  .rs-divider {
+    border-top: 1px solid var(--rs-line);
+  }
+
+  .rs-progress {
+    height: 8px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.28);
+    overflow: hidden;
+  }
+
+  .rs-progress > span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background-color: #ffffff;
+  }
+
+  .rs-fab {
+    position: fixed;
+    bottom: 84px;
+    inset-inline-end: max(16px, calc(50vw - 224px));
+    z-index: 45;
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background-color: var(--rs-primary);
+    color: var(--rs-primary-ink);
+    box-shadow: var(--rs-shadow-lifted);
+  }
+
+  .rs-skeleton {
+    background: linear-gradient(90deg, #EFEDF6 25%, #F7F6FB 37%, #EFEDF6 63%);
+    background-size: 400% 100%;
+    animation: rs-shimmer 1.3s ease infinite;
+    border-radius: 12px;
+  }
+}
+
+@keyframes rs-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-skeleton { animation: none; }
+  .rs-btn { transition: none; }
+}

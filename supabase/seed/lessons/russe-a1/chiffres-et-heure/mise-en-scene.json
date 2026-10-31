@@ -1,0 +1,515 @@
+{
+  "scene": "cadran",
+  "ui": "fr",
+  "langueNarration": "ru",
+  "intro": {
+    "meta": "RusStudy · Russe A1 · 14 minutes",
+    "titre": "Compter, <em>payer</em>, dire l'heure",
+    "texte": "Un seul cadran pour les trois : il porte les nombres, l'aiguille désigne celui qu'on prononce, puis une seconde aiguille paraît et il se met à lire l'heure.",
+    "bouton": "Commencer →",
+    "note": "Écouteurs recommandés"
+  },
+  "chapitres": [
+    {
+      "sur": "Trois usages",
+      "params": {
+        "nombres": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "pointe": null
+      },
+      "jetons": []
+    },
+    {
+      "sur": "0 à 5",
+      "params": {
+        "nombres": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "pointe": 1
+      },
+      "jetons": [
+        {
+          "t": "НОЛЬ",
+          "s": "0 — « nol »",
+          "params": {
+            "pointe": 0
+          }
+        },
+        {
+          "t": "ОДИН",
+          "s": "1 — « adine »",
+          "params": {
+            "pointe": 1
+          }
+        },
+        {
+          "t": "ДВА",
+          "s": "2 — « dva »",
+          "params": {
+            "pointe": 2
+          }
+        },
+        {
+          "t": "ТРИ",
+          "s": "3 — « tri »",
+          "params": {
+            "pointe": 3
+          }
+        },
+        {
+          "t": "ЧЕТЫРЕ",
+          "s": "4 — « tchétyrié »",
+          "params": {
+            "pointe": 4
+          }
+        },
+        {
+          "t": "ПЯТЬ",
+          "s": "5 — « piat »",
+          "params": {
+            "pointe": 5
+          }
+        }
+      ]
+    },
+    {
+      "sur": "6 à 10",
+      "params": {
+        "nombres": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "pointe": 6
+      },
+      "jetons": [
+        {
+          "t": "ШЕСТЬ",
+          "s": "6 — « chest »",
+          "params": {
+            "pointe": 6
+          }
+        },
+        {
+          "t": "СЕМЬ",
+          "s": "7 — « siem »",
+          "params": {
+            "pointe": 7
+          }
+        },
+        {
+          "t": "ВОСЕМЬ",
+          "s": "8 — « vossiem »",
+          "params": {
+            "pointe": 8
+          }
+        },
+        {
+          "t": "ДЕВЯТЬ",
+          "s": "9 — « diéviat »",
+          "params": {
+            "pointe": 9
+          }
+        },
+        {
+          "t": "ДЕСЯТЬ",
+          "s": "10 — « diéssiat »",
+          "params": {
+            "pointe": 10
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Révision",
+      "params": {
+        "nombres": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "pointe": 1
+      },
+      "jetons": [
+        {
+          "t": "ОДИН…ДЕСЯТЬ",
+          "s": "de 1 à 10"
+        },
+        {
+          "t": "ДЕСЯТЬ…ОДИН",
+          "s": "à l'envers"
+        }
+      ]
+    },
+    {
+      "sur": "-НАДЦАТЬ",
+      "params": {
+        "nombres": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "pointe": 11,
+        "anneau": true
+      },
+      "jetons": [
+        {
+          "t": "ОДИННАДЦАТЬ",
+          "s": "11",
+          "params": {
+            "pointe": 11
+          }
+        },
+        {
+          "t": "ДВЕНАДЦАТЬ",
+          "s": "12",
+          "params": {
+            "pointe": 12
+          }
+        },
+        {
+          "t": "ТРИНАДЦАТЬ",
+          "s": "13",
+          "params": {
+            "pointe": 13
+          }
+        },
+        {
+          "t": "ЧЕТЫРНАДЦАТЬ",
+          "s": "14",
+          "params": {
+            "pointe": 14
+          }
+        },
+        {
+          "t": "ПЯТНАДЦАТЬ",
+          "s": "15",
+          "params": {
+            "pointe": 15
+          }
+        }
+      ]
+    },
+    {
+      "sur": "16 à 20",
+      "params": {
+        "nombres": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "pointe": 16,
+        "anneau": true
+      },
+      "jetons": [
+        {
+          "t": "ШЕСТНАДЦАТЬ",
+          "s": "16",
+          "params": {
+            "pointe": 16
+          }
+        },
+        {
+          "t": "СЕМНАДЦАТЬ",
+          "s": "17",
+          "params": {
+            "pointe": 17
+          }
+        },
+        {
+          "t": "ВОСЕМНАДЦАТЬ",
+          "s": "18",
+          "params": {
+            "pointe": 18
+          }
+        },
+        {
+          "t": "ДЕВЯТНАДЦАТЬ",
+          "s": "19",
+          "params": {
+            "pointe": 19
+          }
+        },
+        {
+          "t": "ДВАДЦАТЬ",
+          "s": "20",
+          "params": {
+            "pointe": 20
+          }
+        }
+      ]
+    },
+    {
+      "sur": "Demander un prix",
+      "params": {
+        "nombres": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "pointe": null
+      },
+      "jetons": [
+        {
+          "t": "СКОЛЬКО?",
+          "s": "combien ?"
+        },
+        {
+          "t": "СКОЛЬКО ЭТО СТОИТ?",
+          "s": "combien ça coûte ?"
+        }
+      ]
+    },
+    {
+      "sur": "Comprendre",
+      "params": {
+        "nombres": [
+          10,
+          20
+        ],
+        "pointe": 20,
+        "anneau": true
+      },
+      "jetons": [
+        {
+          "t": "ДЕСЯТЬ",
+          "s": "dix"
+        },
+        {
+          "t": "ДВАДЦАТЬ",
+          "s": "vingt"
+        },
+        {
+          "t": "ПОВТОРИТЕ, ПОЖАЛУЙСТА",
+          "s": "répétez, s'il vous plaît"
+        }
+      ]
+    },
+    {
+      "sur": "Acheter",
+      "params": {
+        "nombres": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "pointe": null
+      },
+      "jetons": [
+        {
+          "t": "ДОРОГО",
+          "s": "c'est cher"
+        },
+        {
+          "t": "ДЁШЕВО",
+          "s": "c'est bon marché"
+        },
+        {
+          "t": "ДА, ПОЖАЛУЙСТА",
+          "s": "oui, s'il vous plaît"
+        }
+      ]
+    },
+    {
+      "sur": "Demander l'heure",
+      "params": {
+        "nombres": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "heure": [
+          10,
+          10
+        ]
+      },
+      "jetons": [
+        {
+          "t": "СКОЛЬКО ВРЕМЕНИ?",
+          "s": "quelle heure est-il ?"
+        },
+        {
+          "t": "КОТОРЫЙ ЧАС?",
+          "s": "quelle heure ?"
+        }
+      ]
+    },
+    {
+      "sur": "Dire l'heure",
+      "params": {
+        "nombres": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "heure": [
+          1,
+          0
+        ]
+      },
+      "jetons": [
+        {
+          "t": "СЕЙЧАС ЧАС",
+          "s": "il est une heure"
+        },
+        {
+          "t": "СЕЙЧАС ДВА ЧАСА",
+          "s": "il est deux heures"
+        },
+        {
+          "t": "ТРИ ЧАСА",
+          "s": "trois heures"
+        },
+        {
+          "t": "ЧЕТЫРЕ ЧАСА",
+          "s": "quatre heures"
+        }
+      ]
+    },
+    {
+      "sur": "Minutes et moment",
+      "params": {
+        "nombres": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "heure": [
+          2,
+          10
+        ]
+      },
+      "jetons": [
+        {
+          "t": "ДВА ЧАСА ДЕСЯТЬ МИНУТ",
+          "s": "deux heures dix"
+        },
+        {
+          "t": "УТРА",
+          "s": "du matin"
+        },
+        {
+          "t": "ДНЯ",
+          "s": "de l'après-midi"
+        },
+        {
+          "t": "ВЕЧЕРА",
+          "s": "du soir"
+        }
+      ]
+    },
+    {
+      "sur": "En situation",
+      "params": {
+        "nombres": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "heure": [
+          3,
+          0
+        ]
+      },
+      "jetons": [
+        {
+          "t": "СКОЛЬКО ВРЕМЕНИ?",
+          "s": "quelle heure est-il ?"
+        },
+        {
+          "t": "СЕЙЧАС ТРИ ЧАСА",
+          "s": "il est trois heures"
+        },
+        {
+          "t": "СПАСИБО!",
+          "s": "merci !"
+        }
+      ]
+    }
+  ]
+}

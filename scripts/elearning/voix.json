@@ -1,0 +1,19 @@
+{
+  "_regle": "Une voix par cours, native de la langue enseignée, la même pour toutes les leçons du cours. Ne jamais narrer une leçon avec une autre voix que celle de son cours. Voir scripts/elearning/README.md.",
+  "francais-a1": {
+    "langue": "fr",
+    "voice_id": "0igQGE0lbNpTaWsexf1r",
+    "nom": "Paul K FR elearning",
+    "genre": "masculin",
+    "modele": "eleven_multilingual_v2",
+    "f0_hz": "107–130, mesuré sur sons-du-francais et saluer-se-presenter"
+  },
+  "russe-a1": {
+    "langue": "ru",
+    "voice_id": null,
+    "nom": "à identifier — voix féminine native russe des leçons existantes",
+    "genre": "féminin",
+    "modele": "eleven_multilingual_v2",
+    "f0_hz": "176–216, mesuré sur alphabet-cyrillique, salutations, chiffres-et-heure"
+  }
+}
