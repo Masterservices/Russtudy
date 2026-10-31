@@ -64,6 +64,18 @@ posées sur Vercel : sans elles, `/app` reste en mode démonstration.
 6. Les scripts d'import de cours (`scripts/elearning/*.py`) écrivent encore dans Supabase :
    à porter vers Neon avant de réimporter des leçons.
 
+## Déploiement Vercel (état vérifié le 31 octobre 2026)
+
+- Projet : `rustudystudiov5` (`prj_rcAupCATbh9QhKSqalK39zW76TSA`), équipe `team_DX8OyfiHwJ4bLD3YTerhzjoj`
+  (`ghorbeloussama44-gmailcoms-projects`). Domaines : `www.russieetudes.com` (principal), apex en 308.
+- Variables Neon posées en **Preview** uniquement. **Production** : volontairement non posées tant que le
+  test n'est pas fait. Ne pas écraser les clés VAPID et `PUSH_HOOK_SECRET` de Production (appareils déjà abonnés).
+- Schéma appliqué sur la branche Neon `production` (26 tables sous RLS, 73 politiques, 18 migrations).
+- Domaines autorisés dans Neon Auth : `www.russieetudes.com` et l'URL de prévisualisation de la branche.
+- **Lien Git Vercel ↔ GitHub non confirmé** : l'API Vercel répond « repository can't be found » pour
+  `ghorbeloussama44-source/Rustudystudiov5`, et le projet n'apparaît pas parmi les projets reliés à un dépôt.
+  Aucun déploiement n'est donc créé à l'ouverture d'une PR. À rétablir dans Vercel → Settings → Git.
+
 ## Sécurité — à faire à la fin
 
 - Réinitialiser le mot de passe de `neondb_owner` (console Neon).
