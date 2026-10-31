@@ -283,3 +283,45 @@ Conserver la compatibilité avec Vercel.
 Ne jamais modifier le domaine officiel.
 
 Toujours produire un rapport des modifications effectuées.
+
+---
+
+# Infrastructure — acquis, ne plus redemander à l'utilisateur
+
+Ces points sont réglés. Les relire ici, ne pas demander à l'utilisateur de les refaire, de se
+reconnecter ou de répéter un historique. Détail et état de la migration : `docs/MIGRATION-NEON.md`.
+
+## Base de données, auth, fichiers : Neon (remplace Supabase)
+
+- Projet Neon `Russtudy` : `solitary-fire-57374519` (aws-eu-central-1). Branche `production` :
+  `br-green-wildflower-b9qod8qz`. Branche de test jetable : `migration-test` : `br-tiny-salad-b9h132aj`.
+- Schéma appliqué sur `production` (26 tables sous RLS). Authentification : Neon Auth. Fichiers : stockage objet
+  Neon, bucket privé `assets`, préfixes `documents/` et `course-assets/`.
+- Code : `src/lib/neon/*` (API de requêtes à la `supabase-js`, exécutée sous les rôles `authenticated`/`anon`).
+  Ne pas réintroduire `@supabase/*`.
+- Les comptes sont recréés dans Neon Auth : aucune donnée de test Supabase n'est reprise.
+
+## Vercel
+
+- Projet `rustudystudiov5` : `prj_rcAupCATbh9QhKSqalK39zW76TSA`, équipe `team_DX8OyfiHwJ4bLD3YTerhzjoj`
+  (`ghorbeloussama44-gmailcoms-projects`). Domaine principal `www.russieetudes.com`.
+- La connexion GitHub ↔ Vercel fonctionne : les fusions sur `main` déploient la production. Ne jamais conclure
+  qu'elle est cassée à partir de la liste des projets « reliés » ni d'une erreur de `create_deployment`.
+- L'équipe Vercel demande une autorisation par session : appeler `authorize_team_access` et donner le lien
+  (un clic de l'utilisateur), sans rien lui redemander d'autre.
+- Variables d'environnement : tu peux les poser toi-même avec l'outil Vercel. Les variables Neon sont en
+  Preview ; la Production attend la validation du test. Ne jamais écraser les clés VAPID ni `PUSH_HOOK_SECRET`
+  de Production (appareils déjà abonnés). Les secrets ne se collent jamais dans un commit.
+
+## Comptes GitHub
+
+- Les dépôts du projet sont sous `ghorbeloussama44-source`. Selon l'utilisateur, ce dépôt et celui du compte
+  « masterservices » sont identiques pour ce projet (aucun développement n'a eu lieu sur Git depuis le
+  changement de compte). Travailler sur `ghorbeloussama44-source` ; ne pas demander lequel utiliser.
+
+## Règles de travail
+
+- Ne pas écrire sur la base `production`, ouvrir une PR ou fusionner sans demande explicite de l'utilisateur.
+  Une fois la demande reçue, agir sans redemander les étapes déjà décrites ici.
+- Faire soi-même tout ce que les outils (Neon, Vercel, GitHub) permettent : l'utilisateur travaille depuis
+  un téléphone et veut le minimum d'étapes manuelles.

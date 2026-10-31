@@ -72,9 +72,10 @@ posées sur Vercel : sans elles, `/app` reste en mode démonstration.
   test n'est pas fait. Ne pas écraser les clés VAPID et `PUSH_HOOK_SECRET` de Production (appareils déjà abonnés).
 - Schéma appliqué sur la branche Neon `production` (26 tables sous RLS, 73 politiques, 18 migrations).
 - Domaines autorisés dans Neon Auth : `www.russieetudes.com` et l'URL de prévisualisation de la branche.
-- **Lien Git Vercel ↔ GitHub non confirmé** : l'API Vercel répond « repository can't be found » pour
-  `ghorbeloussama44-source/Rustudystudiov5`, et le projet n'apparaît pas parmi les projets reliés à un dépôt.
-  Aucun déploiement n'est donc créé à l'ouverture d'une PR. À rétablir dans Vercel → Settings → Git.
+- Lien Git Vercel ↔ GitHub : **il fonctionne** (les fusions sur `main` déploient la production ; le projet
+  `oussamaghorbel` se déploie de la même façon). L'erreur « repository can't be found » vient de l'outil
+  `create_deployment`, pas du lien. Constat à élucider : aucune prévisualisation n'a été créée pour la PR #139
+  (branche `claude/neon-migration-obhema`), cause inconnue — voir le tableau de bord Vercel → Deployments.
 
 ## Sécurité — à faire à la fin
 
