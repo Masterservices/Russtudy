@@ -10,6 +10,10 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 // Noms NEON_STORAGE_* plutôt que AWS_* : Vercel réserve une partie des variables AWS_*.
 let client: S3Client | undefined;
 
+// Un seul bucket privé : les deux anciens buckets Supabase deviennent des préfixes.
+export const DOCUMENTS_PREFIX = "documents/";
+export const COURSE_ASSETS_PREFIX = "course-assets/";
+
 function required(name: string): string {
   const value = process.env[name];
   if (!value) throw new Error(`${name} n'est pas défini.`);
@@ -30,6 +34,9 @@ export function getStorage(): S3Client {
         secretAccessKey: required("NEON_STORAGE_SECRET_ACCESS_KEY"),
       },
       forcePathStyle: true, // obligatoire chez Neon
+      // Sans cela, le SDK calcule le checksum d'un corps vide à la signature et
+      // l'envoi d'un vrai fichier par lien présigné est rejeté.
+      requestChecksumCalculation: "WHEN_REQUIRED",
     });
   }
   return client;

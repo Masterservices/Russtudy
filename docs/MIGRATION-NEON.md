@@ -1,71 +1,76 @@
 # Migration RusStudy : Supabase → Neon
 
-État au 31 octobre 2026. Branche Git : `claude/russtudy-neon-migration-d8y2x4`.
-Le site en production tourne toujours sur Supabase : rien n'est basculé.
+État au 31 octobre 2026. Branche Git : `claude/neon-migration-obhema`.
+Le site en production tourne toujours sur Supabase tant que les variables Neon ne sont pas
+posées sur Vercel : sans elles, `/app` reste en mode démonstration.
+
+## Décisions
+
+- Les comptes sont **recréés** dans Neon Auth : aucun compte ni donnée de test Supabase n'est repris.
+- Les pièces des dossiers vivent dans le **stockage objet Neon** (bucket privé, préfixe `documents/`).
+- La RLS reste dans la base ; l'application ne fait que lui transmettre l'identité.
 
 ## Projet Neon
 
 | Élément | Valeur |
 |---|---|
 | Projet | `Russtudy` — `solitary-fire-57374519` (aws-eu-central-1, Postgres 18) |
-| Branche production | `production` — `br-green-wildflower-b9qod8qz` |
-| Branche de test | `migration-test` — `br-tiny-salad-b9h132aj` |
-| Auth | Neon Auth (Managed Better Auth), e-mail + mot de passe, Google (partagé) |
-| Stockage | bucket privé `assets`, identifiant `russtudy-app-storage` |
+| Branche production | `production` — `br-green-wildflower-b9qod8qz` (**vide** : schéma pas encore appliqué) |
+| Branche de test | `migration-test` — `br-tiny-salad-b9h132aj` (schéma complet, validé) |
+| Auth | Neon Auth, e-mail + mot de passe, Google (partagé) |
+| Stockage | bucket privé `assets` |
 
-## Fait
+## Fait dans le code
 
-- [x] `neon.ts`, `.neon`, dépendances `@neon/config` et `@neon/env`.
-- [x] Driver `pg` + `@vercel/functions` : `src/lib/neon/db.ts` (URL poolée).
-- [x] Stockage S3 : `src/lib/neon/storage.ts` (liens signés, bucket privé). Testé de bout en bout.
-- [x] Auth Neon testée hors application : inscription, connexion, session (HTTP 200).
-- [x] Route de contrôle `GET /api/neon/health` : base, auth, stockage.
-- [x] Couche de compatibilité `neon/migrations/00000000000000_supabase_compat.sql`.
-- [x] Script `scripts/neon/apply-migrations.mjs` (WebSocket, port 443).
-- [x] Schéma complet appliqué et validé sur `migration-test` : 26 tables, 67 politiques RLS,
-      57 fonctions, 17 triggers, 8 tests de sécurité réussis.
-- [ ] Schéma sur `production` : volontairement en attente, jusqu'à ce que le code soit migré.
+- `src/lib/neon/db.ts` : pool Postgres (types alignés sur l'ancien format PostgREST).
+- `src/lib/neon/query.ts` : constructeur de requêtes à l'API de `supabase-js` ; chaque requête
+  s'exécute en transaction, rôle `authenticated`/`anon`, `request.jwt.claim.sub` = utilisateur.
+  Les 189 appels `.from()/.rpc()` existants n'ont donc pas été réécrits.
+- `src/lib/neon/auth.ts`, `server.ts`, `proxy.ts`, `auth-client.ts` : Neon Auth (session, garde `/app`).
+- `src/app/api/auth/[...path]/route.ts` : proxy d'authentification.
+- Actions de connexion, inscription, déconnexion, réinitialisation de mot de passe
+  (+ nouvelle page `/app/mot-de-passe/nouveau`), connexion Google.
+- Pièces : `actions/documents.ts` (lien d'envoi présigné après contrôle d'accès au dossier) ;
+  téléchargement et aperçus signés après relecture de la ligne `documents` sous RLS.
+- Médias de cours : `signed()` signe `course-assets/<chemin>` (chemins issus de lignes lues sous RLS).
+- Push : le trigger écrit dans `net.http_request_queue` ; `lib/neon/push.ts` vide la file
+  après chaque écriture (`after()`).
+- Dépendances `@supabase/*` retirées ; `src/lib/supabase/` supprimé.
 
-## Principe retenu : la RLS reste dans la base
+## Vérifié
 
-Les politiques Supabase sont conservées telles quelles. Pour chaque requête faite au nom
-d'un utilisateur, le code serveur doit :
+- `tsc`, `eslint` et `next build` (mode démonstration) sans erreur.
+- Sur `migration-test` : le compte créé dans Neon Auth reçoit un profil `student` ; un étudiant
+  voit son profil et pas celui d'un autre ; il ne peut pas s'attribuer le rôle admin
+  (`role_change_forbidden`) ; `anon` n'a pas accès à `profiles`.
 
-```sql
-begin;
-set local role authenticated;
-select set_config('request.jwt.claim.sub', '<id utilisateur Neon Auth>', true);
--- requêtes de l'application
-commit;
-```
+## Non vérifié (à tester sur une prévisualisation Vercel)
 
-`auth.uid()` lit cette valeur. Un compte créé dans Neon Auth (`neon_auth."user"`) est recopié
-dans `auth.users` par trigger, ce qui crée son profil (`public.profiles`, rôle `student`).
+- Connexion, inscription et Google de bout en bout (nécessite les variables Neon).
+- **CORS du bucket Neon** pour l'envoi direct depuis le navigateur (`PUT` présigné). Si le
+  navigateur le refuse, remplacer par un envoi via route serveur (limite Vercel ~4,5 Mo).
+- Envoi réel d'une notification push.
 
-## Reste à faire, dans l'ordre
+## À faire par vous
 
-1. **Connexion** : remplacer Supabase Auth par Neon Auth (`@neon/auth`) — `src/lib/supabase/*`,
-   `src/proxy.ts`, `src/app/app/auth/callback/route.ts`, `src/features/app/actions/auth.ts`,
-   bouton Google.
-2. **Couche de données** : helper `withUser(userId, fn)` qui applique le bloc SQL ci-dessus,
-   puis migration des appels `.from(...)` module par module : cours, profils, dossiers,
-   messages, devis, paiements.
-3. **Fichiers** : remplacer `storage.from('documents')` par `src/lib/neon/storage.ts`, avec
-   contrôle `public.can_access_dossier()` avant de signer un lien.
-4. **Notifications push** : traiter la file `net.http_request_queue` côté serveur.
-5. **Tests de bout en bout** sur une prévisualisation Vercel branchée sur `migration-test`.
-6. **Bascule** : appliquer le schéma sur `production`
-   (`MIGRATION_DATABASE_URL=<url directe> node scripts/neon/apply-migrations.mjs`),
-   variables Vercel de production, puis mise en ligne.
+1. Variables Vercel (voir `.env.example`) : `DATABASE_URL` (URL poolée), `NEON_AUTH_BASE_URL`,
+   `NEON_AUTH_COOKIE_SECRET`, `NEON_STORAGE_*`, et les clés VAPID.
+2. Neon → Auth : ajouter le domaine `https://www.russieetudes.com` aux origines de confiance.
+3. Bascule : appliquer le schéma sur `production`
+   (`MIGRATION_DATABASE_URL=<url directe> node scripts/neon/apply-migrations.mjs`).
+4. Premier administrateur, après inscription du compte :
+   `update public.profiles set role = 'admin' where email = '<email>';`
+5. Push : `insert into public.app_config (key, value) values ('push_endpoint','internal'), ('push_secret','internal') on conflict (key) do update set value = excluded.value;`
+6. Les scripts d'import de cours (`scripts/elearning/*.py`) écrivent encore dans Supabase :
+   à porter vers Neon avant de réimporter des leçons.
 
 ## Sécurité — à faire à la fin
 
-- Réinitialiser une dernière fois le mot de passe de `neondb_owner` (console Neon).
-- Faire tourner la clé de stockage :
-  `neon credentials rotate nak_live_1bd46810dcc34661a8d977b6027c7163 --project-id solitary-fire-57374519 --branch production`
+- Réinitialiser le mot de passe de `neondb_owner` (console Neon).
+- Faire tourner la clé de stockage utilisée pendant la migration.
 - Supprimer la branche `migration-test`.
 
 ## Contraintes de l'environnement Claude Code
 
 Le port 5432 est fermé dans le conteneur : utiliser le transport WebSocket
-(`@neondatabase/serverless`) ou les outils MCP Neon. La CLI `neon` n'y est pas connectée.
+(`@neondatabase/serverless`) ou les outils MCP Neon.

@@ -80,6 +80,7 @@ export default async function StudentDocumentsPage({ searchParams }: { searchPar
               label={t.documents.add}
               sizeError={t.documents.tooLarge}
               genericError={t.common.error}
+              demo={demo}
             />
             <p className="mt-2 text-center text-[11px] text-[var(--rs-muted)]">{t.documents.uploadHint}</p>
           </div>

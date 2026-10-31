@@ -49,6 +49,8 @@ export const fr = {
     enter: 'Entrer',
     passwordHint: '8 caractères minimum',
     checkInbox: 'Compte créé. Ouvrez le lien de confirmation envoyé à votre adresse email pour activer votre accès.',
+    newPassword: 'Nouveau mot de passe',
+    passwordUpdated: 'Mot de passe mis à jour. Vous pouvez vous connecter.',
     errors: {
       missing_credentials: 'Renseignez votre email et votre mot de passe.',
       invalid_credentials: 'Email ou mot de passe incorrect.',
@@ -62,6 +64,7 @@ export const fr = {
       invalid_email: 'Cette adresse email est refusée. Vérifiez la saisie.',
       signup_disabled: 'Les inscriptions sont temporairement fermées.',
       email_not_confirmed: "Votre adresse n'est pas encore confirmée. Ouvrez le lien reçu par email.",
+      invalid_link: 'Ce lien de réinitialisation est invalide ou expiré. Demandez-en un nouveau.',
     },
   },
   nav: {

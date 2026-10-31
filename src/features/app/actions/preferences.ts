@@ -2,7 +2,7 @@
 
 import { cookies } from 'next/headers';
 import { revalidatePath } from 'next/cache';
-import { getServerSupabase } from '../../../lib/supabase/server';
+import { getServerDb } from '../../../lib/neon/server';
 import { getAppSession } from '../data/session';
 import { APP_LANG_COOKIE, isAppLang, type AppLang } from '../i18n';
 
@@ -18,7 +18,7 @@ export async function setAppLang(lang: AppLang): Promise<void> {
 
   const session = await getAppSession();
   if (session && !session.demo) {
-    const db = await getServerSupabase();
+    const db = await getServerDb();
     if (db) await db.from('profiles').update({ lang }).eq('id', session.user.id);
   }
 

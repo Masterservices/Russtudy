@@ -2,7 +2,8 @@
 
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
-import { getServerSupabase } from '../../../lib/supabase/server';
+import { getAuth } from '../../../lib/neon/auth';
+import { getAuthUser, getServerDb } from '../../../lib/neon/server';
 import { getAppSession } from '../data/session';
 
 export interface GradeResult {
@@ -31,7 +32,7 @@ export async function gradeExercise(
   // rattacher.
   const session = await getAppSession();
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) {
     // Mode démonstration : aucune correction n'est possible sans base,
     // et il vaut mieux le dire que d'afficher un faux verdict.
@@ -64,7 +65,7 @@ export async function saveLessonProgress(
   const session = await getAppSession();
   if (!session) return { saved: false };
 
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return { saved: false };
 
   const { error } = await client.from('lesson_progress').upsert(
@@ -109,15 +110,15 @@ export async function signInLearner(
 
   if (!email || !password) return { error: 'missing' };
 
-  const client = await getServerSupabase();
-  if (!client) return { error: 'unavailable' };
+  const auth = getAuth();
+  if (!auth) return { error: 'unavailable' };
 
-  const { error } = await client.auth.signInWithPassword({ email, password });
+  const { error } = await auth.signIn.email({ email, password });
   if (error) {
     // La cause exacte reste dans les journaux : la dire à l'écran
     // révélerait quelles adresses sont enregistrées.
     console.error('[elearning][signin]', error.status, error.code, error.message);
-    return { error: error.code === 'over_request_rate_limit' ? 'rate' : 'credentials' };
+    return { error: error.status === 429 ? 'rate' : 'credentials' };
   }
 
   revalidatePath('/elearning', 'layout');
@@ -125,8 +126,8 @@ export async function signInLearner(
 }
 
 export async function signOutLearner(): Promise<void> {
-  const client = await getServerSupabase();
-  if (client) await client.auth.signOut();
+  const auth = getAuth();
+  if (auth) await auth.signOut({});
 
   revalidatePath('/elearning', 'layout');
   redirect('/elearning');
@@ -135,7 +136,7 @@ export async function signOutLearner(): Promise<void> {
 /**
  * Marque une leçon comme terminée.
  *
- * L'identité vient de `auth.getUser()` plutôt que de la session
+ * L'identité vient de la session Neon Auth plutôt que de la session
  * applicative : un apprenant n'a pas forcément de fiche `profiles`, et
  * exiger un rôle de la plateforme de suivi pour cocher une leçon de
  * langue reviendrait à recoudre les deux espaces. La politique
@@ -146,12 +147,10 @@ export async function markLessonDone(
   lessonId: string,
   blockPosition: number,
 ): Promise<{ saved: boolean }> {
-  const client = await getServerSupabase();
+  const client = await getServerDb();
   if (!client) return { saved: false };
 
-  const {
-    data: { user },
-  } = await client.auth.getUser();
+  const user = await getAuthUser();
   if (!user) return { saved: false };
 
   const { error } = await client.from('lesson_progress').upsert(
