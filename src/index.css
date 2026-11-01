@@ -1,0 +1,479 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* ============================================================
+   DESIGN SYSTEM — fusion V5 × V2 (RustudyClaudeV2)
+   Le design premium de V2 devient l'unique thème du site :
+   crème/violet, pilules, cartes 22px, micro-interactions.
+   Les classes t-* de V5 sont conservées pour que tous les
+   composants (simulateur, calendrier…) héritent du nouveau look.
+   ============================================================ */
+
+:root {
+  --bg: #F0EBE3;
+  --surface: #ffffff;
+  --surface-alt: #E8E3D9;
+  --ink: #0A0A0A;
+  --muted: rgba(10, 10, 10, 0.6);
+
+  /* V2 : pilule violette à texte noir */
+  --accent: #A855F7;
+  --accent-hover: #9333ea;
+  --accent-ink: #0A0A0A;
+  --hl: #2460E8;
+  --hl2: #A855F7;
+  --gold: #FBBB21;
+  --green: #22C55E;
+  --red: #EF4444;
+  --orange: #F97316;
+
+  --line: rgba(10, 10, 10, 0.1);
+  --line-soft: rgba(10, 10, 10, 0.08);
+  --line-w: 1.5px;
+  --radius: 22px;
+  --btn-radius: 999px;
+  --btn-line: transparent;
+  --shadow-card: 0 10px 30px rgba(10, 10, 10, 0.07);
+  --shadow-hover: 0 18px 50px rgba(0, 0, 0, 0.16);
+
+  --dark-bg: #0A0A0A;
+  --dark-ink: #ffffff;
+  --dark-muted: rgba(255, 255, 255, 0.55);
+  --dark-line: rgba(255, 255, 255, 0.12);
+
+  --display: "Space Grotesk", sans-serif;
+  --h-transform: none;
+  --h-weight: 700;
+  --h-tracking: -0.04em;
+  --h1-lh: 1.05;
+
+  --c1-bg: #2460E8; --c1-ink: #ffffff;
+  --c2-bg: #F97316; --c2-ink: #0A0A0A;
+  --c3-bg: #FBBB21; --c3-ink: #0A0A0A;
+  --c4-bg: #22C55E; --c4-ink: #0A0A0A;
+  --c5-bg: #A855F7; --c5-ink: #0A0A0A;
+
+  --ticker-a-bg: #2460E8; --ticker-a-ink: #ffffff;
+  --ticker-b-bg: #FBBB21; --ticker-b-ink: #0A0A0A;
+
+  --urgency-bg: #0A0A0A; --urgency-ink: #FBBB21;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Arabe : police dédiée + suppression du tracking latin */
+  html[lang="ar"] body,
+  html[lang="ar"] .t-h,
+  html[lang="ar"] .t-display {
+    font-family: 'Tajawal', 'Space Grotesk', sans-serif;
+    letter-spacing: 0 !important;
+  }
+
+  /* Arabe : interligne sûr pour les diacritiques */
+  html[lang="ar"] h1,
+  html[lang="ar"] h2,
+  html[lang="ar"] h3,
+  html[lang="ar"] h4 {
+    line-height: 1.4 !important;
+  }
+}
+
+/* ---------- Classes thématiques (héritées de V5) ---------- */
+
+.t-page { background: var(--bg); color: var(--ink); }
+.t-display { font-family: var(--display); }
+
+.t-h {
+  font-family: var(--display);
+  text-transform: var(--h-transform);
+  font-weight: var(--h-weight);
+  letter-spacing: var(--h-tracking);
+}
+
+.t-h1 { line-height: var(--h1-lh); }
+
+/* Kicker = c-label V2 : pilule à contour */
+.t-kicker {
+  display: inline-block;
+  width: fit-content;
+  border: 1.8px solid rgba(10, 10, 10, 0.25);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  align-self: flex-start;
+}
+.text-center > .t-kicker { align-self: center; }
+.t-kicker-dark {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--accent);
+}
+
+.t-muted { color: var(--muted); }
+.t-hl { color: var(--hl); }
+.t-hl2 { color: var(--hl2); }
+.t-gold-text { color: var(--gold); }
+.t-green-text { color: var(--green); }
+.t-red-text { color: var(--red); }
+.t-orange-text { color: var(--orange); }
+.t-accent-text { color: var(--accent); }
+
+.t-card {
+  background: var(--surface);
+  color: var(--ink);
+  border: var(--line-w) solid var(--line-soft);
+  border-radius: var(--radius);
+}
+.t-card-shadow { box-shadow: var(--shadow-card); }
+
+.t-card-dark {
+  background: var(--dark-bg);
+  color: var(--dark-ink);
+  border: none;
+  border-radius: var(--radius);
+}
+
+.t-dark { background: var(--dark-bg); color: var(--dark-ink); }
+.t-dark-muted { color: var(--dark-muted); }
+.t-dark-line { border-color: var(--dark-line); }
+
+.t-line { border-color: var(--line); }
+.t-line-soft { border-color: var(--line-soft); }
+
+/* Boutons pilules V2 */
+.t-btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: var(--btn-radius);
+  transition: filter 0.15s, transform 0.15s;
+}
+.t-btn-primary:hover { filter: brightness(1.1); transform: scale(1.02); }
+
+.t-btn-dark {
+  background: var(--dark-bg);
+  color: var(--dark-ink);
+  border: none;
+  border-radius: var(--btn-radius);
+  transition: filter 0.15s, transform 0.15s;
+}
+.t-btn-dark:hover { filter: brightness(1.2); transform: scale(1.01); }
+
+.t-btn-light {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid rgba(10, 10, 10, 0.15);
+  border-radius: var(--btn-radius);
+  transition: background 0.15s;
+}
+.t-btn-light:hover { background: rgba(10, 10, 10, 0.06); }
+
+.t-input {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1.5px solid rgba(10, 10, 10, 0.1);
+  border-radius: 999px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.t-input:focus { border-color: var(--accent); }
+
+.t-chip {
+  border: 1.5px solid rgba(10, 10, 10, 0.12);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 999px;
+  transition: all 0.18s;
+}
+.t-chip-active {
+  background: var(--dark-bg);
+  color: var(--dark-ink);
+  border: 1.5px solid var(--dark-bg);
+  border-radius: 999px;
+}
+
+.t-c1 { background: var(--c1-bg); color: var(--c1-ink); }
+.t-c2 { background: var(--c2-bg); color: var(--c2-ink); }
+.t-c3 { background: var(--c3-bg); color: var(--c3-ink); }
+.t-c4 { background: var(--c4-bg); color: var(--c4-ink); }
+.t-c5 { background: var(--c5-bg); color: var(--c5-ink); }
+
+.t-ticker-a { background: var(--ticker-a-bg); color: var(--ticker-a-ink); }
+.t-ticker-b { background: var(--ticker-b-bg); color: var(--ticker-b-ink); }
+.t-urgency { background: var(--urgency-bg); color: var(--urgency-ink); }
+
+.t-nav {
+  background: var(--bg);
+}
+.t-nav.scrolled {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Composants V2 ---------- */
+
+/* Flèche ronde des cartes */
+.v2-arrow {
+  position: absolute;
+  top: 22px;
+  inset-inline-end: 22px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+}
+
+/* Bouton carré noir (menu) */
+.v2-sq-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--dark-bg);
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s;
+  flex-shrink: 0;
+  color: #fff;
+}
+.v2-sq-btn:hover { transform: scale(1.05); }
+
+/* Item processus */
+.v2-proc:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.13);
+}
+[dir="rtl"] .v2-proc:hover { transform: translateX(-5px); }
+
+/* Chips universités */
+.v2-uni-chip {
+  background: #fff;
+  border-radius: 999px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  border: 1.5px solid rgba(0, 0, 0, 0.07);
+  transition: background 0.18s;
+  flex-shrink: 0;
+}
+.v2-uni-chip:hover { background: var(--gold); }
+
+/* Cartes au survol (tilt géré en JS, ombre ici) */
+.tilt-card {
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.25s;
+  will-change: transform;
+}
+.tilt-card:hover { box-shadow: var(--shadow-hover); }
+
+/* Bottom-sheet modale candidature */
+.v2-sheet {
+  width: min(540px, 100%);
+  max-height: 92svh;
+  background: var(--bg);
+  border-radius: 28px 28px 0 0;
+  transform: translateY(110%);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.v2-overlay-open .v2-sheet { transform: translateY(0); }
+
+/* Feuille du funnel (centrée) */
+.v2-fn-sheet {
+  width: min(480px, 100%);
+  max-height: 92svh;
+  background: var(--bg);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Onglet flottant guide gratuit */
+.v2-guide-tab {
+  position: fixed;
+  inset-inline-start: 16px;
+  bottom: 16px;
+  z-index: 600;
+  background: var(--dark-bg);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 20px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Pastille de confiance ✓ */
+.v2-trust::before {
+  content: '✓';
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* Nav mobile plein écran */
+.v2-mob-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 18px;
+  padding: 22px 20px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+
+/* Footer V2 */
+.v2-flink {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.v2-flink:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.v2-flink::after { content: '↗'; font-size: 0.72rem; opacity: 0.38; }
+
+.v2-fpill {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+}
+
+.v2-soc {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  transition: background 0.18s, color 0.18s;
+}
+.v2-soc:hover { background: var(--accent); color: var(--accent-ink); }
+
+.v2-footer-giant {
+  position: absolute;
+  bottom: -4px;
+  inset-inline-start: 6px;
+  font-size: clamp(4.5rem, 22vw, 13rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--dark-bg);
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Révélation au défilement — avec filet de sécurité :
+   sans JS (ou si l'observer ne tire pas), tout reste visible. */
+.reveal { opacity: 1; transform: none; }
+html.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.97);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+html.js-reveal .reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Tickers ---------- */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.animate-ticker-fast {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 15s linear infinite;
+}
+
+.animate-ticker-reverse {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 20s linear infinite reverse;
+}
+
+[dir="rtl"] .animate-ticker,
+[dir="rtl"] .animate-ticker-reverse {
+  direction: ltr;
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+.animate-pop { animation: pop 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker, .animate-ticker-reverse, .animate-ticker-fast, .animate-float, .animate-pop {
+    animation: none;
+  }
+  html.js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+  .tilt-card, .v2-proc { transition: none; }
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
