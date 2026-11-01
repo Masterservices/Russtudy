@@ -64,6 +64,18 @@ export const en: AppDictionary = {
       invalid_link: 'This reset link is invalid or has expired. Request a new one.',
     },
   },
+  live: {
+    title: 'Live',
+    hint: 'Announcements appear here as soon as they are published, without reloading the page.',
+    empty: 'No announcements yet.',
+    status: {
+      connecting: 'Connecting…',
+      live: 'Up to date',
+      stale: 'Updating… data may be out of date.',
+      error: 'Stopped: reload the page.',
+      closed: 'Closed',
+    },
+  },
   nav: {
     home: 'Home',
     dossier: 'Application',

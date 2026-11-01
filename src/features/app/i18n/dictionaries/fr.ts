@@ -67,6 +67,18 @@ export const fr = {
       invalid_link: 'Ce lien de réinitialisation est invalide ou expiré. Demandez-en un nouveau.',
     },
   },
+  live: {
+    title: 'En direct',
+    hint: "Les annonces s'affichent ici dès qu'elles sont publiées, sans recharger la page.",
+    empty: 'Aucune annonce pour le moment.',
+    status: {
+      connecting: 'Connexion…',
+      live: 'À jour',
+      stale: 'Mise à jour… les données peuvent être en retard.',
+      error: 'Arrêté : rechargez la page.',
+      closed: 'Fermé',
+    },
+  },
   nav: {
     home: 'Accueil',
     dossier: 'Dossier',
