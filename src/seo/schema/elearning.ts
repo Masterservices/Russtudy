@@ -100,3 +100,41 @@ export function buildElearningLessonSchema(lesson: ElearningLessonFacts) {
     },
   };
 }
+
+export interface ElearningShortsFacts {
+  courseSlug: string;
+  courseName: string;
+  name: string;
+  description: string;
+  /** Niveau affiché sur la page (A1, A2…). */
+  level: string;
+  /** Langue de l'interface de la page. */
+  inLanguage: string;
+}
+
+/**
+ * Fil de shorts d'un parcours en LearningResource.
+ *
+ * Les shorts sont ouverts à tous et la page le dit : c'est le seul
+ * fait d'accès déclaré. Ni nombre de vues, ni note — rien de cela
+ * n'existe, et rien de cela n'est affiché.
+ */
+export function buildElearningShortsSchema(shorts: ElearningShortsFacts) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: shorts.name,
+    description: shorts.description,
+    url: `${SITE.domain}/elearning/${shorts.courseSlug}/shorts`,
+    inLanguage: shorts.inLanguage,
+    educationalLevel: shorts.level,
+    isAccessibleForFree: true,
+    provider: PROVIDER,
+    isPartOf: {
+      '@type': 'Course',
+      name: shorts.courseName,
+      url: `${SITE.domain}/elearning/${shorts.courseSlug}`,
+      provider: PROVIDER,
+    },
+  };
+}

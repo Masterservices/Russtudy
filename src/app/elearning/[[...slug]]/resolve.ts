@@ -1,11 +1,22 @@
 import { cache } from 'react';
 import type { Lang } from '../../../i18n';
 import { getPublicCatalogue, type PublicCourse } from '../../../features/app/elearning/public';
+import { SHORTS_SEGMENT, getShortDeck } from '../../../content/shorts/registry';
+import type { ShortDeckSource } from '../../../content/shorts/types';
 
 export type ElearningRoute =
   | { kind: 'catalogue'; lang: Lang; courses: PublicCourse[] }
   | { kind: 'visio'; lang: Lang }
   | { kind: 'signin'; lang: Lang }
+  | { kind: 'shorts-hub'; lang: Lang }
+  | {
+      kind: 'shorts';
+      lang: Lang;
+      courseSlug: string;
+      /** Parcours publié en base ; `null` si elle ne répond pas. */
+      course: PublicCourse | null;
+      deck: ShortDeckSource;
+    }
   | { kind: 'course'; lang: Lang; courseSlug: string; course: PublicCourse }
   | { kind: 'lesson'; lang: Lang; courseSlug: string; lessonSlug: string; course: PublicCourse }
   | { kind: 'unknown' };
@@ -45,10 +56,38 @@ export const resolveElearning = cache(async function resolveElearning(
     return { kind: 'signin', lang: 'fr' };
   }
 
+  if (segments.length === 1 && segments[0] === SHORTS_SEGMENT) {
+    return { kind: 'shorts-hub', lang: 'fr' };
+  }
+
   if (segments.length === 1) {
     const course = (await getPublicCatalogue()).find((c) => c.slug === segments[0]);
     if (!course) return { kind: 'unknown' };
     return { kind: 'course', lang: asLang(course.uiLangs[0]), courseSlug: segments[0], course };
+  }
+
+  // « shorts » est un mot réservé à cette place : aucune leçon ne peut
+  // porter ce slug. Le fil vit dans le dépôt, pas en base — si la base
+  // ne répond pas, la page s'affiche quand même, dans la langue que le
+  // contenu déclare, simplement sans lien vers les leçons.
+  if (segments.length === 2 && segments[1] === SHORTS_SEGMENT) {
+    const deck = getShortDeck(segments[0]);
+    if (!deck) return { kind: 'unknown' };
+
+    let course: PublicCourse | null = null;
+    try {
+      course = (await getPublicCatalogue()).find((c) => c.slug === segments[0]) ?? null;
+    } catch {
+      course = null;
+    }
+
+    return {
+      kind: 'shorts',
+      lang: asLang(course?.uiLangs[0] ?? deck.uiLangs[0]),
+      courseSlug: segments[0],
+      course,
+      deck,
+    };
   }
 
   if (segments.length === 2) {
