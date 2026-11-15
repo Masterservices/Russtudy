@@ -15,8 +15,15 @@ import { BOURSES_SECTION_LABEL } from '../pages-templates/bourses/labels';
 import { GUIDES_SECTION_LABEL } from '../pages-templates/guides/labels';
 import { GUIDE_SECTION_LABEL } from '../pages-templates/guide/labels';
 import { FAQ_PAGE_SECTION_LABEL } from '../pages-templates/faq/labels';
+import { SITE } from '../config/site';
 
 const FooterGridCanvas = lazy(() => import('./FooterGridCanvas'));
+
+// Icônes sociales : libellé accessible et texte court. Affichées seulement si l'URL est renseignée dans SITE.social.
+const SOCIAL_ICONS: { key: keyof typeof SITE.social; label: string; short: string }[] = [
+  { key: 'facebook', label: 'Facebook', short: 'fb' },
+  { key: 'instagram', label: 'Instagram', short: 'ig' },
+];
 
 const HOME_HREF: Record<Lang, string> = { fr: '/', en: '/en', ar: '/ar', ru: '/ru' };
 
@@ -92,6 +99,9 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
         <div className="border-t border-white/[.07] py-4 flex items-center justify-between flex-wrap gap-2.5">
           <p className="text-[0.72rem] opacity-25">© {new Date().getFullYear()} RusStudy — {t.footer.legal}</p>
           <div className="flex gap-1.5">
+            {SOCIAL_ICONS.filter(({ key }) => SITE.social[key].trim() !== '').map(({ key, label, short }) => (
+              <a key={key} href={SITE.social[key]} target="_blank" rel="noopener noreferrer" className="v2-soc" aria-label={label}>{short}</a>
+            ))}
             <a href="https://wa.me/79964334489" target="_blank" rel="noreferrer" className="v2-soc" aria-label="WhatsApp">wa</a>
           </div>
         </div>

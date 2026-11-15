@@ -1,5 +1,8 @@
 import { SITE } from '../../config/site';
 
+// Profils sociaux réellement affichés dans le pied de page (URL renseignée).
+const socialProfiles = Object.values(SITE.social).filter((url) => url.trim() !== '');
+
 // Ne jamais réintroduire d'aggregateRating/Review sur ce schéma : noter notre
 // propre Organization sur notre propre site est un avis "self-serving" interdit
 // par les consignes Google (voir CLAUDE.md, section SEO).
@@ -21,5 +24,6 @@ export function buildEducationalOrganizationSchema() {
       telephone: SITE.phone,
       availableLanguage: SITE.supportedLangs,
     },
+    ...(socialProfiles.length > 0 && { sameAs: socialProfiles }),
   };
 }
