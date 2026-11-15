@@ -10,4 +10,12 @@ export const SITE = {
   defaultLang: 'fr' as Lang,
   supportedLangs: ['fr', 'en', 'ar', 'ru'] as Lang[],
   ogImage: 'https://www.russieetudes.com/assets/img/og-cover.jpg',
+  /**
+   * Comptes officiels. Renseigner l'URL complète (https://…) ; une valeur vide
+   * masque l'icône dans le pied de page et retire l'entrée de `sameAs`.
+   */
+  social: {
+    facebook: 'https://www.facebook.com/RusStudyTunisie',
+    instagram: 'https://www.instagram.com/russtudytunisie/',
+  },
 };
