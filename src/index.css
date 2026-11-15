@@ -684,3 +684,145 @@ html.js-reveal .reveal.in { opacity: 1; transform: none; }
     transform: translate(-50%, -50%) rotate(90deg);
   }
 }
+
+/* ------------------------------------------------------------------
+   Shorts de langue.
+
+   Un fil d'écrans, aimanté par le navigateur : le défilement n'est pas
+   réécrit, il est seulement arrêté écran par écran. Tout ce qui bouge
+   ici sert à dire où en est l'écoute — la photo dérive quand la voix
+   parle, les mots s'allument quand ils sont dits — et s'immobilise
+   pour qui a demandé moins d'animations.
+   ------------------------------------------------------------------ */
+.rs-shorts-scroller,
+.rs-shorts-chips {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.rs-shorts-scroller::-webkit-scrollbar,
+.rs-shorts-chips::-webkit-scrollbar { display: none; }
+
+@keyframes rs-shorts-open {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.rs-shorts-overlay { animation: rs-shorts-open 0.18s ease-out both; }
+
+/* La photo dérive lentement, et seulement pendant que la voix parle :
+   en pause, l'image se fige avec elle. */
+@keyframes rs-short-drift {
+  from { transform: scale(1.04) translate3d(0, 1.2%, 0); }
+  to   { transform: scale(1.14) translate3d(0, -1.2%, 0); }
+}
+.rs-short-bg {
+  animation: rs-short-drift 14s ease-in-out infinite alternate;
+  animation-play-state: paused;
+  will-change: transform;
+}
+.rs-short-bg.is-running { animation-play-state: running; }
+
+/* Voile : sombre en haut pour les onglets, plus sombre en bas pour la
+   phrase. Le milieu reste clair — c'est là qu'on voit la photo. */
+.rs-short-veil {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.12) 22%,
+    rgba(0, 0, 0, 0.08) 38%,
+    rgba(0, 0, 0, 0.58) 62%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+.rs-short-topbar {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+/* Mot à mot : un mot pas encore dit reste en retrait. L'expression
+   clé garde sa pastille violette du début à la fin — c'est elle qu'on
+   vient chercher, elle n'attend pas d'être prononcée pour se montrer. */
+.rs-short-word {
+  opacity: 0.5;
+  transition: opacity 0.14s linear;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+.rs-short-word.is-read { opacity: 1; }
+.rs-short-word.is-key {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: none;
+  border-radius: 0.3em;
+  padding: 0 0.16em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.rs-short-line { opacity: 0.5; transition: opacity 0.2s linear; }
+.rs-short-line.is-past { opacity: 0.78; }
+.rs-short-line.is-current { opacity: 1; }
+.rs-short-line .rs-short-word { opacity: 1; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); }
+.rs-short-line.is-current .rs-short-word:not(.is-read) { opacity: 0.5; }
+
+@keyframes rs-short-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rs-short-reveal,
+.rs-short-toast { animation: rs-short-reveal 0.28s cubic-bezier(.22, .61, .36, 1) both; }
+
+@keyframes rs-short-burst {
+  0%   { opacity: 0; transform: scale(0.5); }
+  25%  { opacity: 1; transform: scale(1.12); }
+  60%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.25); }
+}
+.rs-short-burst { animation: rs-short-burst 0.75s ease-out both; }
+
+@keyframes rs-short-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.85; }
+  50%      { transform: translateY(-9px); opacity: 1; }
+}
+.rs-short-hint { animation: rs-short-hint 1.5s ease-in-out infinite; }
+
+/* Quiz et écran de fin : pas de photo. Le fond change pour dire que
+   l'écran demande quelque chose, au lieu de montrer quelque chose. */
+.rs-short-quiz {
+  background:
+    radial-gradient(120% 70% at 100% 0%, rgba(168, 85, 247, 0.42), rgba(168, 85, 247, 0) 60%),
+    radial-gradient(110% 60% at 0% 100%, rgba(36, 96, 232, 0.4), rgba(36, 96, 232, 0) 62%),
+    #0b0a14;
+}
+
+@keyframes rs-sheet-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+.rs-sheet-panel { animation: rs-sheet-up 0.26s cubic-bezier(.22, .61, .36, 1) both; }
+.rs-sheet-backdrop { animation: rs-shorts-open 0.2s ease-out both; }
+
+@keyframes rs-rec-dot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+.rs-rec-dot { animation: rs-rec-dot 1s ease-in-out infinite; }
+
+/* Bulle d'une barre du graphique : au survol comme au clavier. */
+.rs-week-tip { opacity: 0; transition: opacity 0.12s; }
+.rs-week-day:hover .rs-week-tip,
+.rs-week-day:focus .rs-week-tip { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-shorts-overlay,
+  .rs-short-bg,
+  .rs-short-reveal,
+  .rs-short-toast,
+  .rs-short-burst,
+  .rs-short-hint,
+  .rs-sheet-panel,
+  .rs-sheet-backdrop,
+  .rs-rec-dot { animation: none; }
+  .rs-short-bg { transform: scale(1.04); }
+  .rs-short-burst { display: none; }
+  .rs-short-word,
+  .rs-short-line,
+  .rs-week-tip { transition: none; }
+}

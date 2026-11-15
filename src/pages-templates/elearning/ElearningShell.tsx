@@ -19,6 +19,8 @@ import { getPublicCatalogue, getLearner } from '../../features/app/elearning/pub
 import { signOutLearner } from '../../features/app/elearning/actions';
 import { EL } from '../../features/app/elearning/labels';
 import { pick } from '../../features/app/elearning/types';
+import { SHORTS_SEGMENT } from '../../content/shorts/registry';
+import { shortsCopy } from './shorts-copy';
 
 /**
  * Coque de la plateforme d'apprentissage.
@@ -56,6 +58,8 @@ export default async function ElearningShell({
   const showDiscover = lang === 'fr' || lang === 'ar';
   const L = EL[lang];
   const A = ACCOUNT[lang];
+  const shortsHref = `/elearning/${SHORTS_SEGMENT}`;
+  const shortsLabel = shortsCopy(lang).crumb;
 
   // Le pied de page se construit depuis le catalogue : un parcours
   // ajouté en base y apparaît sans qu'on ait pensé à l'y recopier.
@@ -95,6 +99,14 @@ export default async function ElearningShell({
             className="t-btn-dark font-bold text-[0.85rem] px-5 py-2.5 whitespace-nowrap hidden md:inline-block"
           >
             {NAV_LESSONS[lang]}
+          </Link>
+          {/* Les shorts restent visibles sur téléphone, là où le reste du
+              menu se replie : c'est sur cet écran qu'ils se regardent. */}
+          <Link
+            href={shortsHref}
+            className="t-btn-dark font-bold text-[0.85rem] px-4 sm:px-5 py-2.5 whitespace-nowrap"
+          >
+            {shortsLabel}
           </Link>
           <Link
             href="/elearning/visio"
@@ -227,6 +239,11 @@ export default async function ElearningShell({
                 <li>
                   <Link href="/elearning" className="hover:underline">
                     {NAV_LESSONS[lang]}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={shortsHref} className="hover:underline">
+                    {shortsLabel}
                   </Link>
                 </li>
                 <li>
