@@ -15,7 +15,7 @@ export const SITE = {
    * masque l'icône dans le pied de page et retire l'entrée de `sameAs`.
    */
   social: {
-    facebook: 'https://www.facebook.com/1488100781044530',
+    facebook: 'https://www.facebook.com/RusStudyTunisie',
     instagram: 'https://www.instagram.com/russtudytunisie/',
   },
 };
