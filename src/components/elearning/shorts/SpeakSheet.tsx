@@ -178,7 +178,7 @@ export default function SpeakSheet({
 
       {take && phase === 'ready' && (
         <div className="t-card rounded-[20px] p-4 mt-4">
-          <p className="t-kicker text-[0.7rem] font-bold uppercase tracking-wide opacity-60 mb-2">
+          <p className="text-[0.7rem] font-bold uppercase tracking-wide opacity-60 mb-2">
             {labels.speakYou}
           </p>
           <audio ref={own} src={take} controls className="w-full" />

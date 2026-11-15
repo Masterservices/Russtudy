@@ -149,7 +149,7 @@ export default function ShortsPage({
         <div className="grid gap-4 md:grid-cols-2">
           {themes.map((theme) => (
             <section key={theme.id} className="t-card rounded-[20px] px-5 py-4">
-              <h3 className="t-accent-text text-[0.78rem] font-bold uppercase tracking-wide mb-1">
+              <h3 className="text-[0.78rem] font-bold uppercase tracking-wide opacity-60 mb-1">
                 {theme.label}
               </h3>
               <ul>

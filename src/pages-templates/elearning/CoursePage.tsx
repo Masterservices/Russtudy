@@ -8,6 +8,8 @@ import { buildElearningCourseSchema } from '../../seo/schema/elearning';
 import ElearningShell from './ElearningShell';
 import { ELEARNING_LABEL, accessRequestHref } from './labels';
 import { lessonCount, moduleCount } from './plural';
+import { SHORTS_SEGMENT, getShortDeck } from '../../content/shorts/registry';
+import { shortsCopy } from './shorts-copy';
 
 function LessonRow({
   lesson,
@@ -157,6 +159,27 @@ export default function CoursePage({
             {doneCount} / {lessonCount(lang, course.lessons.length)} — {L.lessonsDone}
           </p>
         </div>
+      )}
+
+      {/* Les shorts du parcours, avant le programme : ils sont ouverts à
+          tous et font entendre la langue en dix secondes, là où la
+          première leçon demande dix minutes. */}
+      {getShortDeck(course.slug) && (
+        <Link
+          href={`/elearning/${course.slug}/${SHORTS_SEGMENT}`}
+          className="t-card-dark rounded-[22px] p-6 max-w-3xl mb-10 flex flex-wrap items-center justify-between gap-4 transition-transform duration-150 hover:-translate-y-[3px]"
+        >
+          <span className="min-w-0 flex-1 basis-64">
+            <span className="t-kicker t-kicker-dark text-[0.7rem]">{shortsCopy(lang).entry.kicker}</span>
+            <span className="block t-display font-bold text-xl tracking-[-0.02em] mt-3 mb-1.5">
+              {shortsCopy(lang).entry.title}
+            </span>
+            <span className="block text-[0.92rem] leading-[1.6] opacity-80">{shortsCopy(lang).entry.text}</span>
+          </span>
+          <span className="t-btn-primary font-bold text-[0.88rem] px-5 py-3 whitespace-nowrap">
+            {shortsCopy(lang).entry.cta} →
+          </span>
+        </Link>
       )}
 
       <h2 className="t-display font-bold text-xl tracking-[-0.03em] mb-4">{L.programme}</h2>

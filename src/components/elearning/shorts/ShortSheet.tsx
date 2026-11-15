@@ -81,7 +81,7 @@ export default function ShortSheet({
 
       <dl className="flex flex-col gap-4 mb-5">
         <div>
-          <dt className="t-kicker text-[0.7rem] font-bold uppercase tracking-wide opacity-60 mb-1">
+          <dt className="text-[0.7rem] font-bold uppercase tracking-wide opacity-60 mb-1">
             {labels.meaning}
           </dt>
           <dd className="text-[0.98rem] leading-[1.55]">
@@ -92,7 +92,7 @@ export default function ShortSheet({
           </dd>
         </div>
         <div>
-          <dt className="t-kicker text-[0.7rem] font-bold uppercase tracking-wide opacity-60 mb-1">
+          <dt className="text-[0.7rem] font-bold uppercase tracking-wide opacity-60 mb-1">
             {labels.usage}
           </dt>
           <dd className="text-[0.98rem] leading-[1.55]">{short.note}</dd>

@@ -11,7 +11,6 @@ import {
   Play,
   RotateCcw,
   Share2,
-  Turtle,
 } from 'lucide-react';
 import type { Short } from '../../../content/shorts/types';
 import { wordSpans, type WordSpan } from '../../../features/app/elearning/shorts/feed';
@@ -58,11 +57,15 @@ function Words({ spans, read }: { spans: WordSpan[]; read: number }) {
 
 function RailButton({
   label,
+  name,
   pressed,
   onClick,
   children,
 }: {
+  /** Mot affiché sous le bouton. */
   label: string;
+  /** Nom complet pour un lecteur d'écran, quand le mot seul ne suffit pas. */
+  name?: string;
   pressed?: boolean;
   onClick: () => void;
   children: React.ReactNode;
@@ -71,6 +74,7 @@ function RailButton({
     <button
       type="button"
       onClick={onClick}
+      aria-label={name}
       aria-pressed={pressed}
       className="pointer-events-auto flex flex-col items-center gap-1 text-white"
     >
@@ -230,11 +234,20 @@ function ShortSlideView({
       )}
 
       <div className="pointer-events-none absolute end-2.5 bottom-[7.2rem] z-[2] flex flex-col items-center gap-4">
-        <RailButton label={saved ? labels.saved : labels.save} pressed={saved} onClick={() => onSave(short.id)}>
+        <RailButton
+          label={labels.tabNotebook}
+          name={saved ? labels.saved : labels.save}
+          pressed={saved}
+          onClick={() => onSave(short.id)}
+        >
           {saved ? <BookmarkCheck size={21} /> : <Bookmark size={21} />}
         </RailButton>
+        {/* Le rapport de vitesse, pas un pictogramme : à cette taille,
+            aucune icône ne dit « plus lentement » sans légende. */}
         <RailButton label={labels.slow} pressed={slow} onClick={onSlow}>
-          <Turtle size={21} />
+          <span aria-hidden="true" className="text-[0.74rem] font-bold tracking-[-0.02em]" dir="ltr">
+            0.75×
+          </span>
         </RailButton>
         {canSpeak && !dialogue && (
           <RailButton label={labels.speak} onClick={() => onSpeak(short.id)}>
@@ -356,10 +369,14 @@ function ShortSlideView({
       {active && step === 5 && (
         <div
           aria-hidden="true"
-          className="rs-short-hint pointer-events-none absolute inset-x-0 top-[38%] flex flex-col items-center gap-1 text-white/85"
+          className="rs-short-hint pointer-events-none absolute inset-x-0 top-[36%] flex justify-center"
         >
-          <ChevronUp size={30} />
-          <span className="text-[0.78rem] font-bold drop-shadow">{labels.swipeHint}</span>
+          {/* Sur son propre fond : la photo peut être claire à cet
+              endroit, et un texte blanc s'y perdrait. */}
+          <span className="flex flex-col items-center gap-0.5 rounded-[18px] bg-black/50 backdrop-blur-sm px-4 py-2 text-white">
+            <ChevronUp size={26} />
+            <span className="text-[0.78rem] font-bold">{labels.swipeHint}</span>
+          </span>
         </div>
       )}
     </article>
