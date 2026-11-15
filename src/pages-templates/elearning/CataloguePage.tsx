@@ -7,6 +7,8 @@ import { buildBreadcrumb } from '../../seo/breadcrumb';
 import ElearningShell from './ElearningShell';
 import { ELEARNING_LABEL, accessRequestHref, TAUGHT_LANGUAGE } from './labels';
 import { lessonCount } from './plural';
+import { SHORTS_SEGMENT, getShortDeck } from '../../content/shorts/registry';
+import { deckCopy, shortsCopy } from './shorts-copy';
 
 /**
  * Catalogue des parcours.
@@ -19,6 +21,13 @@ export default function CataloguePage({ lang, courses }: { lang: Lang; courses: 
   const L = EL[lang];
   const breadcrumb = buildBreadcrumb('/elearning', lang, { elearning: ELEARNING_LABEL[lang] });
   const accessHref = accessRequestHref(lang);
+  const shorts = shortsCopy(lang);
+  // Un encart par parcours publié qui a des shorts : un parcours retiré
+  // du catalogue ne garde pas d'entrée ici.
+  const decks = courses.flatMap((course) => {
+    const deck = getShortDeck(course.slug);
+    return deck ? [deck] : [];
+  });
 
   return (
     <ElearningShell
@@ -83,6 +92,27 @@ export default function CataloguePage({ lang, courses }: { lang: Lang; courses: 
             );
           })}
         </div>
+      )}
+
+      {decks.length > 0 && (
+        <section className="t-card-dark rounded-[22px] p-7 max-w-3xl mb-10">
+          <span className="t-kicker t-kicker-dark text-[0.7rem]">{shorts.entry.kicker}</span>
+          <h2 className="t-display font-bold text-xl tracking-[-0.02em] mt-3 mb-2">{shorts.entry.title}</h2>
+          <p className="text-[0.92rem] leading-[1.65] opacity-80 mb-5">{shorts.entry.text}</p>
+          <div className="flex flex-wrap gap-2">
+            {decks.map((deck) => (
+              <Link
+                key={deck.courseSlug}
+                href={`/elearning/${deck.courseSlug}/${SHORTS_SEGMENT}`}
+                className="t-btn-primary inline-flex items-center gap-2 font-bold text-[0.88rem] px-5 py-3"
+              >
+                <span aria-hidden="true">{TAUGHT_LANGUAGE[deck.targetLang]?.flag}</span>
+                {deckCopy(lang, deck.targetLang, deck.level).name}
+                <span aria-hidden="true">→</span>
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
 
       <p className="text-[0.92rem] leading-[1.65] opacity-70 max-w-2xl mb-8">{L.moreSoon}</p>

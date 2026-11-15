@@ -200,7 +200,7 @@ const COOKIES: Record<Lang, LegalCopy> = {
     description:
       "RussieEtudes.com n'utilise aucun cookie publicitaire ni traceur tiers. Découvrez ce que le site enregistre localement dans votre navigateur et comment l'effacer.",
     h1: 'Cookies et stockage local',
-    updated: 'Dernière mise à jour : 22 juillet 2026',
+    updated: 'Dernière mise à jour : 14 novembre 2026',
     intro:
       "Le site RussieEtudes.com n'utilise aucun cookie publicitaire, aucun traceur tiers et aucun outil de mesure d'audience externe. Certaines informations sont en revanche enregistrées localement dans votre navigateur (localStorage / sessionStorage) pour améliorer votre expérience.",
     sections: [
@@ -208,6 +208,7 @@ const COOKIES: Record<Lang, LegalCopy> = {
         heading: 'Ce que le site enregistre dans votre navigateur',
         paragraphs: [
           "Votre langue préférée (pour vous la proposer à la prochaine visite), l'email saisi pour recevoir le guide, les informations de votre dernière candidature ou prise de rendez-vous (numéro de dossier, données du formulaire) afin d'alimenter votre espace de suivi candidat, et un indicateur de session pour ne pas réafficher certaines fenêtres.",
+          "Sur la plateforme de langues, votre carnet de shorts (expressions enregistrées, échéances de révision, points et jours d'affilée) et vos réglages de lecture sont eux aussi conservés dans le navigateur. L'enregistrement de votre voix, quand vous l'utilisez pour vous comparer au modèle, reste en mémoire le temps de l'exercice : il n'est ni stocké ni transmis.",
           'Ces informations restent sur votre appareil : elles ne sont pas des cookies transmis automatiquement à nos serveurs à chaque page.',
           "Un seul cookie fonctionnel est déposé (rs_lang_redirected, durée 1 an) : il mémorise que la détection automatique de langue a déjà eu lieu lors de votre première visite, afin de ne plus vous rediriger ensuite. Il ne contient aucune donnée personnelle.",
         ],
@@ -237,7 +238,7 @@ const COOKIES: Record<Lang, LegalCopy> = {
     description:
       'RussieEtudes.com uses no advertising cookies and no third-party trackers. Learn what the site stores locally in your browser and how to clear it.',
     h1: 'Cookies and local storage',
-    updated: 'Last updated: 22 July 2026',
+    updated: 'Last updated: 14 November 2026',
     intro:
       'RussieEtudes.com uses no advertising cookies, no third-party trackers and no external analytics tools. Some information is however stored locally in your browser (localStorage / sessionStorage) to improve your experience.',
     sections: [
@@ -245,6 +246,7 @@ const COOKIES: Record<Lang, LegalCopy> = {
         heading: 'What the site stores in your browser',
         paragraphs: [
           'Your preferred language (so it can be offered on your next visit), the email entered to receive the guide, the details of your latest application or booking (file number, form data) to power your local applicant tracking space, and a session flag to avoid showing certain pop-ups twice.',
+          'On the language platform, your shorts notebook (saved expressions, review dates, points and day streak) and your playback settings are also kept in the browser. The recording of your voice, when you use it to compare yourself with the model, stays in memory for the duration of the exercise: it is neither stored nor transmitted.',
           'This information stays on your device: it is not a cookie automatically sent to our servers on every page.',
           'A single functional cookie is set (rs_lang_redirected, 1-year lifetime): it records that automatic language detection already happened on your first visit, so you are never redirected again. It contains no personal data.',
         ],
@@ -274,7 +276,7 @@ const COOKIES: Record<Lang, LegalCopy> = {
     description:
       'لا يستخدم موقع RussieEtudes.com أي كوكيز إعلانية ولا متتبعات تابعة لطرف ثالث. تعرّف على ما يخزنه الموقع محليًا في متصفحك وكيفية حذفه.',
     h1: 'الكوكيز والتخزين المحلي',
-    updated: 'آخر تحديث: 22 جويلية 2026',
+    updated: 'آخر تحديث: 14 نوفمبر 2026',
     intro:
       'لا يستخدم موقع RussieEtudes.com أي كوكيز إعلانية ولا متتبعات خارجية ولا أدوات قياس جمهور. لكن تُخزَّن بعض المعلومات محليًا في متصفحك (localStorage / sessionStorage) لتحسين تجربتك.',
     sections: [
@@ -282,6 +284,7 @@ const COOKIES: Record<Lang, LegalCopy> = {
         heading: 'ما يخزنه الموقع في متصفحك',
         paragraphs: [
           'لغتك المفضلة (لاقتراحها في زيارتك القادمة)، البريد الإلكتروني المدخل لاستلام الدليل، معلومات آخر ترشح أو حجز موعد (رقم الملف، بيانات الاستمارة) لتغذية فضاء المتابعة المحلي الخاص بك، ومؤشر جلسة لعدم إعادة عرض بعض النوافذ.',
+          'على منصّة اللغات، يُحفظ دفتر المقاطع القصيرة (العبارات المحفوظة، مواعيد المراجعة، النقاط والأيام المتتالية) وإعدادات التشغيل في المتصفح أيضًا. أمّا تسجيل صوتك، عند استعماله للمقارنة بالنموذج، فيبقى في الذاكرة مدّة التمرين فقط: لا يُخزَّن ولا يُرسل.',
           'تبقى هذه المعلومات على جهازك: فهي ليست كوكيز تُرسل تلقائيًا إلى خوادمنا مع كل صفحة.',
           'يُودَع كوكي وظيفي واحد فقط (rs_lang_redirected، لمدة سنة): يسجل أن الكشف التلقائي عن اللغة تم في زيارتك الأولى حتى لا تتم إعادة توجيهك مجددًا. لا يحتوي على أي بيانات شخصية.',
         ],
@@ -311,7 +314,7 @@ const COOKIES: Record<Lang, LegalCopy> = {
     description:
       'RussieEtudes.com не использует рекламные cookies и сторонние трекеры. Узнайте, что сайт сохраняет локально в вашем браузере и как это удалить.',
     h1: 'Cookies и локальное хранилище',
-    updated: 'Последнее обновление: 22 июля 2026 г.',
+    updated: 'Последнее обновление: 14 ноября 2026 г.',
     intro:
       'Сайт RussieEtudes.com не использует рекламные cookies, сторонние трекеры и внешние системы аналитики. Однако некоторая информация сохраняется локально в вашем браузере (localStorage / sessionStorage) для улучшения вашего опыта.',
     sections: [
@@ -319,6 +322,7 @@ const COOKIES: Record<Lang, LegalCopy> = {
         heading: 'Что сайт сохраняет в вашем браузере',
         paragraphs: [
           'Предпочитаемый язык (чтобы предложить его при следующем визите), email, введённый для получения гида, данные последней заявки или записи (номер досье, данные формы) для вашего локального кабинета отслеживания, а также сессионный флаг, чтобы не показывать некоторые окна повторно.',
+          'На языковой платформе блокнот шортсов (сохранённые выражения, даты повторений, очки и серия дней) и настройки воспроизведения также хранятся в браузере. Запись вашего голоса, когда вы сравниваете себя с образцом, остаётся в памяти только на время упражнения: она не сохраняется и не передаётся.',
           'Эта информация остаётся на вашем устройстве: это не cookies, автоматически отправляемые на наши серверы при каждом открытии страницы.',
           'Устанавливается только один функциональный cookie (rs_lang_redirected, срок — 1 год): он фиксирует, что автоматическое определение языка уже произошло при первом визите, чтобы больше вас не перенаправлять. Он не содержит персональных данных.',
         ],

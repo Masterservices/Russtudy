@@ -16,6 +16,12 @@ import { ACCOUNT } from '../../../pages-templates/elearning/shell-labels';
 import CoursePage from '../../../pages-templates/elearning/CoursePage';
 import LessonPage from '../../../pages-templates/elearning/LessonPage';
 import VisioPage from '../../../pages-templates/elearning/VisioPage';
+import ShortsPage from '../../../pages-templates/elearning/ShortsPage';
+import ShortsHubPage from '../../../pages-templates/elearning/ShortsHubPage';
+import { deckCopy, shortsCopy } from '../../../pages-templates/elearning/shorts-copy';
+import { SHORTS_SEGMENT, SHORT_COURSE_SLUGS, getShortDeck } from '../../../content/shorts/registry';
+import type { ShortDeckSource } from '../../../content/shorts/types';
+import type { ShortsTab } from '../../../components/elearning/shorts/ShortsTabBar';
 import { resolveElearning } from './resolve';
 import { SECTION_IMAGES } from '../../../content/images/registry';
 import type { Lang } from '../../../i18n';
@@ -58,6 +64,13 @@ function social(opts: {
   };
 }
 
+/** Vue du fil demandée par un lien : `?vue=reviser`. */
+const SHORTS_VIEWS: Record<string, ShortsTab> = {
+  explorer: 'explore',
+  reviser: 'review',
+  carnet: 'notebook',
+};
+
 /**
  * Espace e-learning : catalogue, leçon d'essai et réservation de visio.
  *
@@ -85,6 +98,39 @@ export async function generateMetadata({
         title,
         description: L.subtitle,
         canonical: `${SITE.domain}/elearning`,
+        lang: route.lang,
+      }),
+    };
+  }
+
+  if (route.kind === 'shorts-hub') {
+    const copy = shortsCopy(route.lang).hub;
+    return {
+      ...base,
+      title: copy.metaTitle,
+      description: copy.metaDescription,
+      ...social({
+        title: copy.metaTitle,
+        description: copy.metaDescription,
+        canonical: `${SITE.domain}/elearning/${SHORTS_SEGMENT}`,
+        lang: route.lang,
+      }),
+    };
+  }
+
+  if (route.kind === 'shorts') {
+    // Le lien partagé d'un short (`?s=…`) montre la même page : une
+    // seule adresse canonique, sans paramètre.
+    const copy = deckCopy(route.lang, route.deck.targetLang, route.deck.level);
+    return {
+      ...base,
+      title: copy.metaTitle,
+      description: copy.metaDescription,
+      ...social({
+        title: copy.metaTitle,
+        description: copy.metaDescription,
+        canonical: `${SITE.domain}/elearning/${route.courseSlug}/${SHORTS_SEGMENT}`,
+        targetLang: route.deck.targetLang,
         lang: route.lang,
       }),
     };
@@ -167,6 +213,32 @@ export default async function ElearningRoute({
 
   if (route.kind === 'visio') {
     return <VisioPage />;
+  }
+
+  if (route.kind === 'shorts-hub') {
+    const decks = SHORT_COURSE_SLUGS.map(getShortDeck).filter(
+      (deck): deck is ShortDeckSource => deck !== null,
+    );
+    return <ShortsHubPage lang={route.lang} decks={decks} />;
+  }
+
+  if (route.kind === 'shorts') {
+    const query = await searchParams;
+    const requested = typeof query.s === 'string' ? query.s : null;
+    const view = typeof query.vue === 'string' ? SHORTS_VIEWS[query.vue] ?? null : null;
+    // Sans parcours en base, aucune leçon n'est à relier : pas de requête.
+    const accessible = route.course ? await getAccessibleLessons(route.courseSlug) : new Set<string>();
+
+    return (
+      <ShortsPage
+        lang={route.lang}
+        deck={route.deck}
+        course={route.course}
+        accessible={accessible}
+        initialShortId={requested}
+        initialTab={view}
+      />
+    );
   }
 
   if (route.kind === 'signin') {

@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { SITE } from '../config/site';
 import { buildCanonicalUrl, buildHreflangAlternates } from '../seo/canonical';
 import { getPublicCatalogue } from '../features/app/elearning/public';
+import { SHORTS_SEGMENT, SHORT_COURSE_SLUGS } from '../content/shorts/registry';
 import { UNIVERSITY_SLUGS } from '../content/universites/registry';
 import { publishedPartners } from '../content/partenaires/registry';
 import { PARTNER_LANGS } from '../content/partenaires/types';
@@ -36,6 +37,9 @@ interface SitemapPath {
  * toutes les pages à chaque déploiement.
  */
 const SITE_LAST_MODIFIED = '2026-09-14';
+
+/** Date de mise en ligne des shorts ; à remonter quand le contenu du fil change. */
+const SHORTS_LAST_MODIFIED = '2026-11-14';
 
 /**
  * Échappe un texte destiné au sitemap.
@@ -214,6 +218,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   entries.push(...(await elearningEntries()));
+
+  // Shorts de langue : le pôle, puis le fil de chaque parcours. Ils
+  // viennent du registre du dépôt et non de la base : ils figurent donc
+  // au sitemap même si la base ne répond pas au moment de le produire.
+  entries.push({
+    url: `${SITE.domain}/elearning/${SHORTS_SEGMENT}`,
+    lastModified: SHORTS_LAST_MODIFIED,
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  });
+  for (const slug of SHORT_COURSE_SLUGS) {
+    entries.push({
+      url: `${SITE.domain}/elearning/${slug}/${SHORTS_SEGMENT}`,
+      lastModified: SHORTS_LAST_MODIFIED,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    });
+  }
 
   // La visite immersive 3D : page unique, servie telle quelle dans les
   // quatre langues (son contenu est visuel), liée depuis tout le site.
