@@ -51,6 +51,9 @@ export const BLOG_SLUGS = [
   'logement-etudiant-russie-residence-ou-appartement',
   'compte-bancaire-transferts-argent-russie-tunisie',
   'vie-etudiante-integration-russie',
+  'journee-de-la-mere-russie-29-novembre-2026',
+  'nouvel-an-2027-etudiant-tunisien-russie',
+  'fete-des-meres-tunisie-21-mars-2027',
 ] as const;
 
 export type BlogSlug = (typeof BLOG_SLUGS)[number];

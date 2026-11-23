@@ -690,4 +690,7 @@ export const BLOG_IMAGES: Record<BlogSlug, PageImage> = {
   'logement-etudiant-russie-residence-ou-appartement': SECTION_IMAGES['logement-etudiant'],
   'compte-bancaire-transferts-argent-russie-tunisie': SECTION_IMAGES['cout-des-etudes'],
   'vie-etudiante-integration-russie': SECTION_IMAGES['vie-quotidienne'],
+  'journee-de-la-mere-russie-29-novembre-2026': SECTION_IMAGES['famille-parents'],
+  'nouvel-an-2027-etudiant-tunisien-russie': SECTION_IMAGES['culture-integration'],
+  'fete-des-meres-tunisie-21-mars-2027': SECTION_IMAGES['famille-parents'],
 };

@@ -8,6 +8,7 @@ import { NOVEMBRE_ARTICLES } from './articles/novembre';
 import { DECEMBRE_ARTICLES } from './articles/decembre';
 import { JANVIER_ARTICLES } from './articles/janvier';
 import { FEVRIER_ARTICLES } from './articles/fevrier';
+import { EVENEMENTS_ARTICLES } from './articles/evenements';
 
 export type BlogBlock =
   | { type: 'p'; text: string }
@@ -7680,6 +7681,7 @@ const ARTICLES: BlogArticleEntry[] = [
   ...DECEMBRE_ARTICLES,
   ...JANVIER_ARTICLES,
   ...FEVRIER_ARTICLES,
+  ...EVENEMENTS_ARTICLES,
 ];
 
 const INDEX: Record<Lang, BlogIndexCopy> = {

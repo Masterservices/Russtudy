@@ -12,14 +12,14 @@ import type { BlogArticleEntry } from '../copy';
 export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
   {
     slug: 'hiver-russe-froid-sante-etudiant',
-    publishedAt: '2027-02-01',
+    publishedAt: '2026-11-23',
     copy: {
       fr: {
         title: 'Hiver en Russie : se préparer au froid et à la santé | RusStudy',
         description:
           "Vêtements en couches, chauffage des intérieurs, lumière rare et infections hivernales : comment un étudiant tunisien se prépare à un hiver russe long, sans improviser.",
         h1: 'Hiver en Russie : se préparer au froid et à la santé',
-        publishedLabel: 'Publication : Février 2027',
+        publishedLabel: 'Publication : Novembre 2026',
         excerpt:
           "Le froid russe ne pose pas de problème à qui l'anticipe. Le piège, c'est de le découvrir en janvier avec la mauvaise veste.",
         intro:
@@ -93,7 +93,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'Layered clothing, heated interiors, scarce daylight and winter infections: how a Tunisian student prepares for a long Russian winter without improvising.',
         h1: 'Winter in Russia: preparing for the cold and for your health',
-        publishedLabel: 'Published: February 2027',
+        publishedLabel: 'Published: November 2026',
         excerpt:
           'The Russian cold is no problem for those who plan for it. The trap is discovering it in January, wearing the wrong jacket.',
         intro:
@@ -167,7 +167,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'ملابس بطبقات، وتدفئة داخلية، ونهار قصير، والتهابات الشتاء: كيف يستعد الطالب التونسي لشتاء روسي طويل دون ارتجال.',
         h1: 'الشتاء في روسيا: الاستعداد للبرد والصحة',
-        publishedLabel: 'النشر: فبراير 2027',
+        publishedLabel: 'النشر: نوفمبر 2026',
         excerpt:
           'البرد الروسي لا يشكل مشكلة لمن يستعد له. الفخ أن تكتشفه في يناير بسترة غير مناسبة.',
         intro:
@@ -241,7 +241,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'Одежда слоями, отопление в помещениях, короткий день и зимние инфекции: как тунисский студент готовится к долгой русской зиме без импровизации.',
         h1: 'Зима в России: как подготовиться к холоду и здоровью',
-        publishedLabel: 'Публикация: февраль 2027',
+        publishedLabel: 'Публикация: ноябрь 2026',
         excerpt:
           'Русский холод не проблема для того, кто к нему готовится. Ловушка — обнаружить его в январе в неподходящей куртке.',
         intro:
@@ -314,14 +314,14 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
   },
   {
     slug: 'logement-etudiant-russie-residence-ou-appartement',
-    publishedAt: '2027-02-08',
+    publishedAt: '2026-11-23',
     copy: {
       fr: {
         title: 'Logement étudiant en Russie : résidence ou appartement ? | RusStudy',
         description:
           "Résidence universitaire, chambre chez l'habitant ou appartement partagé : les avantages, les contraintes et les questions à poser avant de signer un logement étudiant en Russie.",
         h1: 'Logement étudiant en Russie : résidence ou appartement ?',
-        publishedLabel: 'Publication : Février 2027',
+        publishedLabel: 'Publication : Novembre 2026',
         excerpt:
           "Le logement détermine votre quotidien autant que vos cours. Le bon choix dépend de votre budget, de votre ville et de votre tolérance à la vie en groupe.",
         intro:
@@ -386,7 +386,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'University dormitory, room with a host family or shared flat: the advantages, constraints and questions to ask before signing student housing in Russia.',
         h1: 'Student housing in Russia: dormitory or apartment?',
-        publishedLabel: 'Published: February 2027',
+        publishedLabel: 'Published: November 2026',
         excerpt:
           'Your housing shapes your daily life as much as your courses. The right choice depends on your budget, your city and how well you handle living in a group.',
         intro:
@@ -451,7 +451,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'الإقامة الجامعية، أو غرفة لدى عائلة، أو شقة مشتركة: المزايا والقيود والأسئلة الواجب طرحها قبل توقيع عقد سكن طلابي في روسيا.',
         h1: 'السكن الطلابي في روسيا: إقامة جامعية أم شقة؟',
-        publishedLabel: 'النشر: فبراير 2027',
+        publishedLabel: 'النشر: نوفمبر 2026',
         excerpt:
           'السكن يحدد يومك بقدر ما تحدده دروسك. والاختيار الصحيح يعتمد على ميزانيتك ومدينتك وقدرتك على العيش ضمن مجموعة.',
         intro:
@@ -516,7 +516,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'Общежитие, комната у принимающей семьи или совместная квартира: плюсы, ограничения и вопросы, которые стоит задать до подписания договора на студенческое жильё в России.',
         h1: 'Студенческое жильё в России: общежитие или квартира?',
-        publishedLabel: 'Публикация: февраль 2027',
+        publishedLabel: 'Публикация: ноябрь 2026',
         excerpt:
           'Жильё влияет на повседневную жизнь не меньше, чем занятия. Правильный выбор зависит от бюджета, города и готовности жить в коллективе.',
         intro:
@@ -580,14 +580,14 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
   },
   {
     slug: 'compte-bancaire-transferts-argent-russie-tunisie',
-    publishedAt: '2027-02-15',
+    publishedAt: '2026-11-23',
     copy: {
       fr: {
         title: "Argent en Russie : compte bancaire et transferts depuis la Tunisie | RusStudy",
         description:
           "Ouvrir un compte bancaire en Russie, transférer de l'argent depuis la Tunisie et éviter les blocages : ce qu'un étudiant doit prévoir, et ce qui change selon les banques.",
         h1: "Argent en Russie : compte bancaire et transferts depuis la Tunisie",
-        publishedLabel: 'Publication : Février 2027',
+        publishedLabel: 'Publication : Novembre 2026',
         excerpt:
           "Sans compte local et sans méthode de transfert de secours, un étudiant peut se retrouver sans accès à son argent. Mieux vaut le prévoir avant le départ.",
         intro:
@@ -648,7 +648,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'Opening a bank account in Russia, transferring money from Tunisia and avoiding blocked payments: what a student should plan for, and what varies between banks.',
         h1: 'Money in Russia: bank account and transfers from Tunisia',
-        publishedLabel: 'Published: February 2027',
+        publishedLabel: 'Published: November 2026',
         excerpt:
           'Without a local account and a backup transfer method, a student can end up without access to their money. It is best to plan this before departure.',
         intro:
@@ -709,7 +709,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'فتح حساب بنكي في روسيا، وتحويل الأموال من تونس، وتجنب تعطل المدفوعات: ما يجب على الطالب التخطيط له، وما يختلف بين البنوك.',
         h1: 'المال في روسيا: حساب بنكي وتحويلات من تونس',
-        publishedLabel: 'النشر: فبراير 2027',
+        publishedLabel: 'النشر: نوفمبر 2026',
         excerpt:
           'دون حساب محلي وطريقة تحويل احتياطية، قد يجد الطالب نفسه دون وصول إلى أمواله. الأفضل التخطيط لذلك قبل السفر.',
         intro:
@@ -770,7 +770,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'Открытие банковского счёта в России, перевод денег из Туниса и защита от заблокированных платежей: что стоит предусмотреть студенту и что различается между банками.',
         h1: 'Деньги в России: банковский счёт и переводы из Туниса',
-        publishedLabel: 'Публикация: февраль 2027',
+        publishedLabel: 'Публикация: ноябрь 2026',
         excerpt:
           'Без местного счёта и запасного способа перевода студент может остаться без доступа к своим деньгам. Лучше предусмотреть это до отъезда.',
         intro:
@@ -830,14 +830,14 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
   },
   {
     slug: 'vie-etudiante-integration-russie',
-    publishedAt: '2027-02-22',
+    publishedAt: '2026-11-23',
     copy: {
       fr: {
         title: "Vie étudiante en Russie : s'intégrer, se faire des amis, tenir la durée | RusStudy",
         description:
           "Langue, groupes d'étudiants, vie associative et solitude : comment un étudiant tunisien construit sa vie sociale en Russie et tient la durée de ses études.",
         h1: "Vie étudiante en Russie : s'intégrer et tenir la durée",
-        publishedLabel: 'Publication : Février 2027',
+        publishedLabel: 'Publication : Novembre 2026',
         excerpt:
           "Les diplômes se réussissent rarement seul. Ce sont les liens qui permettent de passer les moments difficiles, et ils se construisent dès les premières semaines.",
         intro:
@@ -898,7 +898,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'Language, student groups, clubs and loneliness: how a Tunisian student builds a social life in Russia and sees their studies through.',
         h1: 'Student life in Russia: fitting in and seeing your studies through',
-        publishedLabel: 'Published: February 2027',
+        publishedLabel: 'Published: November 2026',
         excerpt:
           'Degrees are rarely achieved alone. It is connections that get you through hard moments, and they are built in the first few weeks.',
         intro:
@@ -959,7 +959,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'اللغة ومجموعات الطلاب والنوادي والشعور بالوحدة: كيف يبني الطالب التونسي حياته الاجتماعية في روسيا ويُتم دراسته.',
         h1: 'الحياة الطلابية في روسيا: الاندماج وإتمام الدراسة',
-        publishedLabel: 'النشر: فبراير 2027',
+        publishedLabel: 'النشر: نوفمبر 2026',
         excerpt:
           'الشهادات نادرا ما تُنال بمفردك. الروابط هي ما يعينك في الأوقات الصعبة، وتُبنى منذ الأسابيع الأولى.',
         intro:
@@ -1020,7 +1020,7 @@ export const FEVRIER_ARTICLES: BlogArticleEntry[] = [
         description:
           'Язык, студенческие группы, клубы и одиночество: как тунисский студент строит социальную жизнь в России и доводит учёбу до конца.',
         h1: 'Студенческая жизнь в России: адаптация и доведение учёбы до конца',
-        publishedLabel: 'Публикация: февраль 2027',
+        publishedLabel: 'Публикация: ноябрь 2026',
         excerpt:
           'Дипломы редко получают в одиночку. Связи помогают пройти трудные моменты, и их строят уже в первые недели.',
         intro:
