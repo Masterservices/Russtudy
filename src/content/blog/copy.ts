@@ -7,6 +7,9 @@ import { OCTOBRE_ARTICLES } from './articles/octobre';
 import { NOVEMBRE_ARTICLES } from './articles/novembre';
 import { DECEMBRE_ARTICLES } from './articles/decembre';
 import { JANVIER_ARTICLES } from './articles/janvier';
+import { FEVRIER_ARTICLES } from './articles/fevrier';
+import { EVENEMENTS_ARTICLES } from './articles/evenements';
+import { FETES_TUNISIE_ARTICLES } from './articles/fetes-tunisie';
 
 export type BlogBlock =
   | { type: 'p'; text: string }
@@ -7678,6 +7681,9 @@ const ARTICLES: BlogArticleEntry[] = [
   ...NOVEMBRE_ARTICLES,
   ...DECEMBRE_ARTICLES,
   ...JANVIER_ARTICLES,
+  ...FEVRIER_ARTICLES,
+  ...EVENEMENTS_ARTICLES,
+  ...FETES_TUNISIE_ARTICLES,
 ];
 
 const INDEX: Record<Lang, BlogIndexCopy> = {

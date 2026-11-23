@@ -47,6 +47,17 @@ export const BLOG_SLUGS = [
   'arriver-en-fevrier-premiere-semaine',
   'ramadan-et-etudes-en-russie',
   'apres-le-diplome-exercer-en-tunisie',
+  'hiver-russe-froid-sante-etudiant',
+  'logement-etudiant-russie-residence-ou-appartement',
+  'compte-bancaire-transferts-argent-russie-tunisie',
+  'vie-etudiante-integration-russie',
+  'journee-de-la-mere-russie-29-novembre-2026',
+  'nouvel-an-2027-etudiant-tunisien-russie',
+  'fete-des-meres-tunisie-21-mars-2027',
+  'fete-revolution-14-janvier-2027-etudiant-tunisien-russie',
+  'fete-independance-20-mars-2027-etudiant-tunisien-russie',
+  'aid-el-fitr-2027-etudiant-tunisien-russie',
+  'aid-el-adha-2027-etudiant-tunisien-russie',
 ] as const;
 
 export type BlogSlug = (typeof BLOG_SLUGS)[number];
