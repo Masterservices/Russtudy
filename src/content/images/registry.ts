@@ -686,4 +686,8 @@ export const BLOG_IMAGES: Record<BlogSlug, PageImage> = {
   'arriver-en-fevrier-premiere-semaine': SECTION_IMAGES['checklist-depart'],
   'ramadan-et-etudes-en-russie': SECTION_IMAGES['ramadan-mosquee'],
   'apres-le-diplome-exercer-en-tunisie': SECTION_IMAGES['travail-etudiant'],
+  'hiver-russe-froid-sante-etudiant': SECTION_IMAGES['sante-assurance'],
+  'logement-etudiant-russie-residence-ou-appartement': SECTION_IMAGES['logement-etudiant'],
+  'compte-bancaire-transferts-argent-russie-tunisie': SECTION_IMAGES['cout-des-etudes'],
+  'vie-etudiante-integration-russie': SECTION_IMAGES['vie-quotidienne'],
 };

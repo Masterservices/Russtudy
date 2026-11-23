@@ -47,6 +47,10 @@ export const BLOG_SLUGS = [
   'arriver-en-fevrier-premiere-semaine',
   'ramadan-et-etudes-en-russie',
   'apres-le-diplome-exercer-en-tunisie',
+  'hiver-russe-froid-sante-etudiant',
+  'logement-etudiant-russie-residence-ou-appartement',
+  'compte-bancaire-transferts-argent-russie-tunisie',
+  'vie-etudiante-integration-russie',
 ] as const;
 
 export type BlogSlug = (typeof BLOG_SLUGS)[number];
