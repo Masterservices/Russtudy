@@ -693,4 +693,8 @@ export const BLOG_IMAGES: Record<BlogSlug, PageImage> = {
   'journee-de-la-mere-russie-29-novembre-2026': SECTION_IMAGES['famille-parents'],
   'nouvel-an-2027-etudiant-tunisien-russie': SECTION_IMAGES['culture-integration'],
   'fete-des-meres-tunisie-21-mars-2027': SECTION_IMAGES['famille-parents'],
+  'fete-revolution-14-janvier-2027-etudiant-tunisien-russie': SECTION_IMAGES['culture-integration'],
+  'fete-independance-20-mars-2027-etudiant-tunisien-russie': SECTION_IMAGES['culture-integration'],
+  'aid-el-fitr-2027-etudiant-tunisien-russie': SECTION_IMAGES['ramadan-mosquee'],
+  'aid-el-adha-2027-etudiant-tunisien-russie': SECTION_IMAGES['ramadan-mosquee'],
 };
